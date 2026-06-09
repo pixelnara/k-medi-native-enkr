@@ -433,6 +433,9 @@ ul {
   transform: translateY(20px);
   animation: rise 1s 0.55s forwards;
 }
+.hero__cta {
+  display: none;
+}
 @keyframes rise {
   to {
     opacity: 1;
@@ -1628,6 +1631,9 @@ ul {
   .header__util {
     display: none;
   }
+  .header__right .btn {
+    display: none;
+  }
 
   /* Hero */
   .hero__title {
@@ -1636,6 +1642,22 @@ ul {
   .hero__desc {
     font-size: 16px;
     margin-top: 20px;
+  }
+  .hero__cta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 36px;
+    width: min(320px, 80vw);
+    height: 60px;
+    background: #fff;
+    color: #111;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: rise 1s 0.7s forwards;
   }
   .hero__scroll {
     display: none;
