@@ -358,6 +358,7 @@ ul {
 .hero {
   position: relative;
   height: 100vh;
+  height: 100dvh;
   min-height: 640px;
   color: #fff;
   overflow: hidden;
@@ -1639,6 +1640,9 @@ ul {
   }
 
   /* Hero */
+  .hero__inner {
+    padding-bottom: 80px;
+  }
   .hero__brand {
     display: block;
     font-size: 12px;
