@@ -432,10 +432,10 @@ ul {
 }
 .hero__desc {
   margin-top: 30px;
-  font-size: 24px;
-  font-weight: 600;
+  font-size: 28px;
+  font-weight: 640;
   max-width: 80ch;
-  line-height: 1.7;
+  line-height: 1.65;
   color: rgba(255, 255, 255, 0.92);
   opacity: 0;
   transform: translateY(20px);
