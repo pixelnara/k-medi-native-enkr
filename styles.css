@@ -1559,7 +1559,7 @@ ul {
   color: var(--body2);
   font-size: 15.5px;
   line-height: 1.85;
-  max-width: 30ch;
+  max-width: 45ch;
 }
 @media (max-width: 860px) {
   .hiw__grid {
