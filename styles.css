@@ -472,7 +472,8 @@ ul {
 
 .hero__scroll {
   position: absolute;
-  right: var(--gutter);
+  left: 50%;
+  transform: translateX(-50%);
   bottom: 150px;
   z-index: 3;
   display: flex;
