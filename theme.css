@@ -21,26 +21,14 @@
   --gray-950: #16181d;
   --black: #000000;
 
-  /* Beige — 따뜻한 베이지 톤 보더·구분선 */
-  --beige-30: #fbfaf9;
+  /* Beige — 따뜻한 베이지 톤 */
   --beige-100: #ece5df;
-  --beige-200: #d8d0c5;
 
-  /* Dark base */
-  --dark-950: #1a1612;
-  --dark-900: #2c2418;
-  --dark-800: #3d3220;
-
-  /* Brown 브랜드 포인트 1 */
-  --brown-500: #a17227;
-
-  /* Brown 브랜드 포인트 2 */
   /* Gold */
   --gold-500: #b08e31;
 
-  /* Teal — 라이트 서피스 · CTA 섹션 배경 */
+  /* Teal — 라이트 서피스 */
   --teal-100: #dee3e3;
-  --teal-800: #0c506b;
 
   /* Red */
   --red-500: #e03c3c;
@@ -99,7 +87,6 @@
   --surface: var(--gray-50);
   --surface-teal: var(--teal-100);
   --bg-black: var(--gray-950);
-  --bg-teal: var(--teal-800);
 
   /* ─── Semantic: Text ─── */
 
