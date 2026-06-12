@@ -1604,6 +1604,9 @@ ul {
     grid-template-columns: 1fr;
     width: 100%;
   }
+  .hiw-card__step {
+    font-size: var(--text-lg);
+  }
 }
 
 /* ============================================================
@@ -1768,6 +1771,12 @@ ul {
   .footer__mid {
     grid-template-columns: 1fr;
   }
+
+  /* Accordion */
+  .acc-head {
+    font-size: var(--text-lg);
+    padding: var(--space-5) var(--space-5);
+  }
 }
 @media (max-width: 600px) {
   .news-grid {
@@ -1813,7 +1822,7 @@ ul {
 
   /* Accordion */
   .acc-head {
-    font-size: var(--text-2xl);
+    font-size: var(--text-md);
     padding: var(--space-5) var(--space-5);
   }
   .acc-body__inner {
