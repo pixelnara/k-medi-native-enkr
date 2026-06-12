@@ -37,37 +37,55 @@
 
   --font-sans: Optima, Candara, "Pretendard", source-sans-pro, sans-serif;
 
-  --text-xs: 11px;
-  --text-sm: 13px;
+  --text-10:   10px;
+  --text-xs:   11px;
+  --text-12:   12.5px;
+  --text-sm:   13px;
+  --text-14:   14px;
   --text-base: 15px;
-  --text-md: 17px;
-  --text-lg: 19px;
-  --text-xl: 25px;
-  --text-2xl: 28px;
-  --text-3xl: clamp(24px, 2.4vw, 34px);
-  --text-4xl: clamp(30px, 3.4vw, 46px);
-  --text-5xl: clamp(38px, 5.4vw, 76px);
-  --text-6xl: clamp(56px, 5vw, 80px);
+  --text-md:   17px;
+  --text-18:   18px;
+  --text-lg:   19px;
+  --text-24:   24px;
+  --text-xl:   25px;
+  --text-2xl:  28px;
+  --text-30:   30px;
+  --text-3xl:  clamp(24px, 2.4vw, 34px);
+  --text-4xl:  clamp(30px, 3.4vw, 46px);
+  --text-5xl:  clamp(38px, 5.4vw, 76px);
+  --text-6xl:  clamp(56px, 5vw, 80px);
   --text-hero: clamp(44px, 6.6vw, 104px);
+
+  /* ─── Primitive: Letter Spacing ─── */
+
+  --tracking-tighter: -0.02em;
+  --tracking-tight:   -0.01em;
+  --tracking-snug:     0.01em;
+  --tracking-normal:   0.02em;
+  --tracking-wide:     0.1em;
+  --tracking-wider:    0.22em;
 
   /* ─── Primitive: Spacing ─── */
 
-  --space-1: 4px;
-  --space-2: 8px;
-  --space-3: 12px;
-  --space-4: 16px;
-  --space-5: 20px;
-  --space-6: 24px;
-  --space-7: 28px;
-  --space-8: 32px;
-  --space-10: 40px;
-  --space-11: 44px;
-  --space-12: 48px;
-  --space-13: 52px;
-  --space-14: 56px;
-  --space-16: 64px;
-  --space-18: 72px;
-  --space-20: 80px;
+  --space-1:      4px;
+  --space-1-5:    6px;
+  --space-2:      8px;
+  --space-2-5:   10px;
+  --space-3:     12px;
+  --space-4:     16px;
+  --space-5:     20px;
+  --space-6:     24px;
+  --space-7:     28px;
+  --space-8:     32px;
+  --space-9:     36px;
+  --space-10:    40px;
+  --space-11:    44px;
+  --space-12:    48px;
+  --space-13:    52px;
+  --space-14:    56px;
+  --space-16:    64px;
+  --space-18:    72px;
+  --space-20:    80px;
   --space-gutter: clamp(16px, 1.6vw, 34px);
 
   /* ─── Primitive: Radius ─── */
