@@ -26,6 +26,7 @@
       overlay.classList.remove("is-open");
       document.body.style.overflow = "";
       document.querySelectorAll(".gnb-col.is-open").forEach(c => c.classList.remove("is-open"));
+      document.querySelectorAll(".gnb-has-sub.is-open").forEach(s => s.classList.remove("is-open"));
     });
   }
 
@@ -34,8 +35,20 @@
     h4.addEventListener("click", () => {
       const col = h4.parentElement;
       const isOpen = col.classList.contains("is-open");
-      document.querySelectorAll(".gnb-col.is-open").forEach(c => c.classList.remove("is-open"));
+      document.querySelectorAll(".gnb-col.is-open").forEach(c => {
+        c.classList.remove("is-open");
+        c.querySelectorAll(".gnb-has-sub.is-open").forEach(s => s.classList.remove("is-open"));
+      });
       if (!isOpen) col.classList.add("is-open");
+    });
+  });
+
+  /* ---------- GNB sub-list toggle (시술 하위 메뉴) ---------- */
+  document.querySelectorAll(".gnb-sub-toggle").forEach(btn => {
+    btn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      const li = btn.closest(".gnb-has-sub");
+      li.classList.toggle("is-open");
     });
   });
 

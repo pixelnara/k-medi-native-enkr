@@ -1517,6 +1517,9 @@ ul {
 .gnb-chevron {
   display: none;
 }
+.gnb-sub-toggle {
+  display: none;
+}
 .gnb-sub-list {
   display: flex;
   flex-direction: column;
@@ -1861,8 +1864,69 @@ ul {
   .gnb-sub-head {
     display: none;
   }
+  /* sub-list hidden by default; override the gnb-col.is-open ul rule */
   .gnb-sub-list {
     display: none;
+  }
+  .gnb-col.is-open ul .gnb-sub-list {
+    display: none;
+  }
+  /* 시술 sub-toggle row */
+  .gnb-item-row {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid var(--border);
+  }
+  .gnb-item-row > a {
+    flex: 1;
+    display: block;
+    padding: var(--space-4) 0;
+    font-size: var(--text-18);
+    font-weight: 400;
+    color: var(--gray-600);
+    letter-spacing: var(--tracking-tight);
+    line-height: 1.4;
+  }
+  .gnb-sub-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 26px;
+    height: 26px;
+    flex-shrink: 0;
+    background: none;
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    cursor: pointer;
+    padding: 0;
+  }
+  .gnb-sub-chevron {
+    width: 14px;
+    height: 14px;
+    transition: transform 0.25s ease;
+  }
+  .gnb-has-sub.is-open .gnb-sub-chevron {
+    transform: rotate(180deg);
+  }
+  /* show sub-list when toggled open */
+  .gnb-col.is-open ul .gnb-has-sub.is-open .gnb-sub-list {
+    display: flex;
+    flex-direction: column;
+    padding: 0 0 var(--space-2) var(--space-4);
+    border-left: 2px solid var(--border);
+    margin-bottom: var(--space-1);
+  }
+  .gnb-has-sub.is-open .gnb-sub-list > li > a {
+    display: block;
+    padding: var(--space-3) 0;
+    font-size: var(--text-sm);
+    color: var(--gray-500);
+    letter-spacing: 0;
+    border-bottom: 1px solid var(--border);
+    line-height: 1.4;
+  }
+  .gnb-has-sub.is-open .gnb-sub-list > li:last-child > a {
+    border-bottom: none;
   }
   .gnb-banner {
     display: flex;
