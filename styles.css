@@ -995,12 +995,13 @@ ul {
   width: 100%;
 }
 .compare__col {
-  background: var(--gray-50);
-  padding: clamp(44px, 5vw, 64px);
+  background: var(--white);
+  padding: 44px;
+  border: 3px solid var(--border-2);
 }
 .compare__col--ours {
-  background: var(--gray-50);
-  border: 3px solid var(--border-2);
+  background: var(--white);
+  border: 3px solid var(--blue-500);
 }
 .compare__title {
   font-family: var(--font-sans);
@@ -1009,11 +1010,12 @@ ul {
   letter-spacing: var(--tracking-snug);
   padding-bottom: 18px;
   margin-bottom: var(--space-6);
-  border-bottom: 2px solid var(--border);
+  border-bottom: 2px solid var(--border-2);
   color: var(--text-heading);
 }
 .compare__col--ours .compare__title {
   color: var(--text-heading);
+  border-bottom-color: var(--blue-500);
 }
 .compare__list {
   display: flex;
