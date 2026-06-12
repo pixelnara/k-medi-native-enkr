@@ -1571,7 +1571,7 @@ ul {
   align-items: center;
 }
 .hiw-card__icon {
-  color: var(--blue-700);
+  color: var(--blue-500);
   margin-bottom: var(--space-7);
 }
 .hiw-card__icon svg {
@@ -1582,7 +1582,7 @@ ul {
 .hiw-card__step {
   font-family: var(--font-sans);
   color: var(--text-heading);
-  font-size: var(--text-30);
+  font-size: var(--text-2xl);
   font-weight: 800;
   letter-spacing: var(--tracking-tight);
   margin-bottom: 18px;
