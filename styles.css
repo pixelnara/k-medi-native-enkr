@@ -439,7 +439,7 @@ ul {
   position: absolute;
   inset: 0;
   z-index: 1;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.82) 0%, rgba(0, 0, 0, 0.35) 40%, rgba(0, 0, 0, 0) 68%);
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.88) 0%, rgba(0, 0, 0, 0.55) 38%, rgba(0, 0, 0, 0.1) 62%, rgba(0, 0, 0, 0) 75%);
 }
 .hero__inner {
   position: relative;
@@ -2183,44 +2183,36 @@ ul {
 
   /* Hero — 모바일 전면 재설계 */
   .hero__inner {
-    justify-content: flex-start;
-    padding-top: calc(var(--header-h) + var(--space-10));
-    padding-bottom: calc(76px + var(--space-8));
+    justify-content: flex-end;
+    padding-top: 0;
+    padding-bottom: calc(76px + var(--space-14));
     align-items: center;
     text-align: center;
   }
   .hero__brand {
     display: none;
-    font-size: var(--text-sm);
-    font-weight: 600;
-    letter-spacing: var(--tracking-wider);
-    text-transform: uppercase;
-    color: rgba(255, 255, 255, 1);
-    margin-bottom: 0;
-    opacity: 0;
-    transform: translateY(20px);
-    animation: rise 1s 0.1s forwards;
   }
   .hero__title {
     margin-top: 0;
-    font-size: clamp(30px, 9vw, 42px);
-    line-height: 1.15;
-    letter-spacing: var(--tracking-tight);
+    font-size: clamp(32px, 10vw, 48px);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
     text-align: center;
+    font-weight: 700;
   }
   .hero__desc {
     display: block;
     font-size: var(--text-base);
-    color: rgba(255, 255, 255, 0.95);
-    margin-top: var(--space-4);
-    font-weight: 500;
-    line-height: 1.75;
-    max-width: 75%;
+    color: rgba(255, 255, 255, 0.88);
+    margin-top: var(--space-3);
+    font-weight: 400;
+    line-height: 1.6;
+    max-width: 80%;
     text-align: center;
   }
   .hero__desc--strong {
-    font-weight: 300;
-    color: rgba(255, 255, 255, 0.85);
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.88);
   }
   .hero__cta {
     display: none;
@@ -2228,15 +2220,17 @@ ul {
   .hero__counter {
     position: static;
     transform: none;
-    background: rgba(0, 0, 0, 0.52);
-    color: rgba(255, 255, 255, 0.9);
-    font-size: var(--text-sm);
+    background: none;
+    color: rgba(255, 255, 255, 0.75);
+    font-size: var(--text-base);
     font-weight: 500;
-    letter-spacing: 0.12em;
-    padding: 4px 14px;
-    border-radius: 3px;
-    margin-top: auto;
-    gap: var(--space-1);
+    letter-spacing: 0.08em;
+    padding: 0;
+    margin-top: var(--space-4);
+    gap: var(--space-2);
+  }
+  .hero__counter-sep {
+    opacity: 0.6;
   }
   .hero__scroll {
     display: none;
