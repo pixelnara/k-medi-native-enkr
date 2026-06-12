@@ -437,8 +437,9 @@ ul {
 
 .hero__dots {
   position: absolute;
-  left: var(--gutter);
-  bottom: 150px;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 36px;
   z-index: 3;
   display: flex;
   gap: 14px;
@@ -455,12 +456,12 @@ ul {
 }
 
 .hero__scroll {
+  display: none;
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
   bottom: 36px;
   z-index: 3;
-  display: flex;
   flex-direction: column;
   align-items: center;
   gap: var(--space-3);
@@ -1742,10 +1743,7 @@ ul {
     transform: translateY(100%);
   }
   .hero__dots {
-    left: 50%;
-    transform: translateX(-50%);
     bottom: calc(88px + var(--space-6));
-    justify-content: center;
   }
   .hero__scroll {
     display: none;
