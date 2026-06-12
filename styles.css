@@ -2240,7 +2240,7 @@ ul {
     align-items: center;
     justify-content: center;
     color: rgba(255, 255, 255, 0.65);
-    margin-top: var(--space-5);
+    margin-top: 10px;
     transition: color 0.3s;
   }
   .hero__down svg {
