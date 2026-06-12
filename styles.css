@@ -1439,6 +1439,9 @@ ul {
   font-weight: 500;
   line-height: 1.8;
 }
+.gnb-col a.gnb-link--bold {
+  font-weight: 550;
+}
 .gnb-col a:hover {
   color: var(--text-caption);
   text-decoration: underline;
