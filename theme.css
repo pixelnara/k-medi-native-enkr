@@ -8,18 +8,19 @@
 
   /* Gray — Cool Gray + Deep Dark (스케일 규칙: 번호↑ = 명도↓) */
   --white: #ffffff;
-  --gray-20: #fafafa;
-  --gray-50: #f8f8f8;
-  --gray-100: #f0f0f0;
-  --gray-150: #eaeaea;
-  --gray-200: #e4e4e4;
-  --gray-400: #a0a0a0;
-  --gray-500: #757575;
-  --gray-600: #585858;
-  --gray-700: #424242;
-  --gray-800: #303030;
-  --gray-900: #1d1d1d;
-  --gray-950: #161616;
+  --gray-20: #fafafc;
+  --gray-50: #f8f8fb;
+  --gray-100: #f0f0f0; /* 입력값 (중립) */
+  --gray-150: #eaeaf1; /* 입력값 */
+  --gray-200: #e4e4ec;
+  --gray-300: #cdcdd7;
+  --gray-400: #9e9eac;
+  --gray-500: #727282;
+  --gray-600: #565666;
+  --gray-700: #40404f;
+  --gray-800: #2e2e3b;
+  --gray-900: #1c1c26;
+  --gray-950: #14141c;
   --black: #000000;
 
   /* Blue */
