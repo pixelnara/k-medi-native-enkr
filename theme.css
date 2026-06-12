@@ -6,20 +6,20 @@
 :root {
   /* ─── Primitive: Color ─── */
 
-  /* Gray — Cool Gray + Deep Dark */
+  /* Gray — Cool Gray + Deep Dark (스케일 규칙: 번호↑ = 명도↓) */
   --white: #ffffff;
-  --gray-20: #f9fafa;
+  --gray-20: #f9fafa;   /* 미사용(예약) */
   --gray-50: #f6f7f8;
-  --gray-100: #eeeff1;
+  --gray-100: #eeeff1;  /* styles.css 직접 사용 */
   --gray-200: #e3e5e8;
   --gray-400: #838995;
   --gray-500: #6c727f;
-  --gray-600: #505662;
-  --gray-700: #22252b;
+  --gray-600: #505662;  /* 미사용(예약) */
+  --gray-700: #3e434d;  /* 2026-06-12 수정: 구 #22252b(800보다 어두운 역전) → 스케일 정렬 */
   --gray-800: #2d3139;
   --gray-900: #1a1d23;
   --gray-950: #16181d;
-  --black: #000000;
+  --black: #000000;     /* 예약: 순수 블랙. 오버레이는 rgba(0,0,0,…) 직접 사용 */
 
   /* Beige — 따뜻한 베이지 톤 */
   --beige-100: #ece5df;
@@ -31,7 +31,7 @@
   --teal-100: #dee3e3;
 
   /* Red */
-  --red-500: #e03c3c;
+  --red-500: #e03c3c;   /* 예약: 에러/경고 상태 */
 
   /* ─── Primitive: Typography ─── */
 
