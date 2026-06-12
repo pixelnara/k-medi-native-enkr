@@ -83,7 +83,7 @@
   --space-gutter: clamp(16px, 1.6vw, 34px);
 
   /* ─── Primitive: Radius ─── */
-
+  --radius-5: 5%;
   --radius-full: 50%;
   --radius-pill: 100px;
 
