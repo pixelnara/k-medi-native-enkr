@@ -55,12 +55,13 @@
   /* ---------- Hero slider ---------- */
   const slides = [...document.querySelectorAll(".hero__slide")];
   const counterCur = document.querySelector(".hero__counter-cur");
+  const counterTot = document.querySelector(".hero__counter-tot");
   let cur = 0;
   let timer = null;
   function go(i) {
     cur = (i + slides.length) % slides.length;
     slides.forEach((s, k) => s.classList.toggle("is-active", k === cur));
-    if (counterCur) counterCur.textContent = cur + 1;
+    if (counterCur) counterCur.textContent = String(cur + 1).padStart(2, '0');
   }
   function play() {
     stop();
@@ -70,6 +71,7 @@
     if (timer) clearInterval(timer);
   }
   if (slides.length) {
+    if (counterTot) counterTot.textContent = String(slides.length).padStart(2, '0');
     go(0);
     play();
   }

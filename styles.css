@@ -327,6 +327,9 @@ ul {
   opacity: 0.8;
   text-transform: uppercase;
 }
+.header__tagline {
+  display: none;
+}
 .gnb {
   display: flex;
   align-items: center;
@@ -432,8 +435,11 @@ ul {
 .inset-0 {
   inset: 0;
 }
-.bg-black\/40 {
-  background-color: rgba(0, 0, 0, 0.5);
+.hero__overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.82) 0%, rgba(0, 0, 0, 0.35) 40%, rgba(0, 0, 0, 0) 68%);
 }
 .hero__inner {
   position: relative;
@@ -2151,16 +2157,27 @@ ul {
     display: none;
   }
   .header__right .btn {
-    display: flex;
-    height: 40px;
-    min-width: auto;
-    padding: 0 var(--space-4);
-    border-radius: var(--radius-1px);
-    border: 1px solid currentColor;
-    background: transparent;
-    color: inherit;
+    display: none;
+  }
+  .brand {
+    display: none;
+  }
+  .header__tagline {
+    display: block;
     font-size: var(--text-sm);
-    letter-spacing: var(--tracking-snug);
+    font-weight: 600;
+    letter-spacing: var(--tracking-tight);
+    text-transform: uppercase;
+    color: inherit;
+    white-space: nowrap;
+  }
+  .menu-btn {
+    display: flex;
+    width: 18px;
+    gap: 4px;
+  }
+  .menu-btn span {
+    height: 1.5px;
   }
 
   /* Hero — 모바일 전면 재설계 */
@@ -2172,7 +2189,7 @@ ul {
     text-align: left;
   }
   .hero__brand {
-    display: block;
+    display: none;
     font-size: var(--text-sm);
     font-weight: 600;
     letter-spacing: var(--tracking-wider);
@@ -2207,7 +2224,16 @@ ul {
     display: none;
   }
   .hero__counter {
-    display: none;
+    position: static;
+    transform: none;
+    background: none;
+    color: rgba(255, 255, 255, 0.55);
+    font-size: var(--text-sm);
+    font-weight: 400;
+    letter-spacing: 0.12em;
+    padding: 0;
+    margin-top: var(--space-5);
+    gap: var(--space-1);
   }
   .hero__scroll {
     display: none;
