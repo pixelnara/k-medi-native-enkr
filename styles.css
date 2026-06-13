@@ -2278,14 +2278,21 @@ ul {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 0;
+    gap: 4px;
     flex: 1;
-    height: 44px;
+    height: 100%;
     padding: 0;
     color: var(--gray-800);
     font-size: 0;
     transition: color 0.2s;
     text-decoration: none;
+  }
+  .mbar-label {
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    color: inherit;
+    white-space: nowrap;
   }
   .mbar-btn svg {
     width: 20px;
