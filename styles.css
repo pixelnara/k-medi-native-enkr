@@ -66,7 +66,7 @@ ul {
   color: var(--text-caption);
   font-size: var(--text-19);
   font-weight: 600;
-  letter-spacing: var(--tracking-wide);
+  letter-spacing: var(--tracking-normal);
   text-transform: uppercase;
   margin-bottom: 18px;
 }
@@ -427,7 +427,7 @@ ul {
   object-fit: cover;
   border-radius: 50%;
   display: block;
-  border: 1.5px solid var(--gray-950);
+  border: 1.5px solid var(--gray-200);
 }
 .header-lang-code {
   font-size: 11px;
