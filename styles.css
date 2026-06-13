@@ -2409,9 +2409,9 @@ ul {
     left: 14px;
     right: 14px;
     z-index: 500;
-    height: 72px;
+    height: 68px;
     background: var(--white);
-    border-radius: 24px;
+    border-radius: 8px;
     box-shadow: 0 4px 24px rgba(0, 0, 0, 0.14);
     align-items: center;
     justify-content: space-between;
@@ -2427,7 +2427,7 @@ ul {
     flex: 1;
     height: 100%;
     padding: 0;
-    color: var(--gray-600);
+    color: var(--gray-950);
     font-size: 0;
     transition: color 0.2s;
     text-decoration: none;
