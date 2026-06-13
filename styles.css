@@ -2256,10 +2256,10 @@ ul {
   }
   /* 하단바 v2 활성 / v1 숨김 */
   .mobile-bar--v1 {
-    display: none;
+    display: flex;
   }
   .mobile-bar--v2 {
-    display: flex;
+    display: none;
   }
   .header__util {
     display: none;
