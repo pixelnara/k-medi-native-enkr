@@ -593,13 +593,14 @@ ul {
   color: var(--white);
   font-family: var(--font-sans);
   font-size: var(--text-13);
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: 0.06em;
   padding: 3px 12px;
   border-radius: var(--radius-1px);
 }
 .hero__counter-sep {
-  opacity: 0.5;
+  opacity: 0.9;
+  font-weight: 900;
 }
 
 .hero__down {
