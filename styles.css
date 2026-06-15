@@ -3204,6 +3204,45 @@ ul {
 .proc-sheet__list li:last-child a {
   border-bottom: none;
 }
+.proc-sheet__banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 24px 20px 32px;
+  padding: 24px 20px;
+  background: var(--violet-700);
+  color: var(--white);
+  text-decoration: none;
+  border-radius: 4px;
+}
+.proc-sheet__banner-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.proc-sheet__banner-label {
+  font-size: var(--text-10);
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  opacity: 0.7;
+}
+.proc-sheet__banner-title {
+  font-size: var(--text-18);
+  font-weight: 700;
+  letter-spacing: var(--tracking-tight);
+}
+.proc-sheet__banner-sub {
+  font-size: var(--text-13);
+  opacity: 0.75;
+  line-height: 1.5;
+}
+.proc-sheet__banner svg {
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+  margin-left: 12px;
+}
 @media (min-width: 861px) {
   .proc-sheet {
     display: none !important;
