@@ -1760,15 +1760,16 @@ ul {
 .gnb-col ul {
   display: flex;
   flex-direction: column;
-  gap: 11px;
+  gap: 14px;
 }
 .gnb-col a {
   color: var(--text-heading);
-  font-size: var(--text-17);
+  opacity: 0.8;
+  font-size: var(--text-18);
   letter-spacing: var(--tracking-tight);
   transition: 0.3s;
   text-decoration: none;
-  font-weight: 500;
+  font-weight: 400;
   line-height: 2.1;
 }
 .gnb-col a.gnb-link--bold {
