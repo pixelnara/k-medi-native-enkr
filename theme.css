@@ -62,16 +62,16 @@
   --violet-800: #1f1957; /* 더 딥 */
   --violet-900: #151132; /* 최심 다크 */
 
-  /* ── Gold Scale (#b08e31 기준) ── */
-  --gold-100: #fbf3d1;
-  --gold-200: #f4e1a3;
-  --gold-300: #e8c76f;
-  --gold-400: #d9ad3f;
-  --gold-500: #b08e31;
-  --gold-600: #8b6f26;
-  --gold-700: #6b511c;
-  --gold-800: #483613;
-  --gold-900: #241a0a;
+  /* ── Amber Scale (#b08e31 기준) ── */
+  --amber-100: #fbf3d1;
+  --amber-200: #f4e1a3;
+  --amber-300: #e8c76f;
+  --amber-400: #d9ad3f;
+  --amber-500: #b08e31;
+  --amber-600: #8b6f26;
+  --amber-700: #6b511c;
+  --amber-800: #483613;
+  --amber-900: #241a0a;
 
   /* ─── Primitive: Typography ─── */
 
@@ -165,7 +165,7 @@
   --text-body3: var(--gray-900);
   --text-subtle: var(--gray-400);
   --text-subtle2: var(--gray-900);
-  --text-caption: var(--violet-500);
+  --text-caption: var(--gold-600);
   --number: var(--gray-900);
 
   /* ─── Semantic: Border ─── */
@@ -190,7 +190,7 @@
   /* ─── Semantic: Accent ─── */
   --accent: var(--blue-400);
   --accent-mid: var(--blue-500); /* UI 아이콘 · 체크마크 · 숫자 원 */
-  --accent-dark: var(--violet-700); /* 아코디언 배경 · 비교 제목 · 브랜드 버튼 */
+  --accent-dark: var(--gold-700); /* 아코디언 배경 · 비교 제목 · 브랜드 버튼 */
 
   /* ─── Layout ─── */
 
