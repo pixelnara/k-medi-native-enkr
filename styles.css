@@ -1753,15 +1753,42 @@ ul {
   display: none;
 }
 .gnb-sub-toggle {
-  display: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  margin-left: 4px;
+  vertical-align: middle;
 }
-.gnb-sub-list {
+.gnb-sub-chevron {
+  width: 14px;
+  height: 14px;
+  transition: transform 0.25s ease;
+  stroke-width: 2.5;
+}
+.gnb-has-sub.is-open .gnb-sub-chevron {
+  transform: rotate(180deg);
+}
+.gnb-item-row {
   display: flex;
+  align-items: center;
+}
+.gnb-col ul.gnb-sub-list {
+  display: none;
   flex-direction: column;
   gap: 0;
   margin-top: var(--space-8);
   padding-left: var(--space-16);
   border-left: 2px solid var(--border);
+}
+.gnb-has-sub.is-open > ul.gnb-sub-list {
+  display: flex;
 }
 .gnb-sub-list li a {
   font-size: var(--text-15);
@@ -1769,6 +1796,11 @@ ul {
   color: var(--text-heading);
   line-height: 2;
   letter-spacing: 0;
+}
+/* nested sub-list (시술 하위) — always visible when parent Beauty Concierge is open */
+.gnb-has-sub.is-open .gnb-sub-list .gnb-sub-list {
+  display: flex;
+  margin-top: var(--space-4);
 }
 @media (hover: hover) {
   .gnb-col a:hover {
@@ -2192,10 +2224,8 @@ ul {
     display: none;
   }
   /* sub-list hidden by default; override the gnb-col.is-open ul rule */
-  .gnb-sub-list {
-    display: none;
-  }
-  .gnb-col.is-open ul .gnb-sub-list {
+  .gnb-col ul.gnb-sub-list,
+  .gnb-col.is-open ul.gnb-sub-list {
     display: none;
   }
   /* 시술 sub-toggle row */
@@ -2253,6 +2283,27 @@ ul {
     line-height: 1.4;
   }
   .gnb-has-sub.is-open .gnb-sub-list > li:last-child > a {
+    border-bottom: none;
+  }
+  /* nested sub-list (e.g. 시술 under Beauty Concierge) always visible when parent is open */
+  .gnb-col.is-open ul .gnb-has-sub.is-open .gnb-sub-list .gnb-sub-list {
+    display: flex;
+    flex-direction: column;
+    padding: 0 0 var(--space-4) var(--space-16);
+    border-left: 2px solid var(--border);
+    margin-top: var(--space-4);
+  }
+  .gnb-col.is-open ul .gnb-has-sub.is-open .gnb-sub-list .gnb-sub-list li a {
+    display: block;
+    padding: var(--space-8) 0;
+    font-size: var(--text-13);
+    color: var(--text-heading);
+    letter-spacing: 0;
+    border-bottom: 1px solid var(--border);
+    line-height: 1.4;
+    font-weight: 400;
+  }
+  .gnb-col.is-open ul .gnb-has-sub.is-open .gnb-sub-list .gnb-sub-list li:last-child a {
     border-bottom: none;
   }
   .gnb-banner {
