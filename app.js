@@ -29,6 +29,7 @@
       document.body.style.overflow = "";
       document.querySelectorAll(".gnb-col.is-open").forEach(c => c.classList.remove("is-open"));
       document.querySelectorAll(".gnb-has-sub.is-open").forEach(s => s.classList.remove("is-open"));
+      document.querySelectorAll(".gnb-has-sub2.is-open").forEach(s => s.classList.remove("is-open"));
     });
   }
 
@@ -53,6 +54,34 @@
       li.classList.toggle("is-open");
     });
   });
+
+  /* ---------- GNB sub2 토글 (시술 하위 목록) ---------- */
+  document.querySelectorAll(".gnb-sub2-toggle").forEach(btn => {
+    btn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      btn.closest(".gnb-has-sub2").classList.toggle("is-open");
+    });
+  });
+
+  /* ---------- 시술 팝업 시트 (모바일) ---------- */
+  const procSheet = document.getElementById("procSheet");
+  const procClose = procSheet && procSheet.querySelector(".proc-sheet__close");
+  document.querySelectorAll(".gnb-proc-trigger").forEach(trigger => {
+    trigger.addEventListener("click", (e) => {
+      if (window.innerWidth <= 860 && procSheet) {
+        e.preventDefault();
+        e.stopPropagation();
+        procSheet.classList.add("is-open");
+        procSheet.setAttribute("aria-hidden", "false");
+      }
+    });
+  });
+  if (procClose) {
+    procClose.addEventListener("click", () => {
+      procSheet.classList.remove("is-open");
+      procSheet.setAttribute("aria-hidden", "true");
+    });
+  }
 
   /* ---------- Hero slider ---------- */
   const slides = [...document.querySelectorAll(".hero__slide")];

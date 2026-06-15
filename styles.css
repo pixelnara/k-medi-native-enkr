@@ -2196,6 +2196,61 @@ ul {
     grid-template-columns: 1fr 1fr;
   }
 }
+
+/* ============================================================
+   GNB SUB2 아코디언 (시술 하위 목록)
+   ============================================================ */
+/* 데스크톱: 기존 nested sub-list 스타일 그대로 */
+.gnb-item-row2 {
+  display: flex;
+  align-items: center;
+}
+.gnb-item-row2 > a {
+  flex: 1;
+  font-size: var(--text-15);
+  font-weight: 400;
+  color: var(--text-heading);
+  line-height: 2;
+}
+.gnb-sub2-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  margin-left: 4px;
+  color: var(--text-heading);
+}
+.gnb-sub2-chevron {
+  width: 14px;
+  height: 14px;
+  transition: transform 0.25s ease;
+  stroke-width: 2.5;
+}
+.gnb-has-sub2.is-open .gnb-sub2-chevron {
+  transform: rotate(180deg);
+}
+.gnb-sub2-list {
+  display: none;
+  flex-direction: column;
+  gap: 0;
+  padding-left: var(--space-12);
+  border-left: 2px solid var(--border);
+  margin-top: var(--space-4);
+}
+.gnb-has-sub2.is-open .gnb-sub2-list {
+  display: flex;
+}
+.gnb-sub2-list li a {
+  font-size: var(--text-14);
+  color: var(--text-heading);
+  line-height: 2.1;
+}
+
 @media (max-width: 860px) {
   :root {
     --header-h: 70px;
@@ -2209,8 +2264,8 @@ ul {
     align-items: center;
     justify-content: space-between;
     padding: var(--space-20) 0;
-    font-size: var(--text-19);
-    font-weight: 600;
+    font-size: var(--text-18);
+    font-weight: 450;
     color: var(--text-heading);
     letter-spacing: var(--tracking-tight);
     border-bottom: 1px solid var(--border);
@@ -2250,7 +2305,7 @@ ul {
     display: block;
     padding: var(--space-16) 0;
     font-size: var(--text-15);
-    font-weight: 600;
+    font-weight: 500;
     color: var(--text-heading);
     letter-spacing: var(--tracking-tight);
     line-height: 1.4;
@@ -2277,8 +2332,8 @@ ul {
     flex: 1;
     display: block;
     padding: var(--space-16) 0;
-    font-size: var(--text-16);
-    font-weight: 600;
+    font-size: var(--text-15);
+    font-weight: 450;
     color: var(--text-heading);
     letter-spacing: var(--tracking-tight);
     line-height: 1.4;
@@ -2316,6 +2371,7 @@ ul {
     display: block;
     padding: var(--space-12) 0;
     font-size: var(--text-13);
+    font-weight: 450;
     color: var(--text-heading);
     letter-spacing: 0;
     border-bottom: 1px solid var(--border);
@@ -2383,6 +2439,65 @@ ul {
     flex-shrink: 0;
     opacity: 0.8;
   }
+  /* 시술 서브리스트 — 모바일: 토글 버튼·하위 목록 숨김, 항목은 일반 텍스트처럼 */
+  .gnb-sub-list .gnb-has-sub .gnb-sub-toggle {
+    display: none;
+  }
+  .gnb-sub-list .gnb-has-sub > ul.gnb-sub-list,
+  .gnb-sub-list .gnb-has-sub.is-open > ul.gnb-sub-list {
+    display: none !important;
+  }
+  .gnb-sub-list .gnb-item-row {
+    border-bottom: 1px solid var(--border);
+  }
+  .gnb-sub-list .gnb-item-row > a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--space-16) 0;
+    font-size: var(--text-13);
+    font-weight: 450;
+    color: var(--text-heading);
+    line-height: 1.4;
+  }
+  .gnb-sub-list .gnb-item-row > a::after {
+    content: "";
+    display: inline-block;
+    width: 7px;
+    height: 7px;
+    border-top: 1.5px solid var(--gray-500);
+    border-right: 1.5px solid var(--gray-500);
+    transform: rotate(45deg);
+    flex-shrink: 0;
+    margin-left: 8px;
+  }
+
+  /* 모바일 sub2 아코디언 */
+  .gnb-item-row2 {
+    border-bottom: 1px solid var(--border);
+  }
+  .gnb-item-row2 > a {
+    padding: var(--space-14) 0;
+    border-bottom: none;
+  }
+  .gnb-sub2-toggle {
+    width: 30px;
+    height: 30px;
+  }
+  .gnb-sub2-list {
+    padding-left: var(--space-16);
+    margin-bottom: var(--space-8);
+  }
+  .gnb-sub2-list li a {
+    display: block;
+    padding: var(--space-10) 0;
+    font-size: var(--text-13);
+    border-bottom: 1px solid var(--border);
+  }
+  .gnb-sub2-list li:last-child a {
+    border-bottom: none;
+  }
+
   .stay__grid {
     grid-template-columns: 1fr;
   }
@@ -2984,5 +3099,71 @@ ul {
   }
   .whyus__intro b {
     margin-bottom: var(--space-40);
+  }
+}
+
+/* ============================================================
+   시술 팝업 시트 (모바일 전용)
+   ============================================================ */
+.proc-sheet {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 9100;
+  background: #fff;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.proc-sheet.is-open {
+  display: block;
+}
+.proc-sheet__bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 20px;
+  border-bottom: 1px solid var(--border);
+}
+.proc-sheet__close {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text-heading);
+  flex-shrink: 0;
+}
+.proc-sheet__close svg {
+  width: 22px;
+  height: 22px;
+}
+.proc-sheet__title {
+  font-size: var(--text-18);
+  font-weight: 700;
+  color: var(--text-heading);
+}
+.proc-sheet__list {
+  list-style: none;
+  margin: 0;
+  padding: 0 20px;
+}
+.proc-sheet__list li a {
+  display: block;
+  padding: 18px 0;
+  font-size: var(--text-16);
+  color: var(--text-heading);
+  border-bottom: 1px solid var(--border);
+  text-decoration: none;
+  font-weight: 500;
+}
+.proc-sheet__list li:last-child a {
+  border-bottom: none;
+}
+@media (min-width: 861px) {
+  .proc-sheet {
+    display: none !important;
   }
 }
