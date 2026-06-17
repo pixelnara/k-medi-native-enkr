@@ -345,6 +345,28 @@
     });
   });
 
+  /* ---------- Mobile bottom bar: hide on scroll down ---------- */
+  (function () {
+    const bars = document.querySelectorAll(".mobile-bar");
+    if (!bars.length) return;
+    let lastY = window.scrollY;
+    let ticking = false;
+    window.addEventListener("scroll", () => {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(() => {
+        const cur = window.scrollY;
+        if (cur > lastY && cur > 60) {
+          bars.forEach(b => b.classList.add("is-hidden"));
+        } else {
+          bars.forEach(b => b.classList.remove("is-hidden"));
+        }
+        lastY = cur;
+        ticking = false;
+      });
+    }, { passive: true });
+  })();
+
   /* ---------- Footer top button ---------- */
   const footerTopBtn = document.querySelector(".footer__top-btn");
   if (footerTopBtn) {

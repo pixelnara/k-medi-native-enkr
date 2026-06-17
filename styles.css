@@ -3426,13 +3426,19 @@ body:has(.gnb-overlay.is-open) {
     max-width: 500px;
     z-index: 500;
     height: 72px;
-    background: var(--gray-900);
+    background: #ffffff;
     border-radius: 8px;
-    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.14);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12), 0 1px 6px rgba(0, 0, 0, 0.08);
     align-items: center;
     justify-content: space-between;
     gap: 0;
     padding: 0 8px;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
+  }
+  .mobile-bar.is-hidden {
+    transform: translateX(-50%) translateY(calc(100% + 24px));
+    opacity: 0;
+    pointer-events: none;
   }
   /* 하단바 v1 활성 / v2 숨김 */
   .mobile-bar--v1 {
@@ -3450,14 +3456,14 @@ body:has(.gnb-overlay.is-open) {
     flex: 1;
     height: 100%;
     padding: 0;
-    color: rgba(255, 255, 255, 0.6);
+    color: var(--gray-400);
     font-size: 11px;
     transition: color 0.2s;
     text-decoration: none;
   }
   .mbar-btn:hover,
   .mbar-btn.is-active {
-    color: var(--white);
+    color: var(--gray-900);
   }
   .mbar-btn--cta {
     flex: 1;
