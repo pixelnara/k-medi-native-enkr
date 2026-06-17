@@ -1718,9 +1718,6 @@ ul {
 }
 /* Dark theme variant — desktop only (861px+) */
 @media (min-width: 861px) {
-  .gnb-col--mypage {
-    order: 5;
-  }
   .gnb-overlay--dark {
     background: var(--gray-950);
     color: var(--white);
@@ -1795,7 +1792,7 @@ ul {
 }
 .gnb-cols--sub {
   grid-template-columns: repeat(4, 1fr);
-  padding-top: var(--space-64);
+  padding-top: var(--space-80);
   padding-bottom: var(--space-40);
   border-top: 1px solid var(--border);
   margin-top: calc(var(--space-80) * -1);
