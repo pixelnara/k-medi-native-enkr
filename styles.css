@@ -1795,7 +1795,7 @@ ul {
 }
 .gnb-cols--sub {
   grid-template-columns: repeat(4, 1fr);
-  padding-top: var(--space-32);
+  padding-top: var(--space-64);
   padding-bottom: var(--space-40);
   border-top: 1px solid var(--border);
   margin-top: calc(var(--space-80) * -1);
@@ -2065,7 +2065,7 @@ ul {
 .treat-card__overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(0,0,0,0.72) 0%, rgba(0,0,0,0.22) 55%, rgba(0,0,0,0.04) 100%);
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.72) 0%, rgba(0, 0, 0, 0.22) 55%, rgba(0, 0, 0, 0.04) 100%);
   transition: opacity 0.42s ease;
 }
 .treat-card:hover .treat-card__overlay {
@@ -2197,8 +2197,12 @@ ul {
   margin-bottom: var(--space-64);
 }
 /* Desktop/Mobile 레이아웃 토글 */
-.hiw-desktop { display: grid; }
-.hiw-mobile  { display: none; }
+.hiw-desktop {
+  display: grid;
+}
+.hiw-mobile {
+  display: none;
+}
 
 /* HIW reuses the .news-card UI — only grid columns + image-slot fill + desc differ */
 .hiw-grid {
@@ -2293,8 +2297,12 @@ ul {
     background: linear-gradient(to top, rgba(0, 0, 0, 0.88) 0%, rgba(0, 0, 0, 0.55) 38%, rgba(0, 0, 0, 0.1) 62%, rgba(0, 0, 0, 0) 75%);
   }
   /* HIW: 860px 이하에서 모바일 레이아웃으로 전환 */
-  .hiw-desktop { display: none; }
-  .hiw-mobile  { display: grid; }
+  .hiw-desktop {
+    display: none;
+  }
+  .hiw-mobile {
+    display: grid;
+  }
   .hiw__grid {
     grid-template-columns: 1fr;
     width: 100%;
