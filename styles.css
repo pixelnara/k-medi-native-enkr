@@ -3637,11 +3637,11 @@ body:has(.gnb-overlay.is-open) {
     z-index: 1;
   }
   .lang-sheet__title {
-    font-size: var(--text-11);
+    font-size: var(--text-17);
     font-weight: 700;
     letter-spacing: var(--tracking-wide);
     text-transform: uppercase;
-    color: var(--text-subtle);
+    color: var(--text-heading);
     margin-bottom: var(--space-20);
   }
   .lang-sheet__opts {
