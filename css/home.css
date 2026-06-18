@@ -776,31 +776,33 @@
 }
 
 /* Services Accordion */
-.why-acc {
-  border-top: 1px solid var(--border-gray-1);
-}
 .why-acc__item {
-  border-bottom: 1px solid var(--border-gray-1);
+  background: var(--bg-gray);
+  transition: background 0.3s;
+}
+.why-acc__item.is-open {
+  background: var(--bg-white);
 }
 .why-acc__head {
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: var(--space-16);
-  padding: var(--space-24) 0;
+  gap: var(--space-20);
+  padding: var(--space-24) 30px;
   text-align: left;
   font-family: var(--font-sans);
   font-size: clamp(17px, 1.4vw, 22px);
-  font-weight: 500;
-  color: var(--text-gray-4);
+  font-weight: 530;
+  color: var(--text-gray-6);
   letter-spacing: var(--tracking-tight);
-  background: transparent;
-  transition: color 0.25s;
+  background: var(--bg-white);
+  transition: background 0.3s, color 0.3s;
   cursor: pointer;
 }
 .why-acc__item.is-open .why-acc__head {
-  color: var(--gold-700);
+  background: var(--gold-600);
+  color: var(--text-white);
 }
 .why-acc__icon {
   position: relative;
@@ -808,6 +810,9 @@
   height: 14px;
   flex-shrink: 0;
   color: var(--gold-500);
+}
+.why-acc__item.is-open .why-acc__icon {
+  color: var(--text-white);
 }
 .why-acc__icon::before,
 .why-acc__icon::after {
@@ -840,13 +845,12 @@
   transition: max-height 0.45s cubic-bezier(0.2, 0.7, 0.2, 1);
 }
 .why-acc__body-inner {
-  padding: 0 0 var(--space-24);
+  padding: var(--space-32) 30px var(--space-40);
   font-family: var(--font-sans);
-  font-size: var(--text-16);
-  color: var(--text-gray-3);
-  line-height: 1.85;
+  font-size: var(--text-18);
+  color: var(--text-gray-6);
+  line-height: 1.9;
   letter-spacing: var(--tracking-tight);
-  max-width: 720px;
 }
 .why-cta {
   text-align: center;
