@@ -154,7 +154,7 @@ semantic 없이 CSS 파일에서 primitive를 직접 참조하는 항목. 삭제
 | — Surface | 3 (surface-gray-1~3) |
 | — Text | 10 (text-gray-1~7, text-white, text-caption, rating) |
 | — Border | 4 (border-gray-1~4) |
-| — Button | 2 (btn-primary, btn-cta) |
+| — Button | 2 (btn-primary, btn-secondary) |
 | — Accent | 4 (accent-mid, dark1, dark2, gradient) |
 | — Social | 2 (btn-kakao, btn-kakao-text) |
 | Direct Primitive Usage | **4건** (violet-300 · gold-600 · violet-600×2 · 의도적) |

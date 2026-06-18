@@ -350,6 +350,7 @@ semantic token 없이 primitive를 직접 참조하는 항목.
 - **2026-06-18 (Blue 제거)**: Blue scale 제거. Accent violet 통일.
 - **2026-06-18 (CSS 폴더 분리)**: styles.css → css/common.css + page CSS. js/ 폴더 신설.
 - **2026-06-18 (Token Audit)**: Semantic 36개로 확장. 전 CSS 파일 direct primitive 0건.
-- **2026-06-18 (Token Cleanup)**: 중복/저사용 삭제 (text-body3, text-subtle2, text-link, text-gold, border-warm, accent, accent-light). 번호형 명명 체계 전환 (text-gray-1~7, border-gray-1~4, surface-gray-1~3). Background/Surface 카테고리 분리. Button 카테고리 신설 (btn-primary, btn-cta). Accent 정리 (mid, dark1, dark2, gradient). text-inverse → text-white. **Active Semantic: 28개.**
+- **2026-06-18 (Token Cleanup)**: 중복/저사용 삭제 (text-body3, text-subtle2, text-link, text-gold, border-warm, accent, accent-light). 번호형 명명 체계 전환 (text-gray-1~7, border-gray-1~4, surface-gray-1~3). Background/Surface 카테고리 분리. Button 카테고리 신설 (btn-primary, btn-secondary). Accent 정리 (mid, dark1, dark2, gradient). text-inverse → text-white. **Active Semantic: 28개.**
 - **2026-06-18 (Why-Us 개편)**: why-us 아코디언(`.why-acc`) 제거 → 5-col 카드 그리드로 교체. `--violet-600` direct primitive 2건 신규 (`.why-journey__icon-wrap` bg, `.why-journey__icon-sub` color). `--text-gray-5` 사용처 +1 (icon-desc). **Direct Primitive: 2건 → 4건.**
 - **2026-06-18 (reset.css 신설)**: 브라우저 리셋 규칙을 common.css에서 분리 → `css/reset.css` 생성. 로드 순서: reset → theme → common → page. 중복 제거: `.login-modal__input` box-sizing, `.proc-sheet__list` list-style/margin, `.why-journey__icons` list-style/padding/margin.
+- **2026-06-18 (Token Rename)**: `--btn-cta` → `--btn-secondary` 이름 변경. 역할 동일 (`--violet-600`, `.btn--primary:hover` 배경). theme.css, common.css, design-system.html 전체 반영.
