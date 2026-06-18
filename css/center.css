@@ -479,7 +479,10 @@ figure.art-img--center img {
   border: 1px solid var(--border-gray-4, #ccc);
   color: var(--text-gray-6, #111);
   cursor: pointer;
-  transition: background 0.2s, color 0.2s, border-color 0.2s;
+  transition:
+    background 0.2s,
+    color 0.2s,
+    border-color 0.2s;
   line-height: 1;
   border-radius: 0;
 }
@@ -508,7 +511,9 @@ figure.art-img--center img {
   justify-content: center;
   color: var(--text-gray-6, #111);
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
-  transition: box-shadow 0.2s, transform 0.15s;
+  transition:
+    box-shadow 0.2s,
+    transform 0.15s;
   margin: 0 clamp(12px, 2vw, 24px);
 }
 
@@ -535,7 +540,7 @@ figure.art-img--center img {
   font-weight: 700;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--text-caption);
+  color: var(--text-caption2);
   margin-bottom: 10px;
 }
 

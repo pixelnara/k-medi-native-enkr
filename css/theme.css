@@ -168,6 +168,7 @@
   --text-gray-7: var(--gray-950); /* 최강 강조 (모바일 헤더, login 제목) */
   --text-white: var(--white); /* 다크/컬러 배경 위 흰색 */
   --text-caption: var(--violet-500); /* 바이올렛 캡션·레이블·링크 */
+  --text-caption2: var(--gold-600); /* 골드 캡션·플로어 레이블 */
   --rating: var(--amber-400); /* 별점·평점 */
 
   /* ─── Semantic: Border ─── */
