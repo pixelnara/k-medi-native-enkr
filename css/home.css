@@ -771,6 +771,9 @@
     grid-template-columns: 1fr;
     border-top: 1px solid var(--border-gray-1);
   }
+  .why-cta {
+    margin-top: 0;
+  }
   .why-journey__icon-item,
   .why-journey__icon-item:nth-child(odd),
   .why-journey__icon-item:nth-child(even) {
@@ -781,6 +784,7 @@
   }
   .why-journey__icon-item:last-child {
     border-bottom: none;
+    padding-bottom: 0;
   }
   .why-journey__icon-wrap {
     width: 72px;
