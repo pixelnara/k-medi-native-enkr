@@ -153,11 +153,11 @@
 }
 .review__stars {
   display: flex;
-  gap: 2px;
+  gap: var(--space-2);
 }
 .review__star {
   color: var(--rating);
-  font-size: 13px;
+  font-size: var(--text-13);
   line-height: 1;
 }
 .review__text {
@@ -181,7 +181,7 @@
 .review__info {
   font-size: var(--text-13);
   color: var(--text-gray-2);
-  margin-top: 3px;
+  margin-top: var(--space-3);
 }
 
 /* ─────────────────────────────────────────────────────

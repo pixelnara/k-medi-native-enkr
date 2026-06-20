@@ -17,7 +17,7 @@
   padding: 12px 20px;
   background: var(--bg-dark);
   color: var(--text-white);
-  font-size: 14px;
+  font-size: var(--text-14);
   font-weight: 600;
   text-decoration: none;
   border-radius: 0 0 4px 0;
@@ -48,10 +48,6 @@ body {
 .section--surface {
   background: var(--surface-gray-1);
 }
-.section--surface2 {
-  background: var(--surface-gray-1);
-}
-
 /* Eyebrow / section label — the ONLY place --caption is used */
 .eyebrow {
   font-family: var(--font-sans);
@@ -60,7 +56,7 @@ body {
   font-weight: 600;
   letter-spacing: var(--tracking-normal);
   text-transform: uppercase;
-  margin-bottom: 18px;
+  margin-bottom: var(--space-18);
 }
 .eyebrow--center {
   text-align: center;
@@ -69,10 +65,6 @@ body {
   color: var(--text-gray-6);
   font-weight: 700;
 }
-.c-highlight {
-  color: var(--text-caption);
-}
-
 /* Display titles */
 .display {
   font-family: var(--font-sans);
@@ -81,29 +73,15 @@ body {
   line-height: 1.08;
   letter-spacing: var(--tracking-tight);
 }
-.h-xl {
-  font-size: var(--text-76);
-}
 .h-lg {
   font-size: var(--text-80);
   font-weight: 700;
 }
-.h-md {
-  font-size: var(--text-34);
-}
-
 /* ── Section Head Component ── */
 .sec-head {
   text-align: center;
   margin-bottom: var(--space-48);
 }
-.sec-head--sm {
-  margin-bottom: var(--space-40);
-}
-.sec-head--lg {
-  margin-bottom: var(--space-56);
-}
-
 /* ── Section Intro Component ── */
 .sec-intro {
   text-align: center;
@@ -171,6 +149,10 @@ body {
 .page-hero__sub {
   font-size: var(--text-15);
   line-height: 1.6;
+  max-width: 560px;
+  margin-left: auto;
+  margin-right: auto;
+  word-break: keep-all;
 }
 .page-hero--white .page-hero__sub {
   color: var(--text-gray-3);
@@ -178,6 +160,25 @@ body {
 .page-hero--navy .page-hero__sub {
   color: rgba(255, 255, 255, 0.58);
 }
+/* -- scroll CTA (선택적 요소: 시술 둘러보기 등) */
+.page-hero__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-6);
+  margin-top: var(--space-36);
+  font-size: var(--text-14);
+  font-weight: 500;
+  letter-spacing: var(--tracking-snug);
+  color: rgba(255, 255, 255, 0.55);
+  cursor: pointer;
+  transition: color 0.2s;
+  background: none;
+  border: none;
+  padding: 0;
+}
+.page-hero__cta:hover { color: rgba(255, 255, 255, 0.9); }
+.page-hero__cta svg { transition: transform 0.3s; }
+.page-hero__cta:hover svg { transform: translateY(3px); }
 @media (max-width: 768px) {
   .page-hero {
     padding: calc(var(--header-h) + 64px) 0 40px;
@@ -190,20 +191,6 @@ body {
   }
 }
 
-.kr-title {
-  font-family: var(--font-sans);
-  color: var(--text-gray-6);
-  font-weight: 500;
-  letter-spacing: var(--tracking-tight);
-}
-
-.lead {
-  color: var(--text-gray-3);
-  font-size: var(--type-body-lg);
-  line-height: 1.85;
-  max-width: 56ch;
-}
-
 /* ── CTA Banner Component ── */
 /* 다크 풀-위드 배너. center / procedure / travel / skin-analysis 에서 공유. */
 .cta-banner {
@@ -211,31 +198,32 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 24px;
-  padding: clamp(36px, 4.5vw, 56px) clamp(16px, 2.5vw, 48px);
+  gap: var(--space-24);
+  /* 수평 패딩: max-width 1200px 콘텐츠 좌우 엣지에 정렬 */
+  padding: clamp(36px, 4.5vw, 56px) max(clamp(16px, 2.5vw, 48px), calc((100% - 1200px) / 2 + var(--gutter)));
 }
 .cta-banner__label {
   font-size: var(--text-12);
   color: rgba(255, 255, 255, 0.38);
-  letter-spacing: 0.06em;
-  margin-bottom: 6px;
+  letter-spacing: var(--tracking-open);
+  margin-bottom: var(--space-6);
 }
 .cta-banner__title {
   font-size: clamp(16px, 1.9vw, 22px);
   font-weight: 600;
   color: rgba(255, 255, 255, 0.9);
-  letter-spacing: -0.01em;
+  letter-spacing: var(--tracking-tight);
 }
 .cta-banner__btn {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
+  gap: var(--space-10);
   background: var(--bg-white);
   color: var(--bg-dark);
   padding: 14px 28px;
   font-size: var(--text-14);
   font-weight: 700;
-  letter-spacing: 0.02em;
+  letter-spacing: var(--tracking-loose);
   text-decoration: none;
   white-space: nowrap;
   border-radius: 2px;
@@ -250,7 +238,7 @@ body {
   .cta-banner {
     flex-direction: column;
     align-items: flex-start;
-    gap: 20px;
+    gap: var(--space-20);
   }
   .cta-banner__btn {
     width: 100%;
@@ -286,7 +274,7 @@ body {
   gap: 0;
   height: var(--space-48);
   font-size: var(--text-12);
-  letter-spacing: 0.04em;
+  letter-spacing: var(--tracking-medium);
 }
 .util-left,
 .util-right {
@@ -313,30 +301,6 @@ body {
   background: currentColor;
   opacity: 0.3;
 }
-.util-user-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: none;
-  border: none;
-  cursor: pointer;
-  color: inherit;
-  padding: 2px;
-  opacity: 0.85;
-  transition: opacity 0.2s;
-}
-.util-user-btn:hover {
-  opacity: 1;
-}
-.util-ext-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 2px;
-  white-space: nowrap;
-  text-decoration: none;
-  color: inherit;
-}
-
 /* ── util 드롭다운 (호버 뎁스2 메뉴) ── */
 .util-dropdown {
   position: relative;
@@ -351,7 +315,7 @@ body {
   transition: opacity 0.2s;
   display: inline-flex;
   align-items: center;
-  gap: 3px;
+  gap: var(--space-3);
   white-space: nowrap;
   color: inherit;
 }
@@ -395,7 +359,7 @@ body {
   text-decoration: none !important;
   opacity: 1 !important;
   white-space: nowrap;
-  letter-spacing: 0.02em;
+  letter-spacing: var(--tracking-loose);
   transition: background 0.15s;
 }
 .util-dropdown__menu a:hover {
@@ -430,7 +394,7 @@ body {
 .lang-select__btn {
   display: flex;
   align-items: center;
-  gap: 5px;
+  gap: var(--space-5);
   font-size: var(--text-13);
   font-weight: 700;
   color: inherit;
@@ -438,7 +402,7 @@ body {
   border: none;
   cursor: pointer;
   padding: 2px 0;
-  letter-spacing: 0.04em;
+  letter-spacing: var(--tracking-medium);
   opacity: 0.9;
 }
 .lang-select__btn:hover {
@@ -493,7 +457,7 @@ body {
   color: var(--text-gray-6);
   cursor: pointer;
   transition: background 0.15s;
-  letter-spacing: 0.02em;
+  letter-spacing: var(--tracking-loose);
 }
 .lang-option span {
   font-size: var(--text-16);
@@ -515,7 +479,7 @@ body {
 }
 .brand {
   font-family: var(--font-sans);
-  font-size: 29px;
+  font-size: var(--text-29);
   font-weight: 600;
   letter-spacing: var(--tracking-normal);
   line-height: 1;
@@ -526,7 +490,7 @@ body {
   font-family: var(--font-sans);
   font-size: var(--text-10);
   font-weight: 700;
-  letter-spacing: 0.1em;
+  letter-spacing: var(--tracking-wide);
   margin-top: var(--space-5);
   opacity: 0.8;
   text-transform: uppercase;
@@ -560,15 +524,10 @@ body {
 .gnb a:hover::after {
   width: 100%;
 }
-.gnb-space-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-}
 .header__right {
   display: flex;
   align-items: center;
-  gap: 4px;
+  gap: var(--space-4);
 }
 .header__right .btn {
   min-width: unset;
@@ -590,14 +549,14 @@ body {
 .menu-btn {
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: var(--space-6);
   width: 32px;
   color: inherit;
 }
 .header-menu-btn {
   display: flex;
   align-items: center;
-  padding: 6px;
+  padding: var(--space-6);
 }
 .header-menu-btn svg {
   width: 24px;
@@ -609,16 +568,6 @@ body {
   width: 100%;
   transition: 0.3s;
 }
-.header-bell {
-  display: none;
-  color: inherit;
-  padding: 4px;
-}
-.header-bell svg {
-  width: 22px;
-  height: 22px;
-}
-
 /* 모바일 헤더 로고 아래 서브타이틀 */
 .brand-sub-mobile {
   display: none !important;
@@ -628,30 +577,12 @@ body {
   display: none;
   align-items: center;
   justify-content: center;
-  gap: 3px;
+  gap: var(--space-3);
   width: 22px;
   height: 22px;
   padding: 0;
   background: transparent;
   cursor: pointer;
-}
-.lang-flag-circle {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  background: var(--bg-dark);
-  flex-shrink: 0;
-}
-.header-lang-flag-img {
-  width: 20px;
-  height: 20px;
-  object-fit: cover;
-  border-radius: 50%;
-  display: block;
-  border: none;
 }
 .header-lang-icon {
   width: 18px;
@@ -662,7 +593,7 @@ body {
 .header-lang-code {
   font-size: var(--text-16);
   font-weight: 700;
-  letter-spacing: 0.04em;
+  letter-spacing: var(--tracking-medium);
   color: var(--text-gray-7);
   line-height: 1;
 }
@@ -674,10 +605,6 @@ body {
 .mobile-bar--v1 {
   display: flex;
 }
-.mobile-bar--v2 {
-  display: none;
-}
-
 /* scrolled / solid state */
 .header.is-solid {
   background: var(--bg-white);
@@ -772,23 +699,6 @@ body {
 .header__util {
   position: relative;
 }
-.brand--compact {
-  display: none;
-  position: absolute;
-  left: var(--gutter, 24px);
-  top: 50%;
-  transform: translateY(-50%);
-  font-family: var(--font-sans);
-  font-size: 20px;
-  font-weight: 700;
-  letter-spacing: var(--tracking-normal);
-  line-height: 1;
-  white-space: nowrap;
-  text-decoration: none;
-}
-.header.is-compact .brand--compact {
-  display: block;
-}
 
 /* ============================================================
    TRUST BAND (certifications)
@@ -823,7 +733,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 14px;
+  gap: var(--space-14);
 }
 .trust__logo image-slot {
   height: 45px;
@@ -904,7 +814,7 @@ image-slot#cert-sgi {
   font-family: var(--font-sans);
   font-weight: 700;
   font-size: var(--text-10);
-  letter-spacing: 0.1em;
+  letter-spacing: var(--tracking-wide);
   color: var(--text-gray-6);
   text-transform: uppercase;
 }
@@ -933,7 +843,7 @@ image-slot#cert-sgi {
 }
 .footer__social {
   display: flex;
-  gap: 6px;
+  gap: var(--space-6);
 }
 .footer__social a {
   width: 38px;
@@ -967,7 +877,7 @@ image-slot#cert-sgi {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 5px;
+  gap: var(--space-5);
   background: none;
   border: none;
   cursor: pointer;
@@ -983,46 +893,6 @@ image-slot#cert-sgi {
 }
 .footer__top-btn:hover {
   color: var(--text-gray-6);
-}
-
-/* ============================================================
-   TOP BUTTON
-   ============================================================ */
-.top-btn {
-  position: fixed;
-  right: 28px;
-  bottom: 36px;
-  z-index: 900;
-  width: 64px;
-  height: 64px;
-  border-radius: var(--radius-full);
-  background: var(--bg-white);
-  /* border: 1px solid rgba(0, 0, 0, 0.15); */
-  box-shadow: var(--shadow-btn);
-  display: grid;
-  place-items: center;
-  cursor: pointer;
-  opacity: 0;
-  pointer-events: none;
-  transform: translateY(var(--space-12));
-  transition:
-    opacity 0.3s,
-    transform 0.3s,
-    background 0.2s;
-}
-.top-btn.is-visible {
-  opacity: 1;
-  pointer-events: auto;
-  transform: translateY(0);
-}
-.top-btn:hover {
-  background: var(--bg-dark);
-  border-color: var(--bg-dark);
-  color: var(--text-white);
-}
-.top-btn svg {
-  width: 20px;
-  height: 20px;
 }
 
 /* Chat floating button */
@@ -1438,7 +1308,7 @@ body:has(.gnb-overlay.is-open) {
 }
 .gnb-overlay__brand small {
   color: var(--text-gray-6);
-  margin-top: 8px;
+  margin-top: var(--space-8);
   opacity: 1;
 }
 .gnb-overlay__close {
@@ -1461,24 +1331,9 @@ body:has(.gnb-overlay.is-open) {
 .gnb-overlay__actions {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: var(--space-14);
   margin-left: auto;
-  margin-right: 5px;
-}
-.gnb-notif-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: none;
-  border: none;
-  padding: 6px;
-  cursor: pointer;
-  color: var(--text-gray-6);
-  opacity: 0.6;
-  transition: opacity 0.2s;
-}
-.gnb-notif-btn:hover {
-  opacity: 1;
+  margin-right: var(--space-5);
 }
 .gnb-login-btn {
   display: inline-flex;
@@ -1489,7 +1344,7 @@ body:has(.gnb-overlay.is-open) {
   color: var(--text-gray-6);
   font-size: var(--text-13);
   font-weight: 500;
-  letter-spacing: 0.02em;
+  letter-spacing: var(--tracking-loose);
   text-decoration: none;
   white-space: nowrap;
   transition:
@@ -1500,13 +1355,6 @@ body:has(.gnb-overlay.is-open) {
   opacity: 0.7;
 }
 @media (min-width: 861px) {
-  .gnb-overlay--dark .gnb-notif-btn {
-    color: rgba(255, 255, 255, 0.75);
-  }
-  .gnb-overlay--dark .gnb-notif-btn:hover {
-    color: var(--text-white);
-    opacity: 1;
-  }
   .gnb-overlay--dark .gnb-login-btn {
     color: rgba(255, 255, 255, 0.82);
     border: 1px solid rgba(255, 255, 255, 0.7);
@@ -1533,13 +1381,10 @@ body:has(.gnb-overlay.is-open) {
   .gnb-overlay__actions {
     margin-left: 0;
     margin-right: 0;
-    gap: 8px;
-  }
-  .gnb-notif-btn {
-    display: none;
+    gap: var(--space-8);
   }
   .gnb-login-btn {
-    font-size: 11px;
+    font-size: var(--text-11);
     padding: 5px 10px;
     border-color: var(--border-gray-2);
     color: var(--text-gray-3);
@@ -1629,25 +1474,19 @@ body:has(.gnb-overlay.is-open) {
   gap: var(--space-40);
   padding: 48px 0 var(--space-36);
 }
-.gnb-cols--sub {
-  grid-template-columns: repeat(2, 1fr);
-  padding-top: var(--space-36);
-  padding-bottom: var(--space-40);
-  margin-top: 0;
-}
 .gnb-col > h4 {
   font-family: var(--font-sans);
   color: var(--text-gray-6);
-  font-size: 21px;
+  font-size: var(--text-21);
   font-weight: 600;
   padding-bottom: var(--space-16);
-  margin-bottom: 18px;
+  margin-bottom: var(--space-18);
   border-bottom: 1px solid var(--border-gray-1);
 }
 .gnb-col ul {
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: var(--space-14);
 }
 .gnb-col a {
   color: var(--text-gray-6);
@@ -1702,7 +1541,7 @@ body:has(.gnb-overlay.is-open) {
   border: none;
   cursor: pointer;
   padding: 0;
-  margin-left: 4px;
+  margin-left: var(--space-4);
   vertical-align: middle;
 }
 .gnb-sub-chevron {
@@ -1740,7 +1579,7 @@ body:has(.gnb-overlay.is-open) {
   font-weight: 400;
   color: var(--text-gray-6);
   line-height: 2.5;
-  letter-spacing: 0;
+  letter-spacing: var(--tracking-normal);
 }
 @media (hover: hover) {
   .gnb-col a:hover {
@@ -1792,60 +1631,6 @@ body:has(.gnb-overlay.is-open) {
   z-index: 1100;
 }
 
-/* ============================================================
-   GNB SUB2 아코디언 (시술 하위 목록)
-   ============================================================ */
-/* 데스크톱: 기존 nested sub-list 스타일 그대로 */
-.gnb-item-row2 {
-  display: flex;
-  align-items: center;
-}
-.gnb-item-row2 > a {
-  flex: 1;
-  font-size: var(--text-15);
-  font-weight: 400;
-  color: var(--text-gray-6);
-  line-height: 2;
-}
-.gnb-sub2-toggle {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 22px;
-  height: 22px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 0;
-  margin-left: 4px;
-  color: var(--text-gray-6);
-}
-.gnb-sub2-chevron {
-  width: 14px;
-  height: 14px;
-  transition: transform 0.25s ease;
-  stroke-width: 2.5;
-}
-.gnb-has-sub2.is-open .gnb-sub2-chevron {
-  transform: rotate(180deg);
-}
-.gnb-sub2-list {
-  display: none;
-  flex-direction: column;
-  gap: 0;
-  padding-left: var(--space-12);
-  border-left: 2px solid var(--border-gray-1);
-  margin-top: var(--space-4);
-}
-.gnb-has-sub2.is-open .gnb-sub2-list {
-  display: flex;
-}
-.gnb-sub2-list li a {
-  font-size: var(--text-14);
-  color: var(--text-gray-6);
-  line-height: 2.1;
-}
-
 @media (max-width: 860px) {
   :root {
     --header-h: 70px;
@@ -1859,7 +1644,7 @@ body:has(.gnb-overlay.is-open) {
     align-items: center;
     justify-content: space-between;
     padding: var(--space-12) 0;
-    font-size: 16px;
+    font-size: var(--text-16);
     font-weight: 450;
     color: var(--text-gray-6);
     letter-spacing: var(--tracking-tight);
@@ -1875,7 +1660,7 @@ body:has(.gnb-overlay.is-open) {
     transition: transform 0.3s ease;
     stroke-width: 2;
     color: var(--text-gray-6);
-    margin-right: 12px;
+    margin-right: var(--space-12);
   }
   .gnb-col.is-open > h4 .gnb-chevron {
     transform: rotate(180deg);
@@ -1891,12 +1676,6 @@ body:has(.gnb-overlay.is-open) {
     flex-direction: column;
     gap: 0;
     padding: 0;
-  }
-  .gnb-cols--sub {
-    margin-top: 0;
-    padding-top: 0;
-    padding-bottom: 0;
-    border-top: none;
   }
   /* 모바일: 상단 복사본 표시, sub-row 마이페이지 숨김 */
 
@@ -1998,7 +1777,7 @@ body:has(.gnb-overlay.is-open) {
     font-size: var(--text-13);
     font-weight: 450;
     color: var(--text-gray-6);
-    letter-spacing: 0;
+    letter-spacing: var(--tracking-normal);
     line-height: 1.4;
     border-bottom: 1px solid var(--border-gray-1);
   }
@@ -2018,7 +1797,7 @@ body:has(.gnb-overlay.is-open) {
     padding: var(--space-12) 0;
     font-size: var(--text-13);
     color: var(--text-gray-6);
-    letter-spacing: 0;
+    letter-spacing: var(--tracking-normal);
     line-height: 1.4;
     font-weight: 400;
     border-bottom: 1px solid var(--border-gray-1);
@@ -2075,7 +1854,7 @@ body:has(.gnb-overlay.is-open) {
     font-size: var(--text-11);
     color: var(--text-gray-7);
     opacity: 1;
-    margin-bottom: 2px;
+    margin-bottom: var(--space-2);
   }
   .gnb-banner__title {
     font-size: var(--text-15);
@@ -2089,7 +1868,7 @@ body:has(.gnb-overlay.is-open) {
     font-size: var(--text-12);
     color: var(--text-gray-3);
     opacity: 1;
-    margin-top: 2px;
+    margin-top: var(--space-2);
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -2132,52 +1911,11 @@ body:has(.gnb-overlay.is-open) {
     border-right: 2px solid var(--text-gray-6);
     transform: rotate(45deg);
     flex-shrink: 0;
-    margin-left: 8px;
-  }
-
-  /* 모바일 sub2 아코디언 */
-  .gnb-item-row2 {
-    border-bottom: 1px solid var(--border-gray-1);
-  }
-  .gnb-item-row2 > a {
-    padding: var(--space-14) 0;
-    border-bottom: none;
-  }
-  .gnb-sub2-toggle {
-    width: 30px;
-    height: 30px;
-  }
-  .gnb-sub2-list {
-    padding-left: var(--space-16);
-    margin-bottom: var(--space-8);
-  }
-  .gnb-sub2-list li a {
-    display: block;
-    padding: var(--space-10) 0;
-    font-size: var(--text-13);
-    border-bottom: 1px solid var(--border-gray-1);
-  }
-  .gnb-sub2-list li:last-child a {
-    border-bottom: none;
+    margin-left: var(--space-8);
   }
 
   .stay__grid {
     grid-template-columns: 1fr;
-  }
-  .membership {
-    grid-template-columns: 1fr;
-  }
-  .booking__row,
-  .bk-dining-row {
-    grid-template-columns: 1fr 1fr;
-  }
-  .booking__submit {
-    grid-column: 1 / -1;
-    margin-top: var(--space-10);
-  }
-  .bk-field:nth-child(odd) {
-    border-left: none;
-    padding-left: 0;
   }
   .header,
   .header--light,
@@ -2193,13 +1931,13 @@ body:has(.gnb-overlay.is-open) {
   .header-right--v2 {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: var(--space-10);
   }
   .header-lang-btn {
     display: flex;
     align-items: center;
     color: var(--text-gray-7);
-    gap: 3px;
+    gap: var(--space-3);
     width: auto;
     height: auto;
   }
@@ -2237,9 +1975,9 @@ body:has(.gnb-overlay.is-open) {
   }
   .header__main .brand {
     display: block;
-    font-size: 15px;
+    font-size: var(--text-15);
     font-weight: 600;
-    letter-spacing: -0.01em;
+    letter-spacing: var(--tracking-tight);
     color: var(--text-gray-7);
     line-height: 1.1;
     padding-top: var(--space-6);
@@ -2264,17 +2002,10 @@ body:has(.gnb-overlay.is-open) {
     height: 22px;
     stroke-width: 1.5;
   }
-  .header-bell {
-    display: flex;
-    color: var(--text-gray-7);
-  }
-  .header-bell svg {
-    stroke-width: 2.5;
-  }
   .menu-btn {
     display: flex;
     width: 18px;
-    gap: 4px;
+    gap: var(--space-4);
     color: var(--text-gray-7);
   }
   .menu-btn span {
@@ -2310,7 +2041,7 @@ body:has(.gnb-overlay.is-open) {
     font-size: clamp(32px, 5.2vw, 32px);
     word-spacing: 0.05em;
     line-height: 1.3;
-    letter-spacing: 0em;
+    letter-spacing: var(--tracking-normal);
     text-align: center;
     font-weight: 650;
     padding-bottom: 0.4em;
@@ -2320,7 +2051,7 @@ body:has(.gnb-overlay.is-open) {
     font-size: var(--text-15);
     color: rgba(255, 255, 255, 0.88);
     margin-top: 0;
-    margin-bottom: 12px;
+    margin-bottom: var(--space-12);
     font-weight: 400;
     line-height: 1.6;
     max-width: 80%;
@@ -2338,10 +2069,10 @@ body:has(.gnb-overlay.is-open) {
     transform: none;
     bottom: auto;
     left: auto;
-    margin-top: 16px;
+    margin-top: var(--space-16);
     background: none;
     color: var(--text-white);
-    letter-spacing: 0.06em;
+    letter-spacing: var(--tracking-open);
     padding: 0;
     gap: 1px;
   }
@@ -2351,14 +2082,14 @@ body:has(.gnb-overlay.is-open) {
   .hero__scroll {
     display: flex;
     align-items: center;
-    gap: 4px;
+    gap: var(--space-4);
     position: static;
     transform: none;
     bottom: auto;
     left: auto;
-    margin-top: 24px;
+    margin-top: var(--space-24);
     color: rgba(255, 255, 255, 0.6);
-    font-size: 10px;
+    font-size: var(--text-10);
     font-weight: 700;
     letter-spacing: 0.3em;
     text-decoration: none;
@@ -2406,20 +2137,17 @@ body:has(.gnb-overlay.is-open) {
   .mobile-bar--v1 {
     display: flex;
   }
-  .mobile-bar--v2 {
-    display: none;
-  }
   .mbar-btn {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 5px;
+    gap: var(--space-5);
     flex: 1;
     height: 80px;
     padding: 0;
     color: rgba(255, 255, 255, 0.5);
-    font-size: 11px;
+    font-size: var(--text-11);
     transition: color 0.2s;
     text-decoration: none;
   }
@@ -2432,8 +2160,8 @@ body:has(.gnb-overlay.is-open) {
     height: 80px;
     padding: 0;
     border-radius: 0;
-    gap: 5px;
-    font-size: 11px;
+    gap: var(--space-5);
+    font-size: var(--text-11);
     margin: 0;
   }
   .mbar-btn--cta svg {
@@ -2441,37 +2169,14 @@ body:has(.gnb-overlay.is-open) {
     height: 26px;
   }
   .mbar-btn--cta .mbar-label {
-    font-size: 10px;
+    font-size: var(--text-10);
     font-weight: 600;
-    letter-spacing: 0.02em;
-  }
-  .mbar-btn--home {
-    flex: none;
-    width: 54px;
-    height: 54px;
-    background: var(--bg-dark);
-    color: var(--text-white);
-    border-radius: 50%;
-    gap: 0;
-    padding: 0;
-    margin: 0 20px;
-  }
-  .mbar-btn--home svg {
-    width: 18px;
-    height: 18px;
-    stroke: var(--text-white);
-  }
-  .mbar-btn--home .mbar-label {
-    font-size: 10px;
-    font-weight: 700;
-    color: var(--text-white);
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
+    letter-spacing: var(--tracking-loose);
   }
   .mbar-label {
-    font-size: 10px;
+    font-size: var(--text-10);
     font-weight: 600;
-    letter-spacing: 0.02em;
+    letter-spacing: var(--tracking-loose);
     color: inherit;
     white-space: nowrap;
   }
@@ -2479,48 +2184,6 @@ body:has(.gnb-overlay.is-open) {
     width: 26px;
     height: 26px;
     flex-shrink: 0;
-  }
-  .mbar-logo {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 3px;
-    font-family: var(--font-sans);
-    text-decoration: none;
-    color: var(--text-gray-7);
-    line-height: 1;
-    flex: 1.6;
-    padding: 0 8px;
-  }
-  .mbar-logo__name {
-    font-size: 12px;
-    font-weight: 800;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    white-space: nowrap;
-  }
-  .mbar-logo__sub {
-    font-size: 11px;
-    font-weight: 500;
-    letter-spacing: 0.04em;
-    color: var(--text-gray-3);
-    padding-top: 1px;
-    white-space: nowrap;
-  }
-  .mbar-logo--box .mbar-logo__name,
-  .mbar-logo--box .mbar-logo__sub {
-    color: var(--text-white);
-  }
-  .mbar-logo--box {
-    background: var(--bg-dark);
-    border: none;
-    border-radius: 4px;
-    padding: 0 24px;
-    height: 60px;
-    flex: none;
-    gap: 7px;
-    margin: 0 2px;
   }
   /* Language bottom sheet */
   .lang-sheet.is-open {
@@ -2566,7 +2229,7 @@ body:has(.gnb-overlay.is-open) {
     transition: background 0.15s;
   }
   .lang-sheet__opt span {
-    font-size: 22px;
+    font-size: var(--text-22);
     line-height: 1;
   }
   .lang-sheet-flag-img {
@@ -2610,17 +2273,13 @@ body:has(.gnb-overlay.is-open) {
     gap: var(--space-24);
   }
 
-  /* Services intro */
-  .services__intro {
-    font-size: clamp(16px, 4vw, 20px);
-  }
   .mo-br {
     display: inline;
   }
 
   /* CTA */
   .cta-dark__desc {
-    font-size: 17px;
+    font-size: var(--text-17);
     margin-bottom: 0;
   }
   .cta-dark__inner .btn--primary2,
@@ -2647,15 +2306,9 @@ body:has(.gnb-overlay.is-open) {
     grid-template-columns: 110px 1fr;
   }
 
-  /* Top button */
-  .top-btn {
-    bottom: calc(72px + var(--space-32));
-    right: var(--space-20);
-  }
-
   /* Accordion */
   .acc {
-    gap: 2px;
+    gap: var(--space-2);
   }
   .acc-head {
     font-size: var(--text-21);
@@ -2680,27 +2333,13 @@ body:has(.gnb-overlay.is-open) {
   .footer__mid {
     grid-template-columns: 1fr;
   }
-  .booking__row,
-  .bk-dining-row {
-    grid-template-columns: 1fr;
-  }
-  .bk-field {
-    border-left: none !important;
-    padding-left: 0 !important;
-    border-top: 1px solid var(--border-gray-1);
-    padding-top: 14px;
-  }
-  .bk-field:first-child {
-    border-top: none;
-    padding-top: 0;
-  }
 
   /* Header */
   .brand {
-    font-size: 22px;
+    font-size: var(--text-22);
   }
   .brand small {
-    letter-spacing: 0.1em;
+    letter-spacing: var(--tracking-wide);
   }
   .header__right .btn {
     padding: 0 10px;
@@ -2745,17 +2384,9 @@ body:has(.gnb-overlay.is-open) {
   }
   .feature__desc {
     font-size: var(--text-15);
-    letter-spacing: -0.01em;
+    letter-spacing: var(--tracking-tight);
   }
 
-  /* whyus intro */
-  .whyus__intro {
-    font-size: clamp(17px, 4vw, 22px);
-    margin-top: var(--space-40);
-  }
-  .whyus__intro b {
-    margin-bottom: var(--space-40);
-  }
 }
 
 /* → modal.css (components/modal.css) : proc-sheet */

@@ -5,39 +5,6 @@
 
 .gnb { display: none; }
 
-/* ─────────────────────────────────────────────────────
-   PAGE HERO — 다크 배경 + 빅타이틀
-   ───────────────────────────────────────────────────── */
-.sa-page-hero {
-  background: var(--navy-700);
-  text-align: center;
-  padding: clamp(56px, 8vw, 100px) clamp(20px, 6vw, 80px) clamp(48px, 7vw, 80px);
-}
-.sa-page-hero__label {
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.42);
-  margin-bottom: 20px;
-}
-.sa-page-hero__title {
-  font-family: var(--font-sans);
-  font-size: clamp(40px, 7vw, 88px);
-  font-weight: 800;
-  letter-spacing: -0.03em;
-  line-height: 1.05;
-  color: #fff;
-  margin-bottom: 24px;
-}
-.sa-page-hero__desc {
-  font-size: clamp(15px, 1.6vw, 18px);
-  line-height: 1.8;
-  color: rgba(255, 255, 255, 0.64);
-  max-width: 640px;
-  margin: 0 auto;
-  word-break: keep-all;
-}
 
 /* ─────────────────────────────────────────────────────
    IMAGE AREA — AI 피부 분석 이미지 (다크 배경 안에 담기)
@@ -76,14 +43,14 @@
   background: #fff;
   border: 1px solid #ddd;
   border-radius: 100px;
-  padding: 5px;
-  gap: 4px;
+  padding: var(--space-5);
+  gap: var(--space-4);
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
 }
 .sa-tab-selector .tab-pill__btn {
   padding: 11px 28px;
   border-radius: 100px;
-  font-size: 14px;
+  font-size: var(--text-14);
   font-weight: 500;
   color: #888;
 }
@@ -122,156 +89,23 @@
 .sa-panel__title {
   font-size: clamp(22px, 2.6vw, 28px);
   font-weight: 700;
-  letter-spacing: -0.02em;
+  letter-spacing: var(--tracking-tighter);
   color: #111;
-  margin-bottom: 12px;
+  margin-bottom: var(--space-12);
 }
 .sa-panel__sub {
-  font-size: 14px;
+  font-size: var(--text-14);
   color: #666;
   line-height: 1.75;
-  margin-bottom: 36px;
+  margin-bottom: var(--space-36);
   max-width: 640px;
   word-break: keep-all;
 }
-.sa-section-label {
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: #999;
-  margin-bottom: 16px;
-  margin-top: 32px;
-}
-
-/* ─────────────────────────────────────────────────────
-   TAB 1 — 피부 상태 분석
-   ───────────────────────────────────────────────────── */
-.sa-steps {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 16px;
-  margin-bottom: 8px;
-}
-.sa-step {
-  background: #fff;
-  border: 1px solid #e8e8e6;
-  padding: 26px 22px;
-}
-.sa-step__num {
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  color: #c8694c;
-  margin-bottom: 10px;
-}
-.sa-step__name {
-  font-size: 16px;
-  font-weight: 600;
-  color: #111;
-  margin-bottom: 7px;
-}
-.sa-step__desc {
-  font-size: 13px;
-  color: #777;
-  line-height: 1.65;
-}
-
-.sa-analysis-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 10px;
-}
-.sa-analysis-item {
-  background: #fff;
-  border: 1px solid #e8e8e6;
-  padding: 20px 16px;
-  text-align: center;
-}
-.sa-analysis-item__icon {
-  font-size: 22px;
-  margin-bottom: 8px;
-}
-.sa-analysis-item__name {
-  font-size: 13px;
-  font-weight: 600;
-  color: #111;
-  margin-bottom: 3px;
-}
-.sa-analysis-item__desc {
-  font-size: 11px;
-  color: #999;
-}
-
-/* ─────────────────────────────────────────────────────
-   TAB 2 — 페이셜 디자인 분석
-   ───────────────────────────────────────────────────── */
-.sa-careplan-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 16px;
-}
-.sa-care-card {
-  background: #fff;
-  border: 1px solid #e8e8e6;
-  overflow: hidden;
-}
-.sa-care-card__head {
-  padding: 22px 22px 14px;
-  border-bottom: 1px solid #f0f0ee;
-}
-.sa-care-card__tag {
-  display: inline-block;
-  font-size: 10px;
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  padding: 3px 8px;
-  background: #f3f3f1;
-  color: #888;
-  margin-bottom: 9px;
-}
-.sa-care-card__title {
-  font-size: 16px;
-  font-weight: 700;
-  color: #111;
-  margin-bottom: 5px;
-}
-.sa-care-card__sub {
-  font-size: 12px;
-  color: #999;
-}
-.sa-care-card__body {
-  padding: 14px 22px 22px;
-}
-.sa-care-card__list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-.sa-care-card__list li {
-  display: flex;
-  align-items: flex-start;
-  gap: 8px;
-  font-size: 13px;
-  color: #555;
-  line-height: 1.6;
-  padding: 5px 0;
-  border-bottom: 1px solid #f4f4f2;
-}
-.sa-care-card__list li:last-child { border-bottom: none; }
-.sa-care-card__list li::before {
-  content: '—';
-  color: #c8694c;
-  flex-shrink: 0;
-  margin-top: 1px;
-}
-
 /* ─────────────────────────────────────────────────────
    패널 헤더
    ───────────────────────────────────────────────────── */
 .sa-panel__header {
-  margin-bottom: 28px;
+  margin-bottom: var(--space-28);
 }
 
 /* ─────────────────────────────────────────────────────
@@ -281,11 +115,11 @@
   display: flex;
   gap: 0;
   border-bottom: 2px solid #e0e0de;
-  margin-bottom: 28px;
+  margin-bottom: var(--space-28);
 }
 .sa-subtab {
   padding: 12px 24px;
-  font-size: 14px;
+  font-size: var(--text-14);
   font-weight: 500;
   color: #999;
   background: none;
@@ -309,10 +143,10 @@
 .sa-subpanel { display: none; }
 .sa-subpanel.is-active { display: block; }
 .sa-subpanel__desc {
-  font-size: 14px;
+  font-size: var(--text-14);
   color: #777;
   line-height: 1.7;
-  margin-bottom: 24px;
+  margin-bottom: var(--space-24);
   word-break: keep-all;
 }
 
@@ -350,16 +184,16 @@
   border-radius: 50%;
   background: #f4f0ee;
   color: #c8694c;
-  font-size: 13px;
+  font-size: var(--text-13);
   font-weight: 700;
-  margin-bottom: 16px;
+  margin-bottom: var(--space-16);
 }
 .sa-slide__title {
   font-size: clamp(18px, 2.2vw, 22px);
   font-weight: 700;
   color: #111;
-  margin-bottom: 18px;
-  letter-spacing: -0.02em;
+  margin-bottom: var(--space-18);
+  letter-spacing: var(--tracking-tighter);
 }
 .sa-slide__list {
   list-style: none;
@@ -367,13 +201,13 @@
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: var(--space-12);
 }
 .sa-slide__list li {
   display: flex;
   align-items: flex-start;
-  gap: 10px;
-  font-size: 14px;
+  gap: var(--space-10);
+  font-size: var(--text-14);
   color: #555;
   line-height: 1.72;
   word-break: keep-all;
@@ -422,7 +256,7 @@
 }
 .sa-carousel__indicators {
   display: flex;
-  gap: 4px;
+  gap: var(--space-4);
   flex-wrap: wrap;
   justify-content: center;
 }
@@ -433,7 +267,7 @@
   border: 1.5px solid #ddd;
   background: #fff;
   color: #aaa;
-  font-size: 11px;
+  font-size: var(--text-11);
   font-weight: 600;
   cursor: pointer;
   transition: background 0.18s, border-color 0.18s, color 0.18s;
@@ -454,8 +288,8 @@
 @media (max-width: 600px) {
   .sa-img-area { max-height: 48vh; }
   .sa-img-area__img { height: 48vh; }
-  .sa-tab-selector .tab-pill__btn { padding: 10px 18px; font-size: 13px; }
-  .sa-page-hero__desc br { display: none; }
-  .sa-subtab { padding: 10px 16px; font-size: 13px; }
-  .sa-carousel__dot { width: 24px; height: 24px; font-size: 10px; }
+  .sa-tab-selector .tab-pill__btn { padding: 10px 18px; font-size: var(--text-13); }
+  .page-hero__sub br { display: none; }
+.sa-subtab { padding: 10px 16px; font-size: var(--text-13); }
+  .sa-carousel__dot { width: 24px; height: 24px; font-size: var(--text-10); }
 }

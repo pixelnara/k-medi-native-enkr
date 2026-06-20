@@ -83,10 +83,12 @@
   --text-19: 19px;
   --text-20: 20px;
   --text-21: 21px;
+  --text-22: 22px;
   --text-23: 23px;
   --text-24: 24px;
   --text-25: 25px;
   --text-28: 28px;
+  --text-29: 29px;
   --text-30: 30px;
   --text-32: 32px;
   --text-34: clamp(24px, 2.4vw, 34px);
@@ -97,12 +99,16 @@
 
   /* ─── Primitive: Letter Spacing ─── */
 
-  --tracking-tighter: -0.02em;
-  --tracking-tight: -0.01em;
-  --tracking-snug: 0.01em;
-  --tracking-normal: 0em;
-  --tracking-wide: 0.1em;
-  --tracking-wider: 0.22em;
+  --tracking-tightest: -0.03em;
+  --tracking-tighter:  -0.02em;
+  --tracking-tight:    -0.01em;
+  --tracking-snug:     0.01em;
+  --tracking-normal:   0em;
+  --tracking-loose:    0.02em;
+  --tracking-medium:   0.04em;
+  --tracking-open:     0.06em;
+  --tracking-wide:     0.1em;
+  --tracking-wider:    0.22em;
 
   /* ─── Primitive: Spacing ─── */
   --space-0: 0px;
@@ -202,11 +208,11 @@
   --btn-kakao: var(--kakao-yellow);
   --btn-kakao-text: var(--kakao-dark);
 
-  /* ─── Navy Scale (page-hero--navy · skin-analysis hero 등) ─── */
+  /* ─── Navy Scale (page-hero--navy 그라디언트 등) ─── */
   --navy-900: #0d1321;   /* hero gradient 끝 */
   --navy-800: #1a2038;   /* hero gradient 시작 */
-  --navy-700: #1e2535;   /* sa-page-hero 배경 */
-  --navy-600: #162032;   /* gnb mobile contact 배경 */
+  --navy-700: #1e2535;   /* 예비 스케일 */
+  --navy-600: #162032;   /* 예비 스케일 */
 
   /* ─── Background: warm neutral ─── */
   --bg-warm: #f6f6f4;    /* procedure · travel · skin-analysis 콘텐츠 영역 배경 */

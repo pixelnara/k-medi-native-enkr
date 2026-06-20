@@ -385,7 +385,7 @@
 .cosm-chip {
   display: inline-flex;
   align-items: center;
-  gap: 3px;
+  gap: var(--space-3);
   padding: 2px 7px 3px;
   border-radius: var(--space-4);
   font-size: var(--text-11);

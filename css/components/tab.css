@@ -4,16 +4,7 @@
    └─ .tab-pill   — segmented pill tab  (skin-sol, skin-analysis)
    ─────────────────────────────────────────────────────────────── */
 
-/* ── Underline tab (밑줄 슬라이드) ── */
-.tab-line {
-  background: var(--bg-white);
-  border-bottom: 1px solid var(--border-gray-1);
-  display: flex;
-  justify-content: center;
-  position: sticky;
-  top: 56px;
-  z-index: 90;
-}
+/* ── Underline tab (밑줄 슬라이드) — .tab-line__btn 공통 스타일 ── */
 .tab-line__btn {
   position: relative;
   font-weight: 500;

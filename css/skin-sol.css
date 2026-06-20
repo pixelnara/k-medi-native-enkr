@@ -19,7 +19,7 @@
   background: var(--bg-white);
   border: 1px solid var(--border-gray-1);
   border-radius: var(--radius-pill);
-  padding: 5px;
+  padding: var(--space-5);
   margin-bottom: var(--space-16);
 }
 .pss-sol-tabs .tab-pill__btn {
@@ -27,7 +27,7 @@
   padding: 9px 22px;
   font-size: var(--text-14);
   font-weight: 600;
-  letter-spacing: 0.01em;
+  letter-spacing: var(--tracking-snug);
   color: var(--text-gray-3);
 }
 .pss-sol-tabs .tab-pill__btn.is-active {
@@ -46,7 +46,7 @@
   margin-bottom: var(--space-28);
   font-size: var(--text-12);
   color: var(--text-gray-2);
-  letter-spacing: 0.02em;
+  letter-spacing: var(--tracking-loose);
 }
 .pss-breadcrumb a {
   color: var(--text-gray-2);
@@ -101,7 +101,7 @@
   font-size: var(--text-12);
   font-weight: 600;
   color: var(--text-gray-3);
-  letter-spacing: 0.04em;
+  letter-spacing: var(--tracking-medium);
   transition: color 0.3s;
 }
 .pss-step.is-done .pss-step__num {
@@ -436,7 +436,7 @@
   height: 60px;
   padding: 0 var(--space-48);
   font-size: var(--text-16);
-  letter-spacing: 0.06em;
+  letter-spacing: var(--tracking-open);
   gap: var(--space-10);
   border-radius: 4px;
   opacity: 0.4;
@@ -495,7 +495,7 @@
   font-size: clamp(52px, 8vw, 88px);
   font-weight: 700;
   color: var(--text-gray-6);
-  letter-spacing: 0.1em;
+  letter-spacing: var(--tracking-wide);
   line-height: 1;
   margin-bottom: var(--space-16);
 }
@@ -516,12 +516,12 @@
 .pss-badge {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: var(--space-6);
   padding: 7px 16px;
   border-radius: var(--radius-pill);
   font-size: var(--text-13);
   font-weight: 700;
-  letter-spacing: 0.04em;
+  letter-spacing: var(--tracking-medium);
 }
 .pss-badge--O {
   background: #fbf3d1;
@@ -628,7 +628,7 @@
   font-size: var(--text-12);
   font-weight: 600;
   color: var(--text-gray-5);
-  letter-spacing: 0.02em;
+  letter-spacing: var(--tracking-loose);
 }
 
 /* ── Ingredients ── */
@@ -657,7 +657,7 @@
   font-size: var(--text-13);
   font-weight: 600;
   color: var(--accent-blue2);
-  letter-spacing: 0;
+  letter-spacing: var(--tracking-normal);
   text-decoration: none;
   white-space: nowrap;
   transition: opacity 0.2s;
@@ -703,7 +703,7 @@
   font-size: var(--text-11);
   font-weight: 700;
   color: var(--text-caption);
-  letter-spacing: 0.06em;
+  letter-spacing: var(--tracking-open);
   background: var(--violet-50);
   padding: 3px 8px;
   border-radius: var(--radius-pill);
@@ -713,14 +713,14 @@
   font-size: var(--text-13);
   font-weight: 700;
   color: var(--text-gray-6);
-  letter-spacing: 0.02em;
+  letter-spacing: var(--tracking-loose);
   margin-bottom: var(--space-3);
 }
 .pss-ingredient-card__area {
   font-size: var(--text-11);
   color: var(--text-gray-2);
   margin-bottom: var(--space-8);
-  letter-spacing: 0.04em;
+  letter-spacing: var(--tracking-medium);
 }
 .pss-ingredient-card__name {
   font-size: var(--text-14);
@@ -810,7 +810,7 @@
   transition:
     color 0.2s,
     border-color 0.2s;
-  letter-spacing: 0.02em;
+  letter-spacing: var(--tracking-loose);
 }
 .pss-reset__btn:hover {
   color: var(--text-gray-6);
@@ -940,7 +940,7 @@
   margin-bottom: -1px;
   background: transparent;
   color: var(--text-gray-3);
-  letter-spacing: 0.01em;
+  letter-spacing: var(--tracking-snug);
   transition:
     color 0.2s,
     border-color 0.2s;
