@@ -19,7 +19,7 @@
 }
 .sa-img-area__img {
   width: 100%;
-  max-width: 1280px;
+  max-width: 100%;
   height: 68vh;
   object-fit: cover;
   object-position: center top;
@@ -30,45 +30,45 @@
    TAB WRAP — 탭 선택자를 콘텐츠 위에 플로팅
    ───────────────────────────────────────────────────── */
 .sa-tab-wrap {
-  background: #f4f4f2;
+  background: var(--gray-50);
   display: flex;
   justify-content: center;
   padding: 28px 20px;
-  border-bottom: 1px solid #e0e0de;
+  border-bottom: 1px solid var(--gray-300);
 }
 
 /* Segmented pill 컨트롤 — tab.css에서 .tab-pill__btn 공통 스타일 제공 */
 .sa-tab-selector {
   display: inline-flex;
   background: #fff;
-  border: 1px solid #ddd;
-  border-radius: 100px;
+  border: 1px solid var(--gray-300);
+  border-radius: 0;
   padding: var(--space-5);
   gap: var(--space-4);
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+  box-shadow: none;
 }
 .sa-tab-selector .tab-pill__btn {
   padding: 11px 28px;
-  border-radius: 100px;
+  border-radius: 0;
   font-size: var(--text-14);
   font-weight: 500;
   color: #888;
 }
 .sa-tab-selector .tab-pill__btn.is-active {
-  background: #c8694c;
+  background: var(--blue-500);
   font-weight: 600;
   color: #fff;
 }
 .sa-tab-selector .tab-pill__btn:hover:not(.is-active) {
   color: #333;
-  background: #f0f0ee;
+  background: var(--gray-150);
 }
 
 /* ─────────────────────────────────────────────────────
    CONTENT AREA — 탭 패널들
    ───────────────────────────────────────────────────── */
 .sa-content {
-  background: #f4f4f2;
+  background: var(--gray-50);
   padding-bottom: clamp(48px, 7vw, 96px);
 }
 
@@ -115,26 +115,27 @@
 .sa-subtab-nav {
   display: flex;
   gap: 0;
-  border-bottom: 2px solid #e0e0de;
+  border-bottom: 2px solid var(--gray-300);
   margin-bottom: var(--space-28);
 }
 .sa-subtab {
-  padding: 12px 24px;
-  font-size: var(--text-14);
+  padding: 14px 28px;
+  font-size: var(--text-15);
   font-weight: 500;
   color: #999;
   background: none;
   border: none;
-  border-bottom: 2.5px solid transparent;
+  border-bottom: 3px solid transparent;
   margin-bottom: -2px;
   cursor: pointer;
   transition: color 0.18s, border-color 0.18s;
   white-space: nowrap;
 }
 .sa-subtab.is-active {
-  color: #111;
-  border-bottom-color: #c8694c;
-  font-weight: 600;
+  color: var(--blue-500);
+  border-bottom-color: var(--blue-500);
+  font-weight: 700;
+  font-size: var(--text-15);
 }
 .sa-subtab:hover:not(.is-active) { color: #444; }
 
@@ -156,7 +157,7 @@
    ───────────────────────────────────────────────────── */
 .sa-carousel {
   background: #fff;
-  border: 1px solid #e8e8e6;
+  border: 1px solid var(--gray-950);
 }
 .sa-carousel__viewport {
   overflow: hidden;
@@ -182,9 +183,9 @@
   justify-content: center;
   width: 32px;
   height: 32px;
-  border-radius: 50%;
-  background: #f4f0ee;
-  color: #c8694c;
+  border-radius: 0;
+  background: var(--blue-100);
+  color: var(--blue-500);
   font-size: var(--text-13);
   font-weight: 700;
   margin-bottom: var(--space-16);
@@ -219,7 +220,7 @@
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #c8694c;
+  background: var(--gray-700);
   margin-top: 9px;
 }
 
@@ -229,26 +230,26 @@
   align-items: center;
   justify-content: space-between;
   padding: 16px 20px;
-  border-top: 1px solid #f0f0ee;
-  background: #fafaf8;
+  border-top: 1px solid var(--gray-150);
+  background: var(--gray-50);
 }
 .sa-carousel__arrow {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 36px;
-  height: 36px;
-  border: 1px solid #ddd;
+  width: 44px;
+  height: 44px;
+  border: 1.5px solid var(--gray-950);
   border-radius: 50%;
   background: #fff;
-  color: #555;
+  color: var(--gray-950);
   cursor: pointer;
   transition: background 0.18s, border-color 0.18s, color 0.18s;
   flex-shrink: 0;
 }
 .sa-carousel__arrow:hover:not(:disabled) {
-  background: #111;
-  border-color: #111;
+  background: var(--blue-500);
+  border-color: var(--blue-500);
   color: #fff;
 }
 .sa-carousel__arrow:disabled {
@@ -262,10 +263,10 @@
   justify-content: center;
 }
 .sa-carousel__dot {
-  width: 28px;
-  height: 28px;
+  width: 30px;
+  height: 30px;
   border-radius: 50%;
-  border: 1.5px solid #ddd;
+  border: 1.5px solid var(--gray-300);
   background: #fff;
   color: #aaa;
   font-size: var(--text-11);
@@ -274,13 +275,15 @@
   transition: background 0.18s, border-color 0.18s, color 0.18s;
 }
 .sa-carousel__dot.is-active {
-  background: #c8694c;
-  border-color: #c8694c;
+  background: var(--blue-500);
+  border-color: var(--blue-500);
   color: #fff;
+  transform: scale(1.15);
+  box-shadow: 0 0 0 3px var(--blue-100);
 }
 .sa-carousel__dot:hover:not(.is-active) {
-  border-color: #888;
-  color: #333;
+  border-color: var(--blue-300);
+  color: var(--blue-500);
 }
 
 /* ─────────────────────────────────────────────────────

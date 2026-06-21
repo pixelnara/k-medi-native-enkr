@@ -75,8 +75,8 @@
   transition: box-shadow 0.2s, border-color 0.2s;
 }
 .proc-slider-section__arrow:hover:not(:disabled) .proc-arrow-circle {
-  border-color: var(--violet-400);
-  box-shadow: 0 4px 14px rgba(59,51,217,0.15);
+  border-color: var(--gray-500);
+  box-shadow: 0 4px 14px rgba(0,0,0,0.12);
 }
 
 /* 슬라이더 뷰포트 */

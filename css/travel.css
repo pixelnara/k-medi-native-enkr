@@ -80,7 +80,7 @@
   color: var(--text-gray-2);
 }
 .tv-search__input:focus {
-  border-color: var(--violet-400);
+  border-color: var(--gray-500);
 }
 
 /* 소팅 */
@@ -104,7 +104,7 @@
   transition: border-color 0.2s;
 }
 .tv-sort__btn:hover {
-  border-color: var(--violet-400);
+  border-color: var(--gray-500);
 }
 .tv-sort__menu {
   position: absolute;
@@ -157,7 +157,7 @@
   margin: 0;
 }
 .tv-count__num {
-  color: var(--violet-500);
+  color: var(--gray-900);
   font-weight: 700;
 }
 
@@ -217,7 +217,7 @@
   font-size: var(--text-11);
   font-weight: 600;
   color: var(--accent-blue1);
-  background: var(--violet-50);
+  background: var(--gray-50);
   border-radius: 100px;
   padding: 3px 9px;
   letter-spacing: var(--tracking-loose);
@@ -380,7 +380,7 @@
   font-size: var(--text-11);
   font-weight: 700;
   color: var(--accent-blue1);
-  background: var(--violet-50);
+  background: var(--gray-50);
   border-radius: 100px;
   padding: 4px 12px;
   margin-bottom: var(--space-12);

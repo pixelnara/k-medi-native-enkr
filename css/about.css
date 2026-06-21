@@ -5,7 +5,9 @@
    ============================================================ */
 
 /* header: header--solid (common.css) */
-.gnb { display: none; }
+.gnb {
+  display: none;
+}
 
 .eyebrow--light {
   color: rgba(255, 255, 255, 0.42);
@@ -14,6 +16,11 @@
 /* ─────────────────────────────────────────────────────
    INTRO — WHO WE ARE
    ───────────────────────────────────────────────────── */
+.intro .ed-head {
+  border-top: none;
+  padding-top: 0;
+}
+
 .intro {
   padding-top: clamp(120px, 16vw, 200px);
   padding-bottom: clamp(48px, 6vw, 80px);
@@ -65,7 +72,7 @@
   margin-bottom: var(--space-28);
 }
 .step__title {
-  font-size: clamp(17px, 1.8vw, 22px);
+  font-size: clamp(19px, 1.8vw, 22px);
   font-weight: 700;
   color: var(--text-gray-6);
   margin-bottom: var(--space-16);
@@ -112,7 +119,7 @@
   width: 36px;
   height: 36px;
   margin-bottom: var(--space-20);
-  color: var(--violet-300);
+  color: var(--gray-300);
   display: block;
 }
 .guarantee-col__title {
@@ -234,7 +241,7 @@
   font-family: var(--font-sans);
   font-size: clamp(30px, 3.2vw, 48px);
   font-weight: 700;
-  color: var(--text-gray-6);
+  color: var(--text-blue);
   letter-spacing: var(--tracking-tighter);
   line-height: 1;
   white-space: nowrap;
@@ -292,9 +299,10 @@
     font-size: clamp(15px, 1.4vw, 17px);
     line-height: 1.9;
     letter-spacing: var(--tracking-tight);
+    font-weight: 400;
   }
   .intro__text {
-    color: var(--text-gray-7);
+    color: var(--text-gray-4);
   }
 
   .steps__list {

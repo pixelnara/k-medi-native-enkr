@@ -62,7 +62,7 @@
   border-color: transparent;
 }
 .btn--primary2 {
-  background: var(--accent-blue2);
+  background: var(--btn-secondary);
   color: var(--bg-white);
   border-color: transparent;
 }
@@ -71,7 +71,7 @@
   color: var(--text-white);
 }
 .btn--primary2:hover {
-  background: var(--accent-blue3);
+  background: var(--blue-500);
 }
 /* Primary Outline — 명시적 outline 변형 (base .btn 외형과 동일) */
 .btn--primary-outline {
@@ -103,7 +103,10 @@
   border-radius: 0;
   cursor: pointer;
   line-height: 1;
-  transition: background 0.2s, color 0.2s, border-color 0.2s;
+  transition:
+    background 0.2s,
+    color 0.2s,
+    border-color 0.2s;
 }
 .chip:hover,
 .filter:hover,

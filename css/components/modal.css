@@ -114,7 +114,8 @@
   transition: border-color 0.2s;
 }
 .login-modal__input:focus {
-  border: 2px solid var(--text-gray-7);
+  border-color: var(--text-gray-7);
+  box-shadow: inset 0 0 0 1px var(--text-gray-7); /* 2px 효과 — 리플로우/선 튐 방지 */
 }
 .login-modal__input::placeholder {
   color: var(--text-gray-1);

@@ -526,9 +526,6 @@
 <section class="pss-result" id="pssResult" aria-hidden="true" aria-live="polite">
   <!-- 모바일 전용 상단 바 (다시 분석 + 닫기 버튼) -->
   <div class="pss-result__modal-bar">
-    <button class="pss-result__reset-btn" id="resetBtn" aria-label="다시 분석하기">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 .49-3"/></svg>
-    </button>
     <span class="pss-result__modal-title">피부 타입 분석 결과</span>
     <button class="pss-result__close-btn" id="pssResultClose" aria-label="닫기">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
@@ -542,6 +539,10 @@
       <div class="pss-result__code" id="resultCode">OSPF</div>
       <p class="pss-result__kr" id="resultKr">지성 · 민감성 · 색소침착 · 탄력성</p>
       <div class="pss-result__badges" id="resultBadges"></div>
+      <button class="pss-result__reset-btn" id="resetBtn" aria-label="다시 분석하기">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 .49-3"/></svg>
+        다시 분석하기
+      </button>
     </div>
 
     <div class="pss-divider" aria-hidden="true"></div>
@@ -563,9 +564,8 @@
 
     <!-- Recommended Ingredients -->
     <div data-reveal>
-      <h3 class="pss-section-title">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10 2v7.31"/><path d="M14 9.3V1.99"/><path d="M8.5 2h7"/><path d="M14 9.3a6.5 6.5 0 1 1-4 0"/><path d="M5.58 16.5h12.85"/></svg>
-        추천 성분
+      <h3 class="pss-section-title pss-section-title--city">
+          추천 성분
       </h3>
       <div class="pss-ingredients-grid" id="ingredientGrid"></div>
     </div>
@@ -574,14 +574,11 @@
 
     <!-- Recommended Products -->
     <div data-reveal>
-      <h3 class="pss-section-title">
-        <span class="pss-section-title__left">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
-          추천 제품
-        </span>
-        <a href="cosmetic.html" class="pss-section-title__link">제품들 더 보러가기 →</a>
+      <h3 class="pss-section-title pss-section-title--city">
+        추천 제품
+        <a href="cosmetic.html" class="pss-section-title__link">SEE ALL</a>
       </h3>
-      <div class="pss-products-grid" id="productGrid"></div>
+      <div class="pss-rec-strip" id="recStrip"></div>
     </div>
 
     <div class="pss-divider" aria-hidden="true"></div>
@@ -598,11 +595,6 @@
         </div>
         <a href="center.html" class="btn btn--primary">휴그로센터 알아보기 →</a>
       </div>
-    </div>
-
-    <!-- 추천 제품 슬라이드 (City-Guides 스타일) -->
-    <div class="pss-rec-section">
-      <div class="pss-rec-strip" id="recStrip"></div>
     </div>
 
 
@@ -732,6 +724,20 @@
 </section>
 
 </main>
+
+<!-- ============================== 문의 (CONTACT) ============================== -->
+<section class="foot-contact">
+  <div class="wrap foot-contact__inner">
+    <div class="foot-contact__text">
+      <h2 class="foot-contact__title">궁금한 점이 있으신가요?</h2>
+      <p class="foot-contact__desc">이메일을 남겨주시면 전담 코디네이터가 빠르게 답변드립니다.</p>
+    </div>
+    <form class="foot-contact__form" onsubmit="return false;">
+      <input type="email" class="foot-contact__input" placeholder="이메일 주소를 입력하세요" aria-label="이메일 주소" />
+      <button type="submit" class="btn btn--primary foot-contact__btn">문의하기</button>
+    </form>
+  </div>
+</section>
 
 <!-- ============================== FOOTER ============================== -->
 <footer class="footer">
@@ -1218,7 +1224,6 @@
     }).join('');
 
     document.getElementById('ingredientGrid').innerHTML = renderIngredients(getIngredients(m, p, e, s));
-    document.getElementById('productGrid').innerHTML    = renderProducts(getProducts(m, s));
     document.getElementById('recStrip').innerHTML       = renderRecCards(getProducts(m, s));
 
     /* Show result section */
@@ -1423,7 +1428,7 @@
     }).join('');
 
     document.getElementById('ingredientGrid').innerHTML = renderIngredients(getIngredients(rm, rp, re, rs));
-    document.getElementById('productGrid').innerHTML    = renderProducts(getProducts(rm, rs));
+    document.getElementById('recStrip').innerHTML       = renderRecCards(getProducts(rm, rs));
 
     /* 결과 섹션 표시 */
     var resultEl = document.getElementById('pssResult');
