@@ -19,6 +19,7 @@
   <link rel="stylesheet" href="css/components/modal.css" />
   <link rel="stylesheet" href="css/components/card.css" />
   <link rel="stylesheet" href="css/components/tab.css" />
+  <link rel="stylesheet" href="css/components/breadcrumb.css" />
 <link rel="stylesheet" href="css/procedure.css" />
 </head>
 <body>
@@ -50,8 +51,9 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" width="10" height="10"><polyline points="6 9 12 15 18 9"/></svg>
           </span>
           <div class="util-dropdown__menu">
-            <a href="skin-sol.html">나의 피부 타입 찾기</a>
             <a href="cosmetic.html">코스메틱 제품</a>
+            <a href="skin-sol.html">나의 피부 타입 찾기</a>
+
           </div>
         </div>
         <span class="util-sep" aria-hidden="true"></span>
@@ -180,8 +182,9 @@
       <div class="gnb-col">
         <h4 data-en="Shopping">쇼핑<svg class="gnb-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></h4>
         <ul>
-          <li><a href="skin-sol.html">나의 피부 타입 찾기</a></li>
           <li><a href="cosmetic.html">코스메틱 제품</a></li>
+          <li><a href="skin-sol.html">나의 피부 타입 찾기</a></li>
+
         </ul>
       </div>
       <div class="gnb-col">
@@ -259,7 +262,7 @@
 <!-- ══════════════════════════════════════════════════════
      HERO
 ══════════════════════════════════════════════════════ -->
-<section class="page-hero page-hero--navy" aria-label="프리미엄 시술">
+<section class="page-hero page-hero--navy page-hero--bc" aria-label="프리미엄 시술">
   <div class="wrap">
   <p class="eyebrow">Premium Medical Procedures</p>
   <h1 class="page-hero__title">프리미엄 시술</h1>
@@ -267,10 +270,13 @@
     당신만을 위한 맞춤 솔루션,<br/>
     안전하고 검증된 한국 의료 시술을 경험해보세요.
   </p>
-  <button class="page-hero__cta" id="heroScrollBtn">
-    시술 둘러보기
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><polyline points="6 9 12 15 18 9"/></svg>
-  </button>
+  <nav class="bc-nav" aria-label="현재 위치">
+    <a href="index.html">홈</a>
+    <span class="bc-sep" aria-hidden="true">/</span>
+    <span>뷰티</span>
+    <span class="bc-sep" aria-hidden="true">/</span>
+    <span aria-current="page">시술 종류</span>
+  </nav>
   </div>
 </section>
 

@@ -14,6 +14,7 @@
   <link rel="stylesheet" href="css/components/modal.css" />
   <link rel="stylesheet" href="css/components/card.css" />
   <link rel="stylesheet" href="css/components/tab.css" />
+  <link rel="stylesheet" href="css/components/breadcrumb.css" />
 <link rel="stylesheet" href="css/faq.css" />
 </head>
 <body>
@@ -45,8 +46,9 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" width="10" height="10"><polyline points="6 9 12 15 18 9"/></svg>
           </span>
           <div class="util-dropdown__menu">
-            <a href="skin-sol.html">나의 피부 타입 찾기</a>
             <a href="cosmetic.html">코스메틱 제품</a>
+            <a href="skin-sol.html">나의 피부 타입 찾기</a>
+
           </div>
         </div>
         <span class="util-sep" aria-hidden="true"></span>
@@ -175,8 +177,9 @@
       <div class="gnb-col">
         <h4 data-en="Shopping">쇼핑<svg class="gnb-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></h4>
         <ul>
-          <li><a href="skin-sol.html">나의 피부 타입 찾기</a></li>
           <li><a href="cosmetic.html">코스메틱 제품</a></li>
+          <li><a href="skin-sol.html">나의 피부 타입 찾기</a></li>
+
         </ul>
       </div>
       <div class="gnb-col">
@@ -246,11 +249,16 @@
 <main id="main-content">
 
 <!-- Hero -->
-<section class="page-hero page-hero--white">
+<section class="page-hero page-hero--white page-hero--bc">
   <div class="wrap">
     <p class="eyebrow">FAQ</p>
     <h1 class="page-hero__title">자주 묻는 질문</h1>
     <p class="page-hero__sub">궁금하신 점을 빠르게 확인하세요.<br>추가 문의는 카카오톡 또는 이메일로 언제든 연락해 주세요.</p>
+    <nav class="bc-nav" aria-label="현재 위치">
+      <a href="index.html">홈</a>
+      <span class="bc-sep" aria-hidden="true">/</span>
+      <span aria-current="page">FAQ</span>
+    </nav>
   </div>
 </section>
 

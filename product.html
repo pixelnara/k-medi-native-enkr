@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="css/components/modal.css" />
   <link rel="stylesheet" href="css/components/card.css" />
   <link rel="stylesheet" href="css/components/tab.css" />
+  <link rel="stylesheet" href="css/components/breadcrumb.css" />
 <link rel="stylesheet" href="css/product.css" />
 </head>
 
@@ -45,8 +46,9 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" width="10" height="10"><polyline points="6 9 12 15 18 9"/></svg>
           </span>
           <div class="util-dropdown__menu">
-            <a href="skin-sol.html">나의 피부 타입 찾기</a>
             <a href="cosmetic.html">코스메틱 제품</a>
+            <a href="skin-sol.html">나의 피부 타입 찾기</a>
+
           </div>
         </div>
         <span class="util-sep" aria-hidden="true"></span>
@@ -176,8 +178,9 @@
       <div class="gnb-col">
         <h4 data-en="Shopping">쇼핑<svg class="gnb-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></h4>
         <ul>
-          <li><a href="skin-sol.html">나의 피부 타입 찾기</a></li>
           <li><a href="cosmetic.html">코스메틱 제품</a></li>
+          <li><a href="skin-sol.html">나의 피부 타입 찾기</a></li>
+
         </ul>
       </div>
       <div class="gnb-col">
@@ -502,7 +505,24 @@
   }
 
   /* ── 갤러리 ── */
-  var imgs = (p.imgs && p.imgs.length) ? p.imgs : (p.img ? [p.img] : ['']);
+  /* 추천 패널용 recProds 먼저 계산 (썸네일 이미지 제외 목록 구성) */
+  var allProds = [];
+  try { allProds = JSON.parse(sessionStorage.getItem('cosm_products')) || []; } catch(e) {}
+  var recProds = allProds
+    .filter(function(r) { return r.id !== p.id; })
+    .sort(function(a, b) { return b.popularity - a.popularity; })
+    .slice(0, 3);
+  var recImgs = recProds.map(function(r) { return r.img; });
+
+  /* 현재 상품 이미지 + 추천 패널 이미지를 제외한 풀에서 4장 보충 */
+  var extraPool = allProds
+    .filter(function(x) { return x.id !== p.id && recImgs.indexOf(x.img) === -1; })
+    .map(function(x) { return x.img; });
+  var pIdx = allProds.findIndex ? allProds.findIndex(function(x){ return x.id === p.id; }) : 0;
+  var offset = pIdx % (extraPool.length || 1);
+  extraPool = extraPool.slice(offset).concat(extraPool.slice(0, offset));
+
+  var imgs = [p.img].concat(extraPool.slice(0, 4));
   var curIdx = 0;
 
   function setImg(idx) {
@@ -572,14 +592,7 @@
     document.getElementById('pdThumbStrip').style.display = 'none';
   }
 
-  /* ★ [신규 기능] 좌측 추천 상품 패널: cosm_products(세션스토리지)에서 인기순 3개 불러와 렌더링 */
-  var allProds = [];
-  try { allProds = JSON.parse(sessionStorage.getItem('cosm_products')) || []; } catch(e) {}
-  var recProds = allProds
-    .filter(function(r) { return r.id !== p.id; })
-    .sort(function(a, b) { return b.popularity - a.popularity; })
-    .slice(0, 3);
-
+  /* ★ [신규 기능] 좌측 추천 상품 패널 */
   var recItemsEl = document.getElementById('pdRecItems');
   if (recProds.length === 0) {
     document.getElementById('pdRecPanel').style.display = 'none';
@@ -589,15 +602,8 @@
       var item = document.createElement('button');
       item.className = 'pd-rec-item';
       item.innerHTML =
-        '<div class="pd-rec-item__img-wrap"><img class="pd-rec-item__img" src="' + r.img + '" alt="' + r.name + '" /></div>' +
-        '<p class="pd-rec-item__name">' + r.name + '</p>' +
-        '<p class="pd-rec-item__price">₩' + rPrice.toLocaleString('ko-KR') + '</p>';
+        '<div class="pd-rec-item__img-wrap"><img class="pd-rec-item__img" src="' + r.img + '" alt="' + r.name + '" /></div>';
       item.addEventListener('click', function() {
-        var _allImgs = allProds.map(function(x) { return x.img; });
-        var _others = _allImgs.filter(function(u) { return u !== r.img; });
-        var _offset = (allProds.indexOf(r) * 2) % _others.length;
-        var _rotated = _others.slice(_offset).concat(_others.slice(0, _offset));
-        r.imgs = [r.img, _rotated[0], _rotated[2], _rotated[4], _rotated[6]];
         sessionStorage.setItem('cosm_product', JSON.stringify(r));
         window.location.reload();
       });

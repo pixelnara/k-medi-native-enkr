@@ -1,11 +1,12 @@
 /* common.css — Shared Layout · Header · Footer · GNB · Utilities
    로드 순서: reset.css → theme.css → common.css → components/*.css → page.css
    components/ 로 분리된 항목:
-     button.css    — .btn*, .link-arrow
-     accordion.css — .acc*
-     modal.css     — .login-modal*, .proc-sheet*
-     card.css      — .prod-card*
-     tab.css       — .tab-line*, .tab-pill*
+     button.css      — .btn*, .link-arrow, .page-hero__cta
+     accordion.css   — .acc*
+     modal.css       — .login-modal*, .proc-sheet*
+     card.css        — .prod-card*
+     tab.css         — .tab-line*, .tab-pill*
+     breadcrumb.css  — .bc-nav, .bc-sep, .bc-bar, .page-hero--bc
 */
 
 /* ---------- Skip Navigation ---------- */
@@ -2407,3 +2408,4 @@ body:has(.gnb-overlay.is-open) {
 }
 
 /* → card.css (components/card.css) */
+/* → breadcrumb.css (components/breadcrumb.css) */

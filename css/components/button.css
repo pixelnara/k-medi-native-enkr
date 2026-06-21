@@ -1,4 +1,4 @@
-/* button.css — Button & Link-arrow components
+/* button.css — Button, Link-arrow & Filter Chip components
    Extracted from common.css · 2026-06-21
    ─────────────────────────────────────────────────────────────── */
 
@@ -72,4 +72,43 @@
 }
 .btn--primary2:hover {
   background: var(--accent-blue3);
+}
+
+/* ── Filter Chip ─────────────────────────────────────────────────
+   공통 정의: .filter(home) · .faq-tab(faq) · .tv-chip(travel) · .ihc__tab(center)
+   각 페이지 CSS는 크기·여백 반응형 override만 유지.
+   ─────────────────────────────────────────────────────────────── */
+.chip,
+.filter,
+.faq-tab,
+.tv-chip,
+.ihc__tab {
+  padding: var(--space-8) var(--space-20);
+  font-size: var(--text-14);
+  font-weight: 600;
+  letter-spacing: var(--tracking-normal);
+  color: var(--text-gray-6);
+  background: var(--bg-white);
+  border: 1px solid var(--border-gray-4);
+  border-radius: 0;
+  cursor: pointer;
+  line-height: 1;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+.chip:hover,
+.filter:hover,
+.faq-tab:hover,
+.tv-chip:hover,
+.ihc__tab:hover {
+  border-color: var(--text-gray-6);
+  color: var(--text-gray-6);
+}
+.chip.is-active,
+.filter.is-active,
+.faq-tab.is-active,
+.tv-chip.is-active,
+.ihc__tab.is-active {
+  background: var(--btn-primary);
+  color: var(--text-white);
+  border-color: var(--btn-primary);
 }

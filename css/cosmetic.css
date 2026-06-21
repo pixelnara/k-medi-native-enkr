@@ -14,6 +14,36 @@
   background: var(--surface-gray-1);
 }
 
+/* ── Breadcrumb ── */
+.cosm-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: var(--space-8);
+  max-width: 1230px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: var(--space-20);
+  font-size: var(--text-12);
+  color: var(--text-gray-2);
+  letter-spacing: var(--tracking-loose);
+}
+.cosm-breadcrumb a {
+  color: var(--text-gray-2);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.cosm-breadcrumb a:hover {
+  color: var(--text-gray-5);
+}
+.cosm-breadcrumb [aria-current="page"] {
+  color: var(--text-gray-5);
+  font-weight: 500;
+}
+.cosm-breadcrumb__sep {
+  opacity: 0.45;
+  font-size: var(--text-11);
+}
+
 /* ── Controls Bar ── */
 .cosm-controls {
   display: flex;

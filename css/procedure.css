@@ -104,7 +104,7 @@
 
 /* 카드 이미지 */
 .proc-slide__img-wrap {
-  border-radius: 16px;
+  border-radius: 2px;
   overflow: hidden;
   aspect-ratio: 4 / 4.5;
   background: var(--bg-gray);

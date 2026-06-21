@@ -14,6 +14,7 @@
   <link rel="stylesheet" href="css/components/modal.css" />
   <link rel="stylesheet" href="css/components/card.css" />
   <link rel="stylesheet" href="css/components/tab.css" />
+  <link rel="stylesheet" href="css/components/breadcrumb.css" />
 <link rel="stylesheet" href="css/travel.css" />
 </head>
 <body>
@@ -45,8 +46,9 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" width="10" height="10"><polyline points="6 9 12 15 18 9"/></svg>
           </span>
           <div class="util-dropdown__menu">
-            <a href="skin-sol.html">나의 피부 타입 찾기</a>
             <a href="cosmetic.html">코스메틱 제품</a>
+            <a href="skin-sol.html">나의 피부 타입 찾기</a>
+
           </div>
         </div>
         <span class="util-sep" aria-hidden="true"></span>
@@ -175,8 +177,9 @@
       <div class="gnb-col">
         <h4 data-en="Shopping">쇼핑<svg class="gnb-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></h4>
         <ul>
-          <li><a href="skin-sol.html">나의 피부 타입 찾기</a></li>
           <li><a href="cosmetic.html">코스메틱 제품</a></li>
+          <li><a href="skin-sol.html">나의 피부 타입 찾기</a></li>
+
         </ul>
       </div>
       <div class="gnb-col">
@@ -252,11 +255,16 @@
 <main id="main-content">
 
 <!-- HERO -->
-<section class="page-hero page-hero--navy">
+<section class="page-hero page-hero--navy page-hero--bc">
   <div class="wrap">
     <p class="eyebrow">Travel in Korea</p>
     <h1 class="page-hero__title">트래블</h1>
     <p class="page-hero__sub">서울의 프리미엄 호텔과 쇼핑 명소를<br/>KMEDITOUR가 엄선하여 안내합니다.</p>
+    <nav class="bc-nav" aria-label="현재 위치">
+      <a href="index.html">홈</a>
+      <span class="bc-sep" aria-hidden="true">/</span>
+      <span aria-current="page">트래블</span>
+    </nav>
   </div>
 </section>
 
@@ -272,28 +280,30 @@
   <!-- ─ 호텔 패널 ─ -->
   <div class="tv-panel is-active" id="panel-hotel">
     <div class="tv-toolbar">
+      <div class="tv-toolbar__right">
+        <div class="tv-sort" id="sort-hotel">
+          <button class="tv-sort__btn" data-sort-toggle="hotel">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="14" y2="12"/><line x1="4" y1="18" x2="9" y2="18"/></svg>
+            <span class="tv-sort__label" data-sort-label="hotel">추천순</span>
+          </button>
+          <div class="tv-sort__menu" id="sortmenu-hotel">
+            <div class="tv-sort__item is-active" data-sort="hotel" data-value="recommended">
+              <svg class="tv-sort__check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              추천순
+            </div>
+            <div class="tv-sort__item" data-sort="hotel" data-value="name">
+              <svg class="tv-sort__check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              이름순
+            </div>
+          </div>
+        </div>
+        <p class="tv-count" id="count-hotel">총 <span class="tv-count__num">3</span>개 숙소</p>
+      </div>
       <div class="tv-search">
         <svg class="tv-search__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
         <input class="tv-search__input" type="text" placeholder="호텔 검색..." data-search="hotel" />
       </div>
-      <div class="tv-sort" id="sort-hotel">
-        <button class="tv-sort__btn" data-sort-toggle="hotel">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="14" y2="12"/><line x1="4" y1="18" x2="9" y2="18"/></svg>
-          <span class="tv-sort__label" data-sort-label="hotel">추천순</span>
-        </button>
-        <div class="tv-sort__menu" id="sortmenu-hotel">
-          <div class="tv-sort__item is-active" data-sort="hotel" data-value="recommended">
-            <svg class="tv-sort__check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-            추천순
-          </div>
-          <div class="tv-sort__item" data-sort="hotel" data-value="name">
-            <svg class="tv-sort__check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-            이름순
-          </div>
-        </div>
-      </div>
     </div>
-    <p class="tv-count" id="count-hotel">총 3개 숙소</p>
     <div class="tv-grid" id="grid-hotel">
 
       <div class="tv-card" data-name="롯데호텔 서울 (소공동)" data-order="1"
@@ -340,35 +350,37 @@
 
   <!-- ─ 쇼핑 패널 ─ -->
   <div class="tv-panel" id="panel-shopping">
-    <div class="tv-toolbar">
-      <div class="tv-search">
-        <svg class="tv-search__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-        <input class="tv-search__input" type="text" placeholder="쇼핑 검색..." data-search="shopping" />
-      </div>
-      <div class="tv-sort" id="sort-shopping">
-        <button class="tv-sort__btn" data-sort-toggle="shopping">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="14" y2="12"/><line x1="4" y1="18" x2="9" y2="18"/></svg>
-          <span class="tv-sort__label" data-sort-label="shopping">추천순</span>
-        </button>
-        <div class="tv-sort__menu" id="sortmenu-shopping">
-          <div class="tv-sort__item is-active" data-sort="shopping" data-value="recommended">
-            <svg class="tv-sort__check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-            추천순
-          </div>
-          <div class="tv-sort__item" data-sort="shopping" data-value="name">
-            <svg class="tv-sort__check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-            이름순
-          </div>
-        </div>
-      </div>
-    </div>
     <div class="tv-chips" id="chips-shopping">
       <button class="tv-chip is-active" data-filter="all">전체</button>
       <button class="tv-chip" data-filter="면세점">면세점</button>
       <button class="tv-chip" data-filter="쇼핑몰">쇼핑몰</button>
       <button class="tv-chip" data-filter="시장">시장</button>
     </div>
-    <p class="tv-count" id="count-shopping">총 5개 쇼핑</p>
+    <div class="tv-toolbar">
+      <div class="tv-toolbar__right">
+        <div class="tv-sort" id="sort-shopping">
+          <button class="tv-sort__btn" data-sort-toggle="shopping">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="14" y2="12"/><line x1="4" y1="18" x2="9" y2="18"/></svg>
+            <span class="tv-sort__label" data-sort-label="shopping">추천순</span>
+          </button>
+          <div class="tv-sort__menu" id="sortmenu-shopping">
+            <div class="tv-sort__item is-active" data-sort="shopping" data-value="recommended">
+              <svg class="tv-sort__check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              추천순
+            </div>
+            <div class="tv-sort__item" data-sort="shopping" data-value="name">
+              <svg class="tv-sort__check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              이름순
+            </div>
+          </div>
+        </div>
+        <p class="tv-count" id="count-shopping">총 <span class="tv-count__num">5</span>개 쇼핑</p>
+      </div>
+      <div class="tv-search">
+        <svg class="tv-search__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input class="tv-search__input" type="text" placeholder="쇼핑 검색..." data-search="shopping" />
+      </div>
+    </div>
     <div class="tv-grid" id="grid-shopping">
 
       <div class="tv-card" data-name="롯데면세점 명동점" data-order="1" data-cat="면세점" data-detail="shop-1">
@@ -718,7 +730,7 @@
     var countEl = document.getElementById('count-' + key);
     if (countEl) {
       var unit = key === 'hotel' ? '숙소' : '쇼핑';
-      countEl.textContent = '총 ' + visible.length + '개 ' + unit;
+      countEl.innerHTML = '총 <span class="tv-count__num">' + visible.length + '</span>개 ' + unit;
     }
 
     /* empty */

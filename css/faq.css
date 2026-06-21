@@ -25,28 +25,7 @@
   gap: var(--space-2);
   margin-bottom: var(--space-48);
 }
-.faq-tab {
-  padding: var(--space-8) var(--space-20);
-  font-size: var(--text-14);
-  font-weight: 600;
-  letter-spacing: var(--tracking-normal);
-  font-family: var(--font-sans);
-  color: var(--text-gray-6);
-  background: var(--bg-white);
-  border: 1px solid var(--border-gray-4);
-  border-radius: 0;
-  cursor: pointer;
-  transition: 0.2s;
-}
-.faq-tab:hover {
-  border-color: var(--text-gray-6);
-  color: var(--text-gray-6);
-}
-.faq-tab.is-active {
-  background: var(--btn-primary);
-  color: var(--text-white);
-  border-color: var(--btn-primary);
-}
+/* .faq-tab — base: components/button.css (.chip) */
 
 /* ── FAQ Group ── */
 .faq-group {

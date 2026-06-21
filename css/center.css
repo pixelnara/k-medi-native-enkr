@@ -483,32 +483,7 @@ figure.art-img--center img {
   gap: var(--space-2, 8px);
 }
 
-.ihc__tab {
-  padding: var(--space-8, 8px) var(--space-20, 20px);
-  font-size: var(--text-14, 14px);
-  font-weight: 600;
-  letter-spacing: var(--tracking-normal, 0.01em);
-  background: var(--bg-white, #fff);
-  border: 1px solid var(--border-gray-4, #ccc);
-  color: var(--text-gray-6, #111);
-  cursor: pointer;
-  transition:
-    background 0.2s,
-    color 0.2s,
-    border-color 0.2s;
-  line-height: 1;
-  border-radius: 0;
-}
-
-.ihc__tab:hover {
-  border-color: var(--text-gray-6, #111);
-}
-
-.ihc__tab.is-active {
-  background: var(--btn-primary, #111);
-  color: var(--text-white, #fff);
-  border-color: var(--btn-primary, #111);
-}
+/* .ihc__tab — base: components/button.css (.chip) */
 
 /* Prev / Next arrows — outside the image in side margins */
 .ihc__arrow {
@@ -580,8 +555,8 @@ figure.art-img--center img {
     margin: 0 8px;
   }
   .ihc__tab {
-    padding: 7px 14px;
-    font-size: 12px;
+    padding: var(--space-6) var(--space-14);
+    font-size: var(--text-12);
   }
 }
 
