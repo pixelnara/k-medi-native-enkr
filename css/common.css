@@ -1,13 +1,4 @@
-/* common.css — Shared Layout · Header · Footer · GNB · Utilities
-   로드 순서: reset.css → theme.css → common.css → components/*.css → page.css
-   components/ 로 분리된 항목:
-     button.css      — .btn*, .link-arrow, .page-hero__cta
-     accordion.css   — .acc*
-     modal.css       — .login-modal*, .proc-sheet*
-     card.css        — .prod-card*
-     tab.css         — .tab-line*, .tab-pill*
-     breadcrumb.css  — .bc-nav, .bc-sep, .bc-bar, .page-hero--bc
-*/
+
 
 /* ---------- Skip Navigation ---------- */
 .skip-link {
@@ -192,7 +183,6 @@ body {
   }
 }
 
-/* ── CTA Banner Component ── */
 /* 다크 풀-위드 배너. center / procedure / travel / skin-analysis 에서 공유. */
 .cta-banner {
   background: var(--bg-dark);
@@ -246,10 +236,6 @@ body {
     justify-content: center;
   }
 }
-
-/* → button.css (components/button.css) */
-
-/* → accordion.css (components/accordion.css) */
 
 /* ============================================================
    HEADER
@@ -625,11 +611,6 @@ body {
   transform: translateY(-100%);
   box-shadow: none;
 }
-
-/* ── Header Themes ─────────────────────────────────────
-   페이지 성격에 따라 <header> 태그에 추가하는 모디파이어.
-   스타일 변경 없이 중복 블록 제거 목적.
-   ──────────────────────────────────────────────────── */
 
 /* --light: 투명 + 다크 텍스트, 스크롤 시 solid 전환 없음
    (cosmetic · faq · skin-sol 등 흰 배경 페이지) */
@@ -1254,12 +1235,7 @@ body:has(.gnb-overlay.is-open) {
 /* Dark theme variant — desktop only (861px+) */
 @media (min-width: 861px) {
   /* 데스크탑: 모바일 복사본 숨김, sub-row 마이페이지 표시 */
-  .gnb-col--mypage-mobile {
-    display: none;
-  }
-  .gnb-col--mypage:not(.gnb-col--mypage-mobile) {
-    display: block;
-  }
+
   .gnb-overlay--dark {
     background: var(--bg-dark);
     color: var(--text-white);
@@ -1279,7 +1255,6 @@ body:has(.gnb-overlay.is-open) {
   .gnb-overlay--dark .gnb-overlay__close,
   .gnb-overlay--dark .gnb-col > h4,
   .gnb-overlay--dark .gnb-col a,
-  .gnb-overlay--dark .gnb-sub-head,
   .gnb-overlay--dark .gnb-sub-chevron,
   .gnb-overlay--dark .gnb-sub-list li a {
     color: rgba(255, 255, 255, 0.92);
@@ -1505,9 +1480,6 @@ body:has(.gnb-overlay.is-open) {
   text-decoration-thickness: 2px;
   text-underline-offset: 3px;
 }
-.gnb-col a.gnb-link--bold {
-  font-weight: 500;
-}
 .gnb-col a.gnb-link--utility {
   color: var(--rating);
   opacity: 1;
@@ -1516,18 +1488,7 @@ body:has(.gnb-overlay.is-open) {
   color: var(--rating);
   opacity: 1;
 }
-.gnb-sub-head {
-  font-size: var(--text-13);
-  font-weight: 700;
-  letter-spacing: var(--tracking-wide);
-  text-transform: uppercase;
-  color: var(--text-gray-2);
-  padding-top: var(--space-16);
-  margin-bottom: calc(-1 * var(--space-4));
-}
-.gnb-sub-head:first-child {
-  padding-top: 0;
-}
+
 .gnb-chevron {
   display: none;
 }
@@ -1678,7 +1639,6 @@ body:has(.gnb-overlay.is-open) {
     gap: 0;
     padding: 0;
   }
-  /* 모바일: 상단 복사본 표시, sub-row 마이페이지 숨김 */
 
   /* depth2: 패널 — 기본 숨김 */
   .gnb-col ul {
@@ -1720,9 +1680,7 @@ body:has(.gnb-overlay.is-open) {
     color: var(--text-gray-6);
     opacity: 0.8;
   }
-  .gnb-sub-head {
-    display: none;
-  }
+  
   /* sub-list hidden by default; override the gnb-col.is-open ul rule */
   .gnb-col ul.gnb-sub-list,
   .gnb-col.is-open ul.gnb-sub-list {
@@ -1926,9 +1884,7 @@ body:has(.gnb-overlay.is-open) {
     /* box-shadow: 0 1px 0 var(--border-gray-1); */
   }
   /* 상단바 v2 활성 / v1 숨김 */
-  .header-right--v1 {
-    display: none;
-  }
+  
   .header-right--v2 {
     display: flex;
     align-items: center;
@@ -2034,9 +1990,7 @@ body:has(.gnb-overlay.is-open) {
     align-items: center;
     text-align: center;
   }
-  .hero__brand {
-    display: none;
-  }
+  
   .hero__title {
     margin-top: 0;
     font-size: clamp(32px, 5.2vw, 32px);
@@ -2058,10 +2012,7 @@ body:has(.gnb-overlay.is-open) {
     max-width: 80%;
     text-align: center;
   }
-  .hero__desc--strong {
-    font-weight: 400;
-    color: rgba(255, 255, 255, 0.88);
-  }
+  
   .hero__cta {
     display: none;
   }
@@ -2390,8 +2341,6 @@ body:has(.gnb-overlay.is-open) {
 
 }
 
-/* → modal.css (components/modal.css) : proc-sheet */
-
 /* ============================================================
    RESPONSIVE — Common (shared across all pages)
    ============================================================ */
@@ -2407,5 +2356,3 @@ body:has(.gnb-overlay.is-open) {
   }
 }
 
-/* → card.css (components/card.css) */
-/* → breadcrumb.css (components/breadcrumb.css) */

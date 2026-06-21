@@ -172,6 +172,7 @@
                   </button>
                 </div>
                 <ul class="gnb-sub-list">
+                  <li><a href="procedure.html">전체</a></li>
                   <li><a href="#">필러</a></li>
                   <li><a href="#">보톡스</a></li>
                   <li><a href="#">실리프팅</a></li>
@@ -250,6 +251,7 @@
     </button>
   </div>
   <ul class="proc-sheet__list">
+    <li><a href="procedure.html">전체</a></li>
     <li><a href="#">필러</a></li>
     <li><a href="#">보톡스</a></li>
     <li><a href="#">실리프팅</a></li>
@@ -351,55 +353,6 @@
 
 </main>
 
-<!-- ============================== PRODUCT DETAIL MODAL ============================== -->
-<div class="pd-overlay" id="pdOverlay" aria-hidden="true">
-  <div class="pd-modal" role="dialog" aria-modal="true" aria-labelledby="pdName">
-    <button class="pd-close" id="pdClose" aria-label="닫기">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="22" height="22"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-    </button>
-    <div class="pd-layout">
-      <!-- 좌: 이미지 -->
-      <div class="pd-gallery">
-        <div class="pd-img-wrap">
-          <img class="pd-img" id="pdImg" src="" alt="" />
-        </div>
-      </div>
-      <!-- 우: 정보 -->
-      <div class="pd-info">
-        <span class="pd-category" id="pdCategory"></span>
-        <h2 class="pd-name" id="pdName"></h2>
-        <div class="pd-tags" id="pdTags"></div>
-        <div class="pd-rating" id="pdRating"></div>
-        <div class="pd-price" id="pdPrice"></div>
-        <p class="pd-desc" id="pdDesc"></p>
-
-        <div class="pd-qty-row">
-          <span class="pd-qty-label">수량</span>
-          <div class="pd-qty">
-            <button class="pd-qty-btn" id="pdQtyMinus">−</button>
-            <span class="pd-qty-val" id="pdQtyVal">1</span>
-            <button class="pd-qty-btn" id="pdQtyPlus">+</button>
-          </div>
-        </div>
-
-        <div class="pd-actions">
-          <button class="pd-btn pd-btn--cart">장바구니 담기</button>
-          <button class="pd-btn pd-btn--buy">바로 구매</button>
-        </div>
-
-        <!-- 상품 정보 탭 -->
-        <div class="pd-specs">
-          <button class="pd-specs-toggle" id="pdSpecsToggle">
-            상품 정보
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><polyline points="6 9 12 15 18 9"/></svg>
-          </button>
-          <table class="pd-specs-table" id="pdSpecsTable"></table>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
 <!-- ============================== FOOTER ============================== -->
 <footer class="footer">
   <div class="wrap">
@@ -449,21 +402,21 @@
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
     <span class="mbar-label">홈</span>
   </a>
+  <a class="mbar-btn" href="skin-sol.html" aria-label="나의 피부타입">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.9 5.8a2 2 0 0 0 1.3 1.3L21 12l-5.8 1.9a2 2 0 0 0-1.3 1.3L12 21l-1.9-5.8a2 2 0 0 0-1.3-1.3L3 12l5.8-1.9a2 2 0 0 0 1.3-1.3z"/></svg>
+    <span class="mbar-label">나의 피부타입</span>
+  </a>
   <a class="mbar-btn" href="index.html#booking" aria-label="상담예약">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
     <span class="mbar-label">상담예약</span>
-  </a>
-  <a class="mbar-btn is-active" href="cosmetic.html" aria-label="쇼핑">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
-    <span class="mbar-label">쇼핑</span>
   </a>
   <a class="mbar-btn" href="#" aria-label="이벤트">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
     <span class="mbar-label">이벤트</span>
   </a>
-  <a class="mbar-btn" href="#" aria-label="마이">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M6 21v-1a6 6 0 0 1 12 0v1"/></svg>
-    <span class="mbar-label">마이</span>
+  <a class="mbar-btn" href="#" aria-label="장바구니">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+    <span class="mbar-label">장바구니</span>
   </a>
 </nav>
 

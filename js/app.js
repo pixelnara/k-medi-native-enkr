@@ -187,37 +187,6 @@
   if (heroNavPrev) heroNavPrev.addEventListener("click", () => { stop(); go(cur - 1); play(); });
   if (heroNavNext) heroNavNext.addEventListener("click", () => { stop(); go(cur + 1); play(); });
 
-  /* ---------- Booking widget tabs ---------- */
-  const bkTabs = [...document.querySelectorAll(".booking__tab")];
-  const bkBodies = [...document.querySelectorAll(".booking__body")];
-  bkTabs.forEach((tab) => {
-    tab.addEventListener("click", () => {
-      const t = tab.dataset.target;
-      bkTabs.forEach((x) => x.classList.toggle("is-active", x === tab));
-      bkBodies.forEach((b) => b.classList.toggle("is-active", b.dataset.body === t));
-    });
-  });
-
-  /* ---------- Collection horizontal scroller ---------- */
-  const track = document.querySelector(".collection__track");
-  const prev = document.querySelector(".cnav-btn--prev");
-  const next = document.querySelector(".cnav-btn--next");
-  if (track && prev && next) {
-    const step = () => {
-      const card = track.querySelector(".col-card");
-      return card ? card.getBoundingClientRect().width + 30 : 360;
-    };
-    const updateBtns = () => {
-      prev.disabled = track.scrollLeft <= 4;
-      next.disabled = track.scrollLeft + track.clientWidth >= track.scrollWidth - 4;
-    };
-    prev.addEventListener("click", () => track.scrollBy({ left: -step(), behavior: "smooth" }));
-    next.addEventListener("click", () => track.scrollBy({ left: step(), behavior: "smooth" }));
-    track.addEventListener("scroll", updateBtns, { passive: true });
-    window.addEventListener("resize", updateBtns);
-    updateBtns();
-  }
-
   /* ---------- News filter ---------- */
   const filters = [...document.querySelectorAll(".filter")];
   const cards = [...document.querySelectorAll(".news-card")];

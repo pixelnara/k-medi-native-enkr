@@ -73,6 +73,16 @@
 .btn--primary2:hover {
   background: var(--accent-blue3);
 }
+/* Primary Outline — 명시적 outline 변형 (base .btn 외형과 동일) */
+.btn--primary-outline {
+  border: 1px solid var(--text-gray-6);
+  color: var(--text-gray-6);
+  background: transparent;
+}
+.btn--primary-outline:hover {
+  background: var(--text-gray-6);
+  color: var(--bg-white);
+}
 
 /* ── Filter Chip ─────────────────────────────────────────────────
    공통 정의: .filter(home) · .faq-tab(faq) · .tv-chip(travel) · .ihc__tab(center)

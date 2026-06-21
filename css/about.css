@@ -272,22 +272,29 @@
    RESPONSIVE — Mobile (≤ 860px)
    ───────────────────────────────────────────────────── */
 @media (max-width: 860px) {
-  .about-hero {
-    height: auto;
-    min-height: 50vh;
+  .intro__header {
+    margin-bottom: var(--space-40);
   }
-  .about-hero__inner {
-    margin-top: 0;
-    padding-bottom: clamp(32px, 6vw, 44px);
+  .intro .h-lg {
+    font-size: clamp(32px, 8.6vw, 38px);
+    line-height: 1.18;
+    letter-spacing: var(--tracking-tight);
   }
-  .about-hero__title {
-    font-size: clamp(24px, 7vw, 48px);
-    line-height: 1.4;
-  }
-
   .intro__cols {
     grid-template-columns: 1fr;
-    gap: var(--space-32);
+    gap: var(--space-18);
+  }
+  .intro__text,
+  .step__desc,
+  .guarantee-col__desc,
+  .review__text,
+  .stat-row__sub {
+    font-size: clamp(15px, 1.4vw, 17px);
+    line-height: 1.9;
+    letter-spacing: var(--tracking-tight);
+  }
+  .intro__text {
+    color: var(--text-gray-7);
   }
 
   .steps__list {
