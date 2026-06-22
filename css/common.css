@@ -2114,7 +2114,7 @@ image-slot#cert-sgi {
     align-items: center;
     height: auto;
     min-height: auto;
-    padding: var(--space-14) var(--gutter);
+    padding: var(--space-14) calc(var(--gutter) + var(--space-12)) var(--space-14) var(--gutter);
     background: var(--bg-white);
     gap: var(--space-14);
     color: var(--text-gray-7);
