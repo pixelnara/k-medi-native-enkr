@@ -1787,16 +1787,12 @@ image-slot#cert-sgi {
     text-underline-offset: 3px;
   }
 }
-/* 모바일 탭 시: 밑줄/탭 하이라이트/텍스트 선택 방지 */
+/* 모바일 탭 시: 텍스트 선택 방지 */
 .gnb-overlay a,
 .gnb-overlay button,
 .gnb-overlay h4 {
-  -webkit-tap-highlight-color: transparent;
   -webkit-user-select: none;
   user-select: none;
-}
-.gnb-overlay button:focus {
-  outline: none;
 }
 .gnb-overlay a:active,
 .gnb-overlay a:focus {

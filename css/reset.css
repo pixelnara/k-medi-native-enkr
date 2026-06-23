@@ -34,6 +34,7 @@ video {
 a {
   color: inherit;
   text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
 button {
@@ -41,6 +42,8 @@ button {
   cursor: pointer;
   border: none;
   background: none;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
 ul,
