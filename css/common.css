@@ -590,15 +590,7 @@ body {
   width: 32px;
   color: inherit;
 }
-.header-menu-btn {
-  display: flex;
-  align-items: center;
-  padding: var(--space-6);
-}
-.header-menu-btn svg {
-  width: 24px;
-  height: 24px;
-}
+
 .menu-btn span {
   height: 2.5px;
   background: currentColor;
@@ -2306,9 +2298,6 @@ image-slot#cert-sgi {
   }
   .menu-btn span {
     height: 2.5px;
-  }
-  .header-menu-btn {
-    display: none;
   }
   .header-mypage-btn {
     display: flex;
