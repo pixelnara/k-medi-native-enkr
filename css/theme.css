@@ -230,7 +230,7 @@
   --type-h2: clamp(28px, 3.5vw, 52px); /* 섹션 서브 제목 */
   --type-h3: clamp(20px, 2.2vw, 30px); /* 카드 대제목, hero 서브타이틀 */
   --type-h4: clamp(18px, 1.8vw, 24px); /* 카드 소제목, CTA desc */
-  --type-h5: clamp(16px, 1.5vw, 20px); /* step 레이블, icon 레이블 */
+  --type-h5: clamp(16px, 1.5vw, 22px); /* step 레이블, icon 레이블 */
   --type-body-lg: clamp(16px, calc(15px + 0.4vw), 18px); /* 리드 본문 */
   --type-body: clamp(15px, calc(14.5px + 0.25vw), 17px); /* 일반 본문 */
   --type-body2: clamp(14px, calc(14px + 0.15vw), 15px); /* 보조 본문 */
