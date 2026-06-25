@@ -101,9 +101,9 @@
   transition: border-color 0.2s;
 }
 @media (hover: hover) {
-.tv-sort__btn:hover {
-  border-color: var(--gray-500);
-}
+  .tv-sort__btn:hover {
+    border-color: var(--gray-500);
+  }
 }
 .tv-sort__menu {
   position: absolute;
@@ -134,9 +134,9 @@
   transition: background 0.15s;
 }
 @media (hover: hover) {
-.tv-sort__item:hover {
-  background: var(--surface-gray-1);
-}
+  .tv-sort__item:hover {
+    background: var(--surface-gray-1);
+  }
 }
 .tv-sort__item.is-active {
   color: var(--accent-gray-1);
@@ -175,8 +175,9 @@
 
 /* ── CARD GRID ── */
 .tv-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: var(--space-20);
   padding: 0 clamp(24px, 4vw, 80px);
 }
@@ -232,9 +233,9 @@
   transition: color 0.2s;
 }
 @media (hover: hover) {
-.tv-detail__back:hover {
-  color: var(--border-gray-4);
-}
+  .tv-detail__back:hover {
+    color: var(--border-gray-4);
+  }
 }
 
 /* 이미지 캐러셀 */
@@ -412,9 +413,9 @@
   transition: background 0.2s;
 }
 @media (hover: hover) {
-.tv-detail__cta-btn:hover {
-  background: var(--border-gray-4);
-}
+  .tv-detail__cta-btn:hover {
+    background: var(--border-gray-4);
+  }
 }
 .tv-detail__cta-info {
   display: flex;
