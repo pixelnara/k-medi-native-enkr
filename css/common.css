@@ -969,13 +969,12 @@ REVEAL ON SCROLL ============================================================ */
     gap: 0px;
   }
   .gnb-banner__label {
-    font-size: var(--text-11);
+    font-size: var(--text-10);
     color: var(--text-gray-7);
     opacity: 1;
-    margin-bottom: var(--space-2);
   }
   .gnb-banner__title {
-    font-size: var(--text-15);
+    font-size: var(--text-16);
     font-weight: 650;
     color: var(--text-gray-6);
     white-space: nowrap;
@@ -986,7 +985,6 @@ REVEAL ON SCROLL ============================================================ */
     font-size: var(--text-12);
     color: var(--text-gray-3);
     opacity: 1;
-    margin-top: var(--space-2);
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
