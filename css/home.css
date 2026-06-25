@@ -687,7 +687,7 @@
 .news-card__title {
   font-family: var(--font-sans);
   color: var(--text-gray-6);
-  font-size: clamp(14px, 1.3vw, 21px);
+  font-size: clamp(14px, 1.35vw, 23px);
   font-weight: 600;
   line-height: 1.45;
   margin-top: var(--space-10);
