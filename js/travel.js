@@ -52,6 +52,26 @@
       addr: '성수동 연무장길, 서울 성동구 연무장길',
       desc: '힙한 편집숍과 카페, 팝업스토어가 모인 성수동 핫플레이스. 성수 베이커리, 스페셜티 커피, 수제 버거가 유명합니다.',
       imgs: ['assets/hero/hero-7.png','assets/hero/hero-2.png','assets/hero/hero-5.png']
+    },
+    'shop-6': {
+      cat: '쇼핑몰', title: '가로수길',
+      addr: '가로수길, 서울 강남구 신사동',
+      desc: '국내외 브랜드 플래그십 스토어와 감각적인 디자이너 편집숍이 늘어선 신사동 트렌드 거리입니다. 브런치 카페와 디저트 명소도 함께 즐길 수 있습니다.',
+      imgs: ['assets/hero/hero-16.png','assets/hero/hero-7.png','assets/hero/hero-15.png']
+    },
+    'shop-7': {
+      cat: '시장', title: '광장시장',
+      addr: '광장시장, 서울 종로구 창경궁로 88',
+      desc: '100년 역사의 전통시장으로 빈대떡, 마약김밥, 육회 골목 등 다채로운 먹거리와 구제 의류·한복으로 유명합니다.',
+      imgs: ['assets/hero/hero-gung.jpeg','assets/hero/hero-2.png','assets/hero/hero-5.png']
+    },
+    'shop-8': {
+      cat: '면세점', title: '신라면세점 서울점',
+      addr: '신라면세점 서울점, 서울 중구 동호로 249',
+      promo: '면세점 이용 시 멤버십 적립 및 할인 혜택을 제공해 드립니다. (일부 브랜드 제외)',
+      desc: '장충동에 위치한 프리미엄 면세점으로 럭셔리 브랜드 부티크와 K-뷰티 라인업이 다양합니다.',
+      imgs: ['assets/hero/hero-17.png','assets/hero/hero-15.png','assets/hero/hero-2.png'],
+      cats: ['럭셔리','메이크업','패션','주류']
     }
   };
 
