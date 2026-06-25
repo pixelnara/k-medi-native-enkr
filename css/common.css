@@ -595,7 +595,20 @@ body {
 }
 
 .header-menu-btn {
-  display: none !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  background: transparent;
+  cursor: pointer;
+  color: inherit;
+}
+.header-menu-btn svg {
+  width: 24px;
+  height: 24px;
+  display: block;
 }
 
 .menu-btn span {
@@ -841,11 +854,16 @@ image-slot#cert-sgi {
   color: rgba(255, 255, 255, 0.6);
 }
 .footer__brand {
+  display: block;
   font-family: var(--font-sans);
   font-size: var(--text-32);
   color: var(--text-white);
   font-weight: 600;
   letter-spacing: var(--tracking-normal);
+  text-decoration: none;
+}
+@media (hover: hover) {
+  .footer__brand:hover { opacity: 0.75; }
 }
 .footer__brand small {
   display: block;
