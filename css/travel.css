@@ -173,12 +173,15 @@
   padding: 0 clamp(24px, 4vw, 80px);
 }
 
-/* ── CARD GRID ── */
+/* ── CARD GRID ──
+   고정 너비(360px) 카드를 양쪽 마진까지 꽉 채워 배치.
+   화면 너비에 들어갈 수 있는 만큼 한 줄에 깔고, 넘치면 아래 줄로 내려감.
+   space-between 으로 좌우 끝(양쪽 마진)을 카드가 채우고 여백은 카드 사이로 분배. */
 .tv-grid {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 320px);
   justify-content: center;
-  gap: var(--space-20);
+  gap: var(--space-8);
   padding: 0 clamp(24px, 4vw, 80px);
 }
 /* → components/travel-card.css */
