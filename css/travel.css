@@ -72,7 +72,7 @@
 .tv-search__input::placeholder {
   color: var(--text-gray-2);
 }
-.tv-search__input:focus {
+.tv-search__input:focus-visible {
   border-color: var(--gray-500);
 }
 

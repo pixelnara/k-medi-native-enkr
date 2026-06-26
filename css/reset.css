@@ -1,6 +1,6 @@
 /* reset.css — Browser Reset & Normalization
-   최상위 CSS. 브라우저 기본값 초기화 전용. 스타일링 없음.
-   로드 순서: reset.css → theme.css → common.css → page.css */
+   브라우저 기본값 초기화 전용. 스타일링 없음.
+   로드 순서: font.css → reset.css → theme.css → common.css → page.css */
 
 *,
 *::before,
@@ -19,7 +19,9 @@ html {
 
 body {
   -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: auto;
+  font-synthesis: none;
   overflow-x: hidden;
   word-break: keep-all;
   overflow-wrap: break-word;

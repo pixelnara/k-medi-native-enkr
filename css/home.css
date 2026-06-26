@@ -2188,3 +2188,18 @@
   text-wrap: balance;
   margin-bottom: clamp(28px, 3.5vw, 44px);
 }
+
+@media (prefers-reduced-motion: reduce) {
+  .hero__title,
+  .hero__desc {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+  .hero__down-btn {
+    animation: none;
+  }
+  .hero__scroll {
+    animation: none;
+  }
+}

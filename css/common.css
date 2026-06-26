@@ -360,6 +360,10 @@ image-slot#cert-sgi {
     transform: scale(1.08);
   }
 }
+.chat-btn:active {
+  transform: scale(0.9);
+  transition: transform 0.07s ease;
+}
 .chat-btn svg {
   width: var(--space-24);
   height: var(--space-24);
@@ -745,6 +749,11 @@ image-slot#cert-sgi {
     transform: none;
     transition: none;
   }
+  .gnb-col.is-open ul,
+  .gnb-col.is-open ul > li,
+  .gnb-col.is-open ul .gnb-has-sub.is-open .gnb-sub-list {
+    animation: none;
+  }
 }
 
 /* ============================================================
@@ -819,9 +828,26 @@ image-slot#cert-sgi {
     background: var(--surface-gray-2);
     padding: var(--space-0) var(--space-0);
   }
+  @keyframes gnb-col-open {
+    from { opacity: 0; transform: translateY(-12px); }
+    to   { opacity: 1; transform: none; }
+  }
+  @keyframes gnb-li-enter {
+    from { opacity: 0; transform: translateX(-8px); }
+    to   { opacity: 1; transform: none; }
+  }
   .gnb-col.is-open ul {
     display: flex;
+    animation: gnb-col-open 0.28s cubic-bezier(0.22, 1, 0.36, 1) both;
   }
+  .gnb-col.is-open ul > li {
+    animation: gnb-li-enter 0.22s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+  .gnb-col.is-open ul > li:nth-child(1) { animation-delay: 0.05s; }
+  .gnb-col.is-open ul > li:nth-child(2) { animation-delay: 0.10s; }
+  .gnb-col.is-open ul > li:nth-child(3) { animation-delay: 0.15s; }
+  .gnb-col.is-open ul > li:nth-child(4) { animation-delay: 0.20s; }
+  .gnb-col.is-open ul > li:nth-child(5) { animation-delay: 0.25s; }
   .gnb-col ul > li > a {
     display: block;
     padding: var(--space-12) var(--space-8);
@@ -834,6 +860,11 @@ image-slot#cert-sgi {
   }
   .gnb-col ul > li:last-child > a {
     border-bottom: none;
+  }
+  .gnb-col ul > li > a:active,
+  .gnb-item-row > a:active {
+    background: var(--border-gray-1);
+    transition: background 0.07s;
   }
   /* [수정1] h4 안에 <a> 링크가 있을 때(쇼핑 등) 폰트 크기를 h4와 동일하게 */
   .gnb-col > h4 > a {
@@ -887,6 +918,11 @@ image-slot#cert-sgi {
     cursor: pointer;
     padding: 0;
   }
+  .gnb-sub-toggle:active {
+    opacity: 0.45;
+    transform: scale(0.85);
+    transition: opacity 0.07s, transform 0.07s;
+  }
   .gnb-sub-chevron {
     width: 16px;
     height: 16px;
@@ -902,6 +938,7 @@ image-slot#cert-sgi {
     display: flex;
     flex-direction: column;
     border-left: 2px solid var(--border-gray-1);
+    animation: gnb-col-open 0.24s cubic-bezier(0.22, 1, 0.36, 1) both;
   }
   .gnb-has-sub.is-open .gnb-sub-list > li > a {
     display: block;
@@ -1291,6 +1328,11 @@ image-slot#cert-sgi {
     fill: currentColor;
     /* 라인(stroke) 유지 + fill 채움 — stroke-width는 인라인(2) 사용 */
     stroke: currentColor;
+  }
+  .mbar-btn:active {
+    transform: scale(0.88);
+    opacity: 0.65;
+    transition: transform 0.07s ease, opacity 0.07s ease;
   }
   .mbar-btn--cta {
     position: relative;

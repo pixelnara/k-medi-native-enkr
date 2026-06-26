@@ -313,14 +313,14 @@ input[type="password"].login-modal__input {
   transform: translateY(100%);
   visibility: hidden;
   transition:
-    transform 0.45s cubic-bezier(0.7, 0, 0.2, 1),
-    visibility 0s linear 0.45s;
+    transform 0.26s cubic-bezier(0.55, 0, 1, 0.45), /* close: 빠른 퇴장 */
+    visibility 0s linear 0.26s;
 }
 .proc-sheet.is-open {
   transform: translateY(0);
   visibility: visible;
   transition:
-    transform 0.45s cubic-bezier(0.7, 0, 0.2, 1),
+    transform 0.42s cubic-bezier(0.22, 1, 0.36, 1), /* open: spring 진입 */
     visibility 0s linear 0s;
 }
 .proc-sheet__bar {
@@ -346,6 +346,11 @@ input[type="password"].login-modal__input {
   width: 22px;
   height: 22px;
 }
+.proc-sheet__close:active {
+  transform: scale(0.84);
+  opacity: 0.45;
+  transition: transform 0.07s, opacity 0.07s;
+}
 .proc-sheet__title {
   font-size: var(--text-18);
   font-weight: 700;
@@ -367,6 +372,34 @@ input[type="password"].login-modal__input {
 .proc-sheet__list li:last-child a {
   border-bottom: none;
 }
+.proc-sheet__list li a:active {
+  background: var(--surface-gray-1);
+  transition: background 0.07s;
+}
+
+/* 열릴 때 아이템 순차 등장 */
+@keyframes proc-enter {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: none; }
+}
+.proc-sheet.is-open .proc-sheet__list li {
+  animation: proc-enter 0.28s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+.proc-sheet.is-open .proc-sheet__list li:nth-child(1) { animation-delay: 0.22s; }
+.proc-sheet.is-open .proc-sheet__list li:nth-child(2) { animation-delay: 0.27s; }
+.proc-sheet.is-open .proc-sheet__list li:nth-child(3) { animation-delay: 0.32s; }
+.proc-sheet.is-open .proc-sheet__list li:nth-child(4) { animation-delay: 0.37s; }
+.proc-sheet.is-open .proc-sheet__list li:nth-child(5) { animation-delay: 0.42s; }
+.proc-sheet.is-open .proc-sheet__banner {
+  animation: proc-enter 0.3s cubic-bezier(0.22, 1, 0.36, 1) 0.44s both;
+}
+@media (prefers-reduced-motion: reduce) {
+  .proc-sheet.is-open .proc-sheet__list li,
+  .proc-sheet.is-open .proc-sheet__banner {
+    animation: none;
+  }
+}
+
 .proc-sheet__banner {
   display: flex;
   align-items: center;

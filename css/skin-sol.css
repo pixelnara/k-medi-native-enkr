@@ -462,6 +462,13 @@
     transform: none;
   }
 }
+@media (prefers-reduced-motion: reduce) {
+  .pss-result {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}
 
 /* Result Header */
 .pss-result__header {
@@ -491,9 +498,11 @@
     color 0.2s,
     background 0.2s;
 }
-.pss-result__reset-btn:hover {
-  border-color: var(--edi-ink);
-  color: var(--edi-ink);
+@media (hover: hover) {
+  .pss-result__reset-btn:hover {
+    border-color: var(--edi-ink);
+    color: var(--edi-ink);
+  }
 }
 .pss-result__label {
   font-size: var(--text-12);

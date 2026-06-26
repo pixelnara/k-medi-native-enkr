@@ -152,3 +152,21 @@
   outline: 2px solid var(--blue-500);
   outline-offset: 4px;
 }
+
+/* ── Active / Press states — tactile feedback ─────────────── */
+.btn:active {
+  transform: scale(0.96);
+  transition: transform 0.07s ease, background 0.07s ease, color 0.07s ease;
+}
+.chip:active,
+.filter:active,
+.faq-tab:active,
+.tv-chip:active,
+.ihc__tab:active {
+  transform: scale(0.94);
+  transition: transform 0.07s ease;
+}
+.link-arrow:active {
+  opacity: 0.5;
+  transition: opacity 0.07s;
+}
