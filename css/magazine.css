@@ -112,10 +112,38 @@
     color: var(--gray-950);
   }
 }
-@media (max-width: 600px) {
+@media (max-width: 860px) {
+  /* 첫 탭이 잘리지 않도록 flex-start + 좌우 패딩 확보 */
+  .mag-filter {
+    border-bottom: none;
+    padding: var(--space-12) 0;
+    /* 우측 fade — 더 스크롤할 항목이 있음을 암시 */
+    -webkit-mask-image: linear-gradient(to right, black calc(100% - 40px), transparent 100%);
+    mask-image: linear-gradient(to right, black calc(100% - 40px), transparent 100%);
+  }
+  .mag-filter__inner {
+    justify-content: flex-start;
+    /* 왼쪽 시작 패딩 + 오른쪽 여분(peek용) */
+    padding: 0 40px 0 var(--gutter);
+    gap: var(--space-8);
+  }
+  /* pill 칩 — 누르기 편한 사이즈 */
   .mag-filter__tab {
-    padding: var(--space-14) var(--space-16);
-    font-size: var(--text-12);
+    padding: 10px 20px;
+    font-size: var(--text-14);
+    letter-spacing: 0.01em;
+    border-radius: 100px;
+    border: 1.5px solid rgba(0, 0, 0, 0.13);
+    border-bottom: 1.5px solid rgba(0, 0, 0, 0.13);
+    margin-bottom: 0;
+    color: var(--text-gray-4, var(--text-gray-3));
+    background: var(--bg-white);
+    touch-action: manipulation;
+  }
+  .mag-filter__tab.is-active {
+    background: var(--gray-950);
+    color: #fff;
+    border-color: var(--gray-950);
   }
 }
 
