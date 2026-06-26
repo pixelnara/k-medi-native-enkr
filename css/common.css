@@ -1203,6 +1203,19 @@ image-slot#cert-sgi {
   .menu-btn span {
     height: 2.5px;
   }
+  .header-menu-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    flex-shrink: 0;
+    color: var(--text-gray-7);
+  }
+  .header-menu-btn svg {
+    width: 22px;
+    height: 22px;
+  }
   .header-mypage-btn {
     /* 모바일 상단바: 로그인(마이페이지) 아이콘 숨김
        - 각 페이지 CSS의 .header-right--v2{display:flex}가 이후 로드되어
@@ -1315,10 +1328,6 @@ image-slot#cert-sgi {
     padding-bottom: env(safe-area-inset-bottom, 0px);
     transition: opacity 0.2s ease;
   }
-  .mobile-bar.is-hidden {
-    opacity: 0;
-    pointer-events: none;
-  }
   /* 하단바 v1 활성 / v2 숨김 */
   .mobile-bar--v1 {
     display: flex;
@@ -1332,6 +1341,8 @@ image-slot#cert-sgi {
     flex: 1;
     height: 80px;
     padding: 0;
+    border: none;
+    outline: none;
     color: rgba(0, 0, 0, 0.28);
     font-size: var(--text-11);
     transition: color 0.18s;
@@ -1354,7 +1365,6 @@ image-slot#cert-sgi {
     background: rgba(0, 0, 0, 0.06);
   }
   .mbar-btn--cta {
-    position: relative;
     flex: 1;
     height: 80px;
     padding: 0;
@@ -1362,17 +1372,8 @@ image-slot#cert-sgi {
     gap: var(--space-5);
     font-size: var(--text-11);
     margin: 0;
-    border-left: none;
+    border: none;
     color: rgba(0, 0, 0, 0.35);
-  }
-  .mbar-btn--cta::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 10px;
-    bottom: 16px;
-    width: 1px;
-    background: rgba(0, 0, 0, 0.13);
   }
   .mbar-btn--cta svg {
     width: 26px;

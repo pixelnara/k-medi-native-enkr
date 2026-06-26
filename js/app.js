@@ -550,23 +550,6 @@
     });
   });
 
-  /* ---------- Mobile bottom bar: hide while scrolling, show on stop ---------- */
-  (function () {
-    const bars = document.querySelectorAll(".mobile-bar");
-    if (!bars.length) return;
-    let scrollTimer = null;
-    window.addEventListener(
-      "scroll",
-      () => {
-        bars.forEach((b) => b.classList.add("is-hidden"));
-        clearTimeout(scrollTimer);
-        scrollTimer = setTimeout(() => {
-          bars.forEach((b) => b.classList.remove("is-hidden"));
-        }, 300);
-      },
-      { passive: true },
-    );
-  })();
 
   /* ---------- Footer top button ---------- */
   const footerTopBtn = document.querySelector(".footer__top-btn");
