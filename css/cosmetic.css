@@ -312,8 +312,9 @@
     gap: var(--space-8);
   }
   .cosm-select-btn {
-    padding: var(--space-6) var(--space-10);
+    padding: var(--space-6) var(--space-8);
     font-size: var(--text-13);
+    border-radius: 0.2em;
   }
   .cosm-count {
     font-size: var(--text-13);
