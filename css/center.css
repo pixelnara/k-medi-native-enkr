@@ -293,37 +293,6 @@ figure.art-img--center img {
   background: var(--text-gray-6);
 }
 
-/* ─────────────────────────────────────────────────────
-   BUILDING INFO — concrete section
-   ───────────────────────────────────────────────────── */
-.building-info {
-  margin-top: var(--space-28);
-}
-.building-table {
-  border-top: 1px solid var(--border-gray-1);
-  margin-top: var(--space-64);
-}
-.building-row {
-  display: flex;
-  gap: var(--space-20);
-  padding: 15px 0;
-  border-bottom: 1px solid var(--border-gray-1);
-  align-items: flex-start;
-}
-.building-dt {
-  font-size: var(--text-16);
-  font-weight: 700;
-  color: var(--text-gray-6);
-  min-width: 90px;
-  flex-shrink: 0;
-}
-.building-dd {
-  font-size: var(--text-16);
-  font-weight: 450;
-  color: var(--text-gray-3);
-  line-height: 1.7;
-  flex: 1;
-}
 
 /* ─────────────────────────────────────────────────────
    INFO TABLE — schedule / booking info box
@@ -819,23 +788,6 @@ figure.art-img--center img {
     font-weight: 600;
   }
   .info-dd {
-    font-size: 15px;
-    line-height: 1.7;
-  }
-  .building-table {
-    margin-top: var(--space-40);
-  }
-  .building-row {
-    gap: var(--space-16);
-    padding: 13px 0;
-  }
-  .building-dt {
-    min-width: 84px;
-    font-size: 15px;
-    line-height: 1.6;
-    font-weight: 500;
-  }
-  .building-dd {
     font-size: 15px;
     line-height: 1.7;
   }
