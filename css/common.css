@@ -1377,7 +1377,9 @@ image-slot#cert-sgi {
     gap: var(--space-5);
     font-size: var(--text-11);
     margin: 0;
-    border: none;
+    border: none !important;
+    outline: none;
+    box-shadow: none !important;
     color: rgba(0, 0, 0, 0.35);
   }
   .mbar-btn--cta svg {

@@ -1803,8 +1803,8 @@
     }
   }
 
-  /* Mobile bottom bar */
-  .mobile-bar {
+  /* Mobile bottom bar — dark 클래스 없을 때만 흰 배경 적용 */
+  .mobile-bar:not(.mobile-bar--dark) {
     background: var(--bg-white);
     border-top: 1px solid rgba(0, 0, 0, 0.09);
     box-shadow: 0 -2px 12px rgba(0, 0, 0, 0.06);
