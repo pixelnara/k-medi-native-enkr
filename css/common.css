@@ -1521,7 +1521,7 @@ image-slot#cert-sgi {
     }
   }
   .mobile-bar--dark .mbar-btn.is-active {
-    color: #fff;
+    color: var(--text-white);
   }
   .mobile-bar--dark .mbar-btn.is-active svg {
     fill: currentColor;

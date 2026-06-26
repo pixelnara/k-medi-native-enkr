@@ -144,7 +144,7 @@
   }
   .mag-filter__tab.is-active {
     background: var(--gray-950);
-    color: #fff;
+    color: var(--text-white);
     border-color: var(--gray-950);
   }
 }

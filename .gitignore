@@ -1,15 +1,11 @@
-<<<<<<< HEAD
-design-system.html
-MD/
-=======
 .DS_Store
 .vscode/
 .claude/
 
-# 문서
+# 문서 (내부용)
 MD/
 
-# 디자인 시스템 파일
+# 디자인 시스템 파일 (내부용)
 design-system.html
 
 # Next.js / Node
@@ -20,4 +16,3 @@ next-env.d.ts
 
 # 빌드 아카이브
 *.zip
->>>>>>> 5e6c833d9f87b4b08801641f54d1d1e48747a05b
