@@ -706,7 +706,8 @@ image-slot#cert-sgi {
 }
 /* ──────────── → components/header.css (GNB Overlay) ──────────── */
 
-REVEAL ON SCROLL ============================================================ */ [data-reveal] {
+/* REVEAL ON SCROLL ============================================================ */
+[data-reveal] {
   opacity: 0;
   transform: translateY(34px);
   transition:
@@ -962,7 +963,7 @@ REVEAL ON SCROLL ============================================================ */
     display: none;
   }
   .gnb-banner--hugro::before {
-    background-image: url("../assets/img/img-building.png");
+    background-image: url("/assets/img/img-building.png");
   }
   /* 텍스트 블록 */
   .gnb-banner__inner {
