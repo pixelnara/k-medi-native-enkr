@@ -1290,11 +1290,9 @@ image-slot#cert-sgi {
     padding: 0;
     padding-bottom: env(safe-area-inset-bottom, 0px);
     transition:
-      transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
-      opacity 0.3s ease;
+      opacity 0.2s ease;
   }
   .mobile-bar.is-hidden {
-    transform: translateY(100%);
     opacity: 0;
     pointer-events: none;
   }
@@ -1307,13 +1305,13 @@ image-slot#cert-sgi {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: var(--space-5);
+    gap: var(--space-4);
     flex: 1;
     height: 80px;
     padding: 0;
-    color: rgba(0, 0, 0, 0.35);
+    color: rgba(0, 0, 0, 0.28);
     font-size: var(--text-11);
-    transition: color 0.2s;
+    transition: color 0.18s;
     text-decoration: none;
   }
   @media (hover: hover) {
@@ -1325,14 +1323,20 @@ image-slot#cert-sgi {
     color: var(--gray-950);
   }
   .mbar-btn.is-active svg {
+    width: 30px;
+    height: 30px;
     fill: currentColor;
-    /* 라인(stroke) 유지 + fill 채움 — stroke-width는 인라인(2) 사용 */
     stroke: currentColor;
   }
+  .mbar-btn.is-active .mbar-label {
+    font-size: var(--text-11);
+    font-weight: 700;
+    color: var(--gray-950);
+  }
   .mbar-btn:active {
-    transform: scale(0.88);
-    opacity: 0.65;
-    transition: transform 0.07s ease, opacity 0.07s ease;
+    transform: scale(0.72);
+    opacity: 0.5;
+    transition: transform 0.06s ease, opacity 0.06s ease;
   }
   .mbar-btn--cta {
     position: relative;
@@ -1365,15 +1369,15 @@ image-slot#cert-sgi {
     letter-spacing: var(--tracking-loose);
   }
   .mbar-label {
-    font-size: var(--text-10);
-    font-weight: 600;
+    font-size: 9px;
+    font-weight: 500;
     letter-spacing: var(--tracking-loose);
     color: inherit;
     white-space: nowrap;
   }
   .mbar-btn svg {
-    width: 26px;
-    height: 26px;
+    width: 20px;
+    height: 20px;
     flex-shrink: 0;
   }
   button.mbar-btn {
@@ -1679,5 +1683,14 @@ image-slot#cert-sgi {
   }
   .ed-head__more {
     font-size: var(--text-11);
+  }
+}
+
+/* ── 터치 디바이스 수직 리스트 눌림 효과 ───────────────────── */
+@media (hover: none) {
+  .mag-card:active,
+  .news-card:active {
+    background: var(--surface-gray-1);
+    transition: background 0s;
   }
 }
