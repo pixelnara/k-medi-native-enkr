@@ -183,6 +183,9 @@
    RESPONSIVE
    ───────────────────────────────────────────────────── */
 @media (max-width: 900px) {
+  .proc-slide__title {
+    font-size: clamp(24px, 5.5vw, 36px);
+  }
   .proc-filter .tab-line__btn {
     padding: 16px 16px 14px;
     font-size: var(--text-13);

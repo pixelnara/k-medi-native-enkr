@@ -238,6 +238,13 @@
   white-space: nowrap;
 }
 @media (max-width: 700px) {
+  .foot-contact__title {
+    font-size: var(--type-h4);
+  }
+  .foot-contact__desc {
+    font-size: var(--text-14);
+    line-height: 1.4;
+  }
   .foot-contact {
     border-top: none;
   }

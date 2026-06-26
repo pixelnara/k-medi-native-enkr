@@ -107,10 +107,24 @@ k-medi-web/
 | 이름 | 값 | 용도 |
 |------|-----|------|
 | mobile | `≤ 860px` | 바텀바, 헤더 햄버거, 컴포넌트 모바일 |
-| tablet | `≤ 768px` | page-hero 크기 |
-| small | `≤ 600px` | page-head-edito 단일 컬럼 |
+| tablet | `≤ 768px` | page-hero 크기, faq 탭 스크롤 |
+| small | `≤ 700px` | foot-contact 단일 컬럼 |
+| small | `≤ 600px` | page-head-edito 단일 컬럼, 모바일 타이포 최소값 |
 | xs | `≤ 520px` | 그리드 1컬럼 |
 | xxs | `≤ 480px` | 코스메틱 그리드 |
+
+## 모바일 타이포그래피 조정 (미디어 쿼리)
+
+| 파일 | 선택자 | 데스크탑 | 모바일 브레이크포인트 |
+|------|--------|---------|-------------------|
+| `common.css` | `.page-hero__title` | `var(--text-80)` | `≤ 860px`: `clamp(40–56px)` |
+| `common.css` | `.page-head-edito__title` | `clamp(40–88px)` | `≤ 600px`: `clamp(32–52px)` |
+| `magazine.css` | `.art2-hero__title` | `clamp(32–76px)` | `≤ 860px`: `clamp(28–44px)` · `≤ 600px`: `clamp(24–34px)` |
+| `procedure.css` | `.proc-slide__title` | `clamp(32–52px)` | `≤ 900px`: `clamp(24–36px)` |
+| `procedure-detail.css` | `.pd-hero__title` | `clamp(44–88px)` | `≤ 900px`: `clamp(32–48px)` · `≤ 600px`: `clamp(36–60px)` |
+| `center.css` | `.related-posts__heading` | `--space-16` | `≤ 860px`: `--space-8` |
+| `components/footer.css` | `.foot-contact__title` | `var(--type-h3)` | `≤ 700px`: `var(--type-h4)` |
+| `components/footer.css` | `.foot-contact__desc` | `var(--text-15)` | `≤ 700px`: `var(--text-14)` |
 
 ---
 
@@ -151,8 +165,10 @@ k-medi-web/
 - [x] font-synthesis: none 선언
 - [x] iOS safe-area 대응
 - [x] 하단 바텀바 JS 컴포넌트화
-- [x] 디자인 토큰 하드코딩 제거
-- [x] Editorial Page Head 컴포넌트화
+- [x] 디자인 토큰 하드코딩 제거 (`#fff` → `var(--text-white)`)
+- [x] Editorial Page Head 컴포넌트화 (A형/B형)
+- [x] Magazine 필터 탭 → pill 칩 가로 스크롤 (모바일)
+- [x] 모바일 타이포그래피 미디어 쿼리 전수 점검
 - [ ] `prefers-reduced-motion` 애니메이션 대응
 - [ ] `focus-visible` 스타일 보완
 - [ ] React 환경에서 `app.js` → hooks 분리 설계
