@@ -217,6 +217,84 @@ body {
   }
 }
 
+/* ─── Editorial Page Head ─── */
+/* 두 가지 변형:
+   A형 (ISSUE 컬럼 있음): .page-head-edito + .page-head-edito__right 포함 — magazine.html
+   B형 (심플):            .page-head-edito + left 블록만               — skin-sol.html, cosmetic.html
+*/
+.page-head-edito {
+  padding-top: calc(var(--header-h) + clamp(48px, 6vw, 80px));
+  padding-bottom: clamp(32px, 4vw, 56px);
+  border-bottom: 3px solid var(--gray-950);
+  background: var(--bg-white);
+}
+.page-head-edito__inner {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--space-24);
+}
+.page-head-edito__eyebrow {
+  font-size: var(--text-11);
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--text-blue);
+  margin-bottom: var(--space-12);
+}
+.page-head-edito__title {
+  font-size: clamp(40px, 6vw, 88px);
+  font-weight: 700;
+  letter-spacing: var(--tracking-tighter);
+  color: var(--gray-950);
+  line-height: 0.95;
+  margin: 0 0 var(--space-16);
+}
+.page-head-edito__desc {
+  font-size: var(--text-15);
+  color: var(--text-gray-3);
+  max-width: 480px;
+  line-height: 1.65;
+}
+/* ── A형: 우측 ISSUE 컬럼 ── */
+.page-head-edito__right {
+  flex-shrink: 0;
+  text-align: right;
+}
+.page-head-edito__issue-label {
+  font-size: var(--text-11);
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-gray-2);
+  margin-bottom: var(--space-4);
+}
+.page-head-edito__issue-num {
+  font-size: clamp(28px, 4vw, 52px);
+  font-weight: 700;
+  color: var(--gray-950);
+  letter-spacing: var(--tracking-tight);
+  line-height: 1;
+}
+.page-head-edito__issue-date {
+  font-size: var(--text-13);
+  font-weight: 500;
+  color: var(--text-gray-2);
+  margin-top: var(--space-4);
+}
+@media (max-width: 600px) {
+  .page-head-edito__inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .page-head-edito__right {
+    text-align: left;
+  }
+  .page-head-edito__title {
+    font-size: clamp(36px, 9vw, 52px);
+  }
+}
+
 /* 다크 풀-위드 배너. center / procedure / travel / skin-analysis 에서 공유. */
 .cta-banner {
   background: var(--bg-dark);
