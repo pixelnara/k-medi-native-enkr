@@ -334,3 +334,37 @@
     padding: var(--space-4) 7px;
   }
 }
+
+/* ── Mobile: page-hero → Magazine 스타일 ── */
+@media (max-width: 860px) {
+  .page-hero {
+    text-align: left;
+    border-bottom: 3px solid var(--gray-950);
+  }
+  .page-hero .eyebrow {
+    text-align: left;
+    font-size: var(--text-11);
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    color: var(--text-blue);
+    margin-bottom: var(--space-12);
+  }
+  .page-hero .eyebrow::before {
+    display: none;
+  }
+  .page-hero__title {
+    font-size: clamp(36px, 9vw, 52px);
+    letter-spacing: var(--tracking-tighter);
+    color: var(--gray-950);
+    line-height: 0.95;
+    margin-bottom: var(--space-12);
+  }
+  .page-hero__sub {
+    font-size: var(--text-14);
+    color: var(--text-gray-3);
+    line-height: 1.65;
+    margin-left: 0;
+    margin-right: 0;
+    text-align: left;
+  }
+}
