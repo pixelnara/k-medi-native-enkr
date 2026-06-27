@@ -13,6 +13,29 @@
 }
 
 /* ────────────────────────────────────────────────
+   HEADER — Minimal: 햄버거만 노출
+──────────────────────────────────────────────── */
+.header--reservation .header__util,
+.header--reservation .brand,
+.header--reservation .header__tagline,
+.header--reservation .gnb,
+.header--reservation .header__right .btn--primary2,
+.header--reservation .header-lang-btn,
+.header--reservation .header-mypage-btn {
+  display: none;
+}
+
+.header--reservation,
+.header--reservation.is-solid {
+  background: transparent;
+  box-shadow: none;
+}
+
+.header--reservation .header__main .wrap {
+  justify-content: flex-end;
+}
+
+/* ────────────────────────────────────────────────
    HERO — Page title + step indicator
 ──────────────────────────────────────────────── */
 .rsv-hero {

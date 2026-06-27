@@ -500,6 +500,12 @@
 .header--solid .header__util {
   border-color: var(--border-gray-1);
 }
+.header--solid .header__util a,
+.header--solid .header__util .util-dropdown__trigger,
+.header--solid .header__util .lang-code,
+.header--solid .header__util .lang-select__btn {
+  color: var(--text-gray-6);
+}
 .header--solid .link-arrow {
   color: var(--text-gray-6);
 }
@@ -677,22 +683,7 @@
 }
 /* GNB open: overflow managed via JS (document.body.style.overflow) */
 
-@keyframes gnb-enter {
-  from { opacity: 0; transform: translateY(18px); }
-  to   { opacity: 1; transform: none; }
-}
-.gnb-overlay.is-open .gnb-cols {
-  animation: gnb-enter 0.35s cubic-bezier(0.22, 1, 0.36, 1) 0.2s both;
-}
-.gnb-overlay.is-open .gnb-banners {
-  animation: gnb-enter 0.3s cubic-bezier(0.22, 1, 0.36, 1) 0.28s both;
-}
-@media (prefers-reduced-motion: reduce) {
-  .gnb-overlay.is-open .gnb-cols,
-  .gnb-overlay.is-open .gnb-banners {
-    animation: none;
-  }
-}
+/* GNB 콘텐츠(컬럼·배너) 등장 애니메이션 제거 — 메뉴 내용은 즉시 표시 */
 
 /* Dark theme variant — desktop only (861px+) */
 @media (min-width: 861px) {

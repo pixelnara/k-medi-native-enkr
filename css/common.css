@@ -979,7 +979,7 @@ image-slot#cert-sgi {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: var(--space-12) 0;
+    padding: var(--space-16) 0;
     font-size: var(--text-15);
     font-weight: 550;
     color: var(--text-gray-6);
@@ -1023,53 +1023,14 @@ image-slot#cert-sgi {
     background: var(--surface-gray-2);
     padding: var(--space-0) var(--space-0);
   }
-  @keyframes gnb-col-open {
-    from {
-      opacity: 0;
-      transform: translateY(-12px);
-    }
-    to {
-      opacity: 1;
-      transform: none;
-    }
-  }
-  @keyframes gnb-li-enter {
-    from {
-      opacity: 0;
-      transform: translateX(-8px);
-    }
-    to {
-      opacity: 1;
-      transform: none;
-    }
-  }
   .gnb-col.is-open ul {
     display: flex;
-    animation: gnb-col-open 0.28s cubic-bezier(0.22, 1, 0.36, 1) both;
-  }
-  .gnb-col.is-open ul > li {
-    animation: gnb-li-enter 0.22s cubic-bezier(0.22, 1, 0.36, 1) both;
-  }
-  .gnb-col.is-open ul > li:nth-child(1) {
-    animation-delay: 0.05s;
-  }
-  .gnb-col.is-open ul > li:nth-child(2) {
-    animation-delay: 0.1s;
-  }
-  .gnb-col.is-open ul > li:nth-child(3) {
-    animation-delay: 0.15s;
-  }
-  .gnb-col.is-open ul > li:nth-child(4) {
-    animation-delay: 0.2s;
-  }
-  .gnb-col.is-open ul > li:nth-child(5) {
-    animation-delay: 0.25s;
   }
   .gnb-col ul > li > a {
     display: block;
     padding: var(--space-12) var(--space-8);
-    font-size: var(--text-14);
-    font-weight: 500;
+    font-size: var(--text-16);
+    font-weight: 550;
     color: var(--text-gray-6);
     letter-spacing: var(--tracking-tight);
     line-height: 1.4;
@@ -1117,23 +1078,15 @@ image-slot#cert-sgi {
     flex: 1;
     display: block;
     padding: var(--space-12) var(--space-8);
-    font-size: var(--text-14);
-    font-weight: 500;
+    font-size: var(--text-16);
+    font-weight: 550;
     color: var(--text-gray-6);
     letter-spacing: var(--tracking-tight);
     line-height: 1.4;
   }
+  /* 모바일: 하위 트리를 항상 펼쳐 두므로 토글 버튼(쉐브론)은 숨긴다 */
   .gnb-sub-toggle {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 44px;
-    height: 44px;
-    flex-shrink: 0;
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 0;
+    display: none;
   }
   .gnb-sub-toggle:active {
     opacity: 0.45;
@@ -1157,13 +1110,12 @@ image-slot#cert-sgi {
     display: flex;
     flex-direction: column;
     border-left: 2px solid var(--border-gray-1);
-    animation: gnb-col-open 0.24s cubic-bezier(0.22, 1, 0.36, 1) both;
   }
   .gnb-has-sub.is-open .gnb-sub-list > li > a {
     display: block;
-    padding: var(--space-12) var(--space-8) var(--space-12) var(--space-16);
-    font-size: var(--text-13);
-    font-weight: 450;
+    padding: var(--space-12) var(--space-8) var(--space-18) var(--space-12);
+    font-size: var(--text-15);
+    font-weight: 500;
     color: var(--text-gray-6);
     letter-spacing: var(--tracking-normal);
     line-height: 1.4;
@@ -1176,7 +1128,7 @@ image-slot#cert-sgi {
   .gnb-col.is-open ul .gnb-has-sub.is-open .gnb-sub-list .gnb-sub-list {
     display: flex;
     flex-direction: column;
-    padding: 0 0 var(--space-4) var(--space-16);
+    padding: 0 0 0 var(--space-24);
     border-left: 2px solid var(--border-gray-1);
     margin-top: var(--space-4);
   }
@@ -1187,7 +1139,7 @@ image-slot#cert-sgi {
     color: var(--text-gray-6);
     letter-spacing: var(--tracking-normal);
     line-height: 1.4;
-    font-weight: 400;
+    font-weight: 550;
     border-bottom: 1px solid var(--border-gray-1);
   }
   .gnb-col.is-open ul .gnb-has-sub.is-open .gnb-sub-list .gnb-sub-list li:last-child a {
@@ -1207,7 +1159,7 @@ image-slot#cert-sgi {
     align-items: center;
     height: auto;
     min-height: auto;
-    padding: var(--space-14) calc(var(--gutter) + var(--space-12)) var(--space-14) var(--gutter);
+    padding: var(--space-16) calc(var(--gutter) + var(--space-12)) var(--space-14) var(--gutter);
     background: var(--bg-white);
     gap: var(--space-14);
     color: var(--text-gray-7);
@@ -1220,7 +1172,7 @@ image-slot#cert-sgi {
     width: 72px;
     height: 72px;
     min-width: 72px;
-    border-radius: 10px;
+    border-radius: 2px;
     flex-shrink: 0;
     transform: none !important;
     transition: none;
@@ -1268,37 +1220,21 @@ image-slot#cert-sgi {
     align-self: center;
     flex-shrink: 0;
   }
-  /* 시술 서브리스트 — 모바일: 토글 버튼·하위 목록 숨김, 항목은 일반 텍스트처럼 */
-  .gnb-sub-list .gnb-has-sub .gnb-sub-toggle {
-    display: none;
-  }
-  .gnb-sub-list .gnb-has-sub > ul.gnb-sub-list,
+  /* 시술 서브리스트 — 모바일: 시술 항목(All/Filler/…)을 인라인으로 펼쳐 표시 */
   .gnb-sub-list .gnb-has-sub.is-open > ul.gnb-sub-list {
-    display: none !important;
+    display: flex !important;
   }
   .gnb-sub-list .gnb-item-row {
     border-bottom: 1px solid var(--border-gray-1);
   }
   .gnb-sub-list .gnb-item-row > a {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: var(--space-12) var(--space-18) var(--space-12) var(--space-16);
-    font-size: var(--text-13);
-    font-weight: 450;
+    flex: 1;
+    display: block;
+    padding: var(--space-12) var(--space-0);
+    font-size: var(--text-15);
+    font-weight: 550;
     color: var(--text-gray-6);
     line-height: 1.4;
-  }
-  .gnb-sub-list .gnb-item-row > a::after {
-    content: "";
-    display: inline-block;
-    width: 7px;
-    height: 7px;
-    border-top: 2px solid var(--text-gray-6);
-    border-right: 2px solid var(--text-gray-6);
-    transform: rotate(45deg);
-    flex-shrink: 0;
-    margin-left: var(--space-8);
   }
 
   .stay__grid {

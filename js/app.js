@@ -153,6 +153,7 @@
   })();
 
   /* ---------- GNB accordion (mobile) ---------- */
+  const gnbIsMobile = () => window.KMT.mqMax(BP.mobile).matches;
   document.querySelectorAll(".gnb-col > h4").forEach((h4) => {
     h4.addEventListener("click", () => {
       const col = h4.parentElement;
@@ -161,7 +162,13 @@
         c.classList.remove("is-open");
         c.querySelectorAll(".gnb-has-sub.is-open").forEach((s) => s.classList.remove("is-open"));
       });
-      if (!isOpen) col.classList.add("is-open");
+      if (!isOpen) {
+        col.classList.add("is-open");
+        // 모바일: 하위 트리 전체(뷰티 컨시어지 → 시술 → 항목)를 한번에 펼친다
+        if (gnbIsMobile()) {
+          col.querySelectorAll(".gnb-has-sub").forEach((s) => s.classList.add("is-open"));
+        }
+      }
     });
   });
 
@@ -182,20 +189,11 @@
     });
   });
 
-  /* ---------- 시술 팝업 시트 (모바일) ---------- */
+  /* ---------- 시술 팝업 시트 (모바일) ----------
+     모바일 GNB가 시술 항목을 인라인으로 펼쳐 보여주므로 별도 팝업 시트는 사용하지 않는다.
+     (proc-sheet 마크업/스타일은 유지하되 트리거를 비활성화 → '시술 종류'는 procedure.html로 이동) */
   const procSheet = document.getElementById("procSheet");
   const procClose = procSheet && procSheet.querySelector(".proc-sheet__close");
-  const isMobile = () => window.KMT.mqMax(BP.mobile).matches;
-  document.querySelectorAll(".gnb-proc-trigger").forEach((trigger) => {
-    trigger.addEventListener("click", (e) => {
-      if (isMobile() && procSheet) {
-        e.preventDefault();
-        e.stopPropagation();
-        procSheet.classList.add("is-open");
-        procSheet.setAttribute("aria-hidden", "false");
-      }
-    });
-  });
   if (procClose) {
     procClose.addEventListener("click", () => {
       procSheet.classList.remove("is-open");
