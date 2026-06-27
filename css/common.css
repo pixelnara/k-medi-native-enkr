@@ -1029,7 +1029,7 @@ image-slot#cert-sgi {
   .gnb-col ul > li > a {
     display: block;
     padding: var(--space-12) var(--space-8);
-    font-size: var(--text-16);
+    font-size: var(--text-14);
     font-weight: 550;
     color: var(--text-gray-6);
     letter-spacing: var(--tracking-tight);
@@ -1078,7 +1078,7 @@ image-slot#cert-sgi {
     flex: 1;
     display: block;
     padding: var(--space-12) var(--space-8);
-    font-size: var(--text-16);
+    font-size: var(--text-14);
     font-weight: 550;
     color: var(--text-gray-6);
     letter-spacing: var(--tracking-tight);
@@ -1231,7 +1231,7 @@ image-slot#cert-sgi {
     flex: 1;
     display: block;
     padding: var(--space-12) var(--space-0);
-    font-size: var(--text-15);
+    font-size: var(--text-14);
     font-weight: 550;
     color: var(--text-gray-6);
     line-height: 1.4;
