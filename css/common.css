@@ -374,6 +374,22 @@ body {
   }
 }
 
+/* B형 센터 정렬 — cosmetic-ko / skin-sol-ko PC 전용 */
+.page-head-edito--center .page-head-edito__inner {
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.page-head-edito--center .page-head-edito__desc {
+  max-width: 560px;
+}
+@media (max-width: 600px) {
+  .page-head-edito--center .page-head-edito__inner {
+    align-items: flex-start;
+    text-align: left;
+  }
+}
+
 /* ─── Editorial Header 이후 첫 콘텐츠 섹션 상단 패딩 (공통 관리) ───
    여기서만 수정하면 해당 모든 페이지에 반영된다.
    skin-sol → .pss-sol-nav  /  cosmetic → .cosm-shop
