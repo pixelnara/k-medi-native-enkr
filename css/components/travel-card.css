@@ -50,8 +50,8 @@
 
 .tv-card__title {
   font-family: var(--font-display);
-  font-size: var(--text-17);
-  font-weight: 700;
+  font-size: var(--h5-size);
+  font-weight: var(--h5-weight);
   letter-spacing: var(--tracking-tight);
   color: var(--text-gray-6);
   margin-bottom: var(--space-8);

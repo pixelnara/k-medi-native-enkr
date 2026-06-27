@@ -8,13 +8,6 @@
    ============================================================ */
 
 :root {
-  /* [Deprecated] 하위 호환용 alias — 신규/기존 코드 모두 --font-display 사용.
-     프로덕션 CSS에서는 미사용(design-system.html 문서 예시로만 잔존). */
-  --font-en: Optima, Marcellus, Candara, sans-serif;
-
-  /* 국문/기본: Pretendard Variable → 시스템 폰트 */
-  --font-sans: "Pretendard Variable", -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", sans-serif;
-
   /* ── Semantic Font Role ── */
   /* Display: 장식·브랜드·히어로 제목 (Optima 계열) */
   --font-display: Optima, Marcellus, Candara, "Pretendard Variable", serif;

@@ -134,7 +134,7 @@
 }
 
 .art-section__body {
-  font-size: var(--type-body-lg);
+  font-size: var(--res-body-lg);
   font-weight: 450;
   line-height: 1.9;
   color: var(--text-gray-7);
@@ -157,12 +157,12 @@ figure.art-img img {
   display: block;
 }
 figure.art-img figcaption {
-  font-size: var(--typo-caption-size);
-  font-weight: var(--typo-caption-weight);
-  color: var(--typo-caption-color);
+  font-size: var(--caption-size);
+  font-weight: var(--caption-weight);
+  color: var(--text-gray-2);
   text-align: center;
   margin-top: var(--space-24);
-  line-height: var(--typo-caption-line);
+  line-height: var(--caption-line);
 }
 /* Centered image variant */
 figure.art-img--center {
@@ -179,14 +179,14 @@ figure.art-img--center img {
 
 /* Highlight text */
 .art-highlight {
-  border-left: 4px solid var(--text-caption);
+  border-left: 4px solid var(--accent-blue);
   padding-left: 18px;
   margin: 40px 0;
 }
 .art-highlight__label {
   font-size: var(--text-12);
   font-weight: 700;
-  color: var(--text-caption);
+  color: var(--accent-blue);
   letter-spacing: var(--tracking-open);
   margin-bottom: var(--space-6);
 }
@@ -225,12 +225,12 @@ figure.art-img--center img {
   display: block;
 }
 .treatment-carousel__slide figcaption {
-  font-size: var(--typo-caption-size);
-  font-weight: var(--typo-caption-weight);
-  color: var(--typo-caption-color);
+  font-size: var(--caption-size);
+  font-weight: var(--caption-weight);
+  color: var(--text-gray-2);
   text-align: center;
   margin-top: 9px;
-  line-height: var(--typo-caption-line);
+  line-height: var(--caption-line);
 }
 .treatment-carousel__btn {
   position: absolute;
@@ -459,7 +459,7 @@ figure.art-img--center img {
   font-weight: 700;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--text-caption2);
+  color: var(--text-gray-3);
   margin-bottom: var(--space-10);
 }
 
@@ -507,7 +507,7 @@ figure.art-img--center img {
   font-weight: 600;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--text-caption);
+  color: var(--accent-blue);
   margin-bottom: var(--space-10);
 }
 .location-info h2 {
@@ -528,7 +528,7 @@ figure.art-img--center img {
   line-height: 1.7;
 }
 .location-meta a {
-  color: var(--text-caption);
+  color: var(--accent-blue);
   text-decoration: underline;
   text-underline-offset: 3px;
 }
@@ -585,7 +585,7 @@ figure.art-img--center img {
 }
 @media (hover: hover) {
   .map-card__btn:hover {
-    background: var(--text-caption);
+    background: var(--accent-blue);
     color: var(--text-white);
     box-shadow: 0 6px 20px rgba(155, 121, 67, 0.28);
   }
@@ -673,7 +673,7 @@ figure.art-img--center img {
   }
 }
 .rpost-card__title {
-  font-size: var(--type-h5);
+  font-size: var(--res-h5);
   font-weight: 700;
   letter-spacing: var(--tracking-tight);
   color: var(--text-gray-6);

@@ -185,7 +185,7 @@
   flex-wrap: wrap;
 }
 .foot-contact__title {
-  font-size: var(--type-h3);
+  font-size: var(--res-h3);
   font-weight: 700;
   color: var(--text-gray-7);
   letter-spacing: var(--tracking-tight);
@@ -239,7 +239,7 @@
 }
 @media (max-width: 700px) {
   .foot-contact__title {
-    font-size: var(--type-h4);
+    font-size: var(--res-h4);
   }
   .foot-contact__desc {
     font-size: var(--text-14);

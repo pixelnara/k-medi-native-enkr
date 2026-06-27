@@ -44,9 +44,9 @@
   gap: var(--space-10);
   height: 54px;
   padding: 0 var(--space-32);
-  font-size: var(--typo-button-size);
-  font-weight: var(--typo-button-weight);
-  letter-spacing: var(--typo-button-letter);
+  font-size: var(--button-size);
+  font-weight: var(--button-weight);
+  letter-spacing: var(--button-letter);
   border: 1px solid var(--text-gray-6);
   color: var(--text-gray-6);
   background: transparent;

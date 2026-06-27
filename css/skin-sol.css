@@ -14,7 +14,6 @@
   /* 시맨틱 토큰 재매핑 */
   --accent-gray-1: var(--edi-blue); /* 아이콘·체크·숫자원·액티브·보더강조 */
   --accent-gray-2: var(--edi-blue-d); /* 아코디언·버튼·CTA 배경 */
-  --text-caption: var(--edi-blue); /* 카테고리/캡션 라벨 = 블루 */
   --btn-primary: var(--edi-blue); /* 솔리드 블루 버튼 */
   --btn-secondary: var(--edi-blue-d); /* 버튼 호버 */
 
@@ -228,7 +227,7 @@
   width: 52px;
   height: 52px;
   border-radius: 0;
-  background: var(--icon-bg-white);
+  background: var(--white);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -245,7 +244,7 @@
   font-size: var(--text-14);
   font-weight: 700;
   letter-spacing: var(--tracking-normal);
-  color: var(--text-caption);
+  color: var(--accent-blue);
   /* margin-bottom: var(--space-4); */
 }
 .pss-category__title {
@@ -509,7 +508,7 @@
   font-weight: 700;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--text-caption);
+  color: var(--accent-blue);
   margin-bottom: var(--space-16);
 }
 .pss-result__code {
@@ -743,7 +742,7 @@
 .pss-ingredient-card__ppm {
   font-size: var(--text-11);
   font-weight: 700;
-  color: var(--text-caption);
+  color: var(--accent-blue);
   letter-spacing: var(--tracking-open);
   background: var(--gray-50);
   padding: 3px 8px;
@@ -1042,7 +1041,7 @@
 }
 .pss-rec-section__more {
   font-size: var(--text-12);
-  color: var(--text-caption);
+  color: var(--accent-blue);
   text-decoration: none;
   font-weight: 600;
   letter-spacing: var(--tracking-normal);

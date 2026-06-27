@@ -105,7 +105,7 @@
 }
 @media (hover: hover) {
   .pd-rec-item:hover .pd-rec-item__img-wrap {
-    border-color: var(--text-caption);
+    border-color: var(--accent-blue);
   }
 }
 .pd-rec-item__img {
@@ -190,7 +190,7 @@
   width: 64px;
   height: 64px;
   border-radius: 50%;
-  background: var(--text-caption);
+  background: var(--accent-blue);
   color: var(--text-white);
   font-size: var(--text-12);
   font-weight: 700;
@@ -266,7 +266,7 @@
   border: none;
 }
 .pd-gallery__dot.is-active {
-  background: var(--text-caption);
+  background: var(--accent-blue);
   transform: scale(1.3);
 }
 
@@ -278,8 +278,8 @@
   display: inline-block;
   font-size: var(--text-13);
   font-weight: 600;
-  color: var(--text-caption);
-  border: 1.5px solid var(--text-caption);
+  color: var(--accent-blue);
+  border: 1.5px solid var(--accent-blue);
   border-radius: 2px;
   padding: 3px var(--space-12);
   margin-bottom: var(--space-16);
@@ -331,7 +331,7 @@
   transition: border-color 0.15s;
 }
 .pd-option-item.is-selected {
-  border-color: var(--text-caption);
+  border-color: var(--accent-blue);
 }
 .pd-option-dot {
   width: 18px;
@@ -342,8 +342,8 @@
   position: relative;
 }
 .pd-option-item.is-selected .pd-option-dot {
-  border-color: var(--text-caption);
-  background: var(--text-caption);
+  border-color: var(--accent-blue);
+  background: var(--accent-blue);
 }
 .pd-option-item.is-selected .pd-option-dot::after {
   content: "";
@@ -575,7 +575,7 @@
 .pd-detail-hero__title {
   font-family: var(--font-display);
   font-size: var(--text-32);
-  font-weight: var(--typo-h1-weight);
+  font-weight: var(--h1-weight);
   line-height: 1.35;
   letter-spacing: var(--tracking-tight);
   margin-bottom: var(--space-16);
@@ -624,7 +624,7 @@
   flex-shrink: 0;
 }
 .pd-feat-icon {
-  color: var(--text-caption);
+  color: var(--accent-blue);
   font-size: var(--text-13);
 }
 
@@ -662,7 +662,7 @@
   min-width: 28px;
   height: 28px;
   border-radius: 50%;
-  background: var(--text-caption);
+  background: var(--accent-blue);
   color: var(--text-white);
   font-size: var(--text-14);
   font-weight: 700;

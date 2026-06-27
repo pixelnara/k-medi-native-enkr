@@ -26,7 +26,7 @@
 .mag-page-head__title {
   font-family: var(--font-display);
   font-size: clamp(40px, 6vw, 88px);
-  font-weight: var(--typo-h1-weight);
+  font-weight: var(--h1-weight);
   letter-spacing: var(--tracking-tighter);
   color: var(--gray-950);
   line-height: 0.95;
@@ -488,10 +488,10 @@
   object-fit: cover;
 }
 .art-body figcaption {
-  font-size: var(--typo-caption-size);
-  color: var(--typo-caption-color);
+  font-size: var(--caption-size);
+  color: var(--text-gray-2);
   margin-top: var(--space-10);
-  letter-spacing: var(--typo-caption-letter);
+  letter-spacing: var(--caption-letter);
 }
 
 /* ─── Article Sidebar ─── */
@@ -679,7 +679,7 @@
 .art2-hero__title {
   font-family: var(--font-display);
   font-size: clamp(32px, 5.5vw, 76px);
-  font-weight: var(--typo-h1-weight);
+  font-weight: var(--h1-weight);
   color: var(--text-white);
   letter-spacing: var(--tracking-tighter);
   line-height: 1.1;

@@ -169,7 +169,7 @@ input[type="password"].login-modal__input {
 .login-modal__forgot {
   font-size: var(--text-11);
   font-weight: 500;
-  color: var(--text-caption);
+  color: var(--accent-blue);
   text-decoration: none;
 }
 @media (hover: hover) {

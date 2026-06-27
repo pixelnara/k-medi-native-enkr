@@ -21,10 +21,10 @@
 
 body {
   font-family: var(--font-body);
-  font-size: var(--typo-body-size);
-  font-weight: var(--typo-body-weight);
-  line-height: var(--typo-body-line);
-  letter-spacing: var(--typo-body-letter);
+  font-size: var(--body-2-size);
+  font-weight: var(--body-2-weight);
+  line-height: var(--body-2-line);
+  letter-spacing: var(--body-2-letter);
   background: var(--bg-white);
   color: var(--text-gray-3);
 }
@@ -43,13 +43,13 @@ body {
 .section--surface {
   background: var(--surface-gray-4);
 }
-/* Eyebrow / section label — the ONLY place --caption is used */
+/* Eyebrow / section label — Overline tier (--overline-*) */
 .eyebrow {
   font-family: var(--font-display);
-  color: var(--text-caption);
-  font-size: var(--text-19);
-  font-weight: 600;
-  letter-spacing: var(--tracking-wide);
+  color: var(--accent-blue);
+  font-size: var(--overline-size);
+  font-weight: var(--overline-weight);
+  letter-spacing: var(--overline-letter);
   text-transform: uppercase;
   margin-bottom: var(--space-18);
 }
@@ -79,67 +79,67 @@ body {
 /* Hero Title: 홈 히어로·풀블리드 배경 위 최대 장식 타이틀 */
 .hero-title {
   font-family: var(--font-display);
-  font-size: var(--typo-hero-size);
-  font-weight: var(--typo-hero-weight);
-  line-height: var(--typo-hero-line);
-  letter-spacing: var(--typo-hero-letter);
+  font-size: var(--display-1-size);
+  font-weight: var(--display-1-weight);
+  line-height: var(--display-1-line);
+  letter-spacing: var(--display-1-letter);
 }
 
 /* Display Title: 섹션 최상위 브랜드·장식 제목 */
 .display-title {
   font-family: var(--font-display);
-  font-size: var(--typo-display-size);
-  font-weight: var(--typo-display-weight);
-  line-height: var(--typo-display-line);
-  letter-spacing: var(--typo-display-letter);
+  font-size: var(--display-2-size);
+  font-weight: var(--display-2-weight);
+  line-height: var(--display-2-line);
+  letter-spacing: var(--display-2-letter);
 }
 
 /* Section Display Title: 섹션 내 장식형 중간 제목 */
 .section-display-title {
   font-family: var(--font-display);
-  font-size: var(--typo-section-display-size);
-  font-weight: var(--typo-section-display-weight);
-  line-height: var(--typo-section-display-line);
-  letter-spacing: var(--typo-section-display-letter);
+  font-size: var(--display-3-size);
+  font-weight: var(--display-3-weight);
+  line-height: var(--display-3-line);
+  letter-spacing: var(--display-3-letter);
 }
 
 /* Content Heading: 섹션 서브 제목 h2 (제목 → Display: EN Optima / KO Pretendard) */
 .content-heading {
   font-family: var(--font-display);
-  font-size: var(--typo-h2-size);
-  font-weight: var(--typo-h2-weight);
-  line-height: var(--typo-h2-line);
-  letter-spacing: var(--typo-h2-letter);
+  font-size: var(--h2-size);
+  font-weight: var(--h2-weight);
+  line-height: var(--h2-line);
+  letter-spacing: var(--h2-letter);
 }
 
 /* Content Title: 카드·폼·리스트 h3 제목 (제목 → Display: EN Optima / KO Pretendard) */
 .content-title {
   font-family: var(--font-display);
-  font-size: var(--typo-h3-size);
-  font-weight: var(--typo-h3-weight);
-  line-height: var(--typo-h3-line);
-  letter-spacing: var(--typo-h3-letter);
+  font-size: var(--h3-size);
+  font-weight: var(--h3-weight);
+  line-height: var(--h3-line);
+  letter-spacing: var(--h3-letter);
 }
 
 /* Lead: 리드 본문·섹션 설명 */
 .lead {
   font-family: var(--font-body);
-  font-size: var(--typo-lead-size);
-  font-weight: var(--typo-lead-weight);
-  line-height: var(--typo-lead-line);
-  letter-spacing: var(--typo-lead-letter);
+  font-size: var(--body-1-size);
+  font-weight: var(--body-1-weight);
+  line-height: var(--body-1-line);
+  letter-spacing: var(--body-1-letter);
 }
 
 /* Legacy alias — 기존 .display 클래스 유지 (호환성) */
 .display {
   font-family: var(--font-display);
   color: var(--text-gray-6);
-  font-weight: var(--typo-section-display-weight);
-  line-height: var(--typo-section-display-line);
-  letter-spacing: var(--typo-section-display-letter);
+  font-weight: var(--display-3-weight);
+  line-height: var(--display-3-line);
+  letter-spacing: var(--display-3-letter);
 }
 .h-lg {
-  font-size: var(--typo-display-size);
+  font-size: var(--display-2-size);
   font-weight: 700;
   letter-spacing: var(--tracking-tightest);
 }
@@ -153,12 +153,12 @@ body {
   text-align: center;
   font-family: var(--font-body);
   color: var(--text-gray-6);
-  font-size: var(--typo-lead-size);
-  font-weight: var(--typo-body-weight);
-  line-height: var(--typo-lead-line);
+  font-size: var(--body-1-size);
+  font-weight: var(--body-2-weight);
+  line-height: var(--body-1-line);
   max-width: 1400px;
   margin: 0 auto var(--space-48);
-  letter-spacing: var(--typo-lead-letter);
+  letter-spacing: var(--body-1-letter);
   text-wrap: balance;
 }
 
@@ -204,7 +204,7 @@ body {
   margin: 0 auto clamp(14px, 1.8vw, 20px);
 }
 .page-hero--white .eyebrow {
-  color: var(--text-caption);
+  color: var(--accent-blue);
   font-size: var(--text-16);
   font-weight: 700;
   letter-spacing: var(--tracking-wide);
@@ -220,12 +220,11 @@ body {
 }
 .page-hero__title {
   font-family: var(--font-display);
-  font-size: var(--typo-display-size);
-  font-weight: var(--typo-display-weight);
-  letter-spacing: var(--typo-display-letter);
-  line-height: var(--typo-display-line);
+  font-size: var(--display-2-size);
+  font-weight: var(--display-2-weight);
+  letter-spacing: var(--display-2-letter);
+  line-height: var(--display-2-line);
   margin-bottom: var(--space-16);
-  color: purple !important; /* TEMP DEBUG — display 토큰 시각화 (확인 후 제거) */
 }
 .page-hero--white .page-hero__title {
   color: var(--text-gray-6);
@@ -319,7 +318,7 @@ body {
 .page-head-edito__title {
   font-family: var(--font-display);
   font-size: clamp(40px, 6vw, 88px);
-  font-weight: var(--typo-h1-weight);
+  font-weight: var(--h1-weight);
   letter-spacing: var(--tracking-tighter);
   color: var(--gray-950);
   line-height: 0.95;
@@ -1823,11 +1822,11 @@ image-slot#cert-sgi {
 }
 .ed-head__title {
   font-family: var(--font-display);
-  font-size: var(--typo-section-display-size);
-  font-weight: var(--typo-section-display-weight);
-  letter-spacing: var(--typo-section-display-letter);
-  color: gold !important; /* TEMP DEBUG — section-display 토큰 시각화 (확인 후 제거) */
-  line-height: var(--typo-section-display-line);
+  font-size: var(--display-3-size);
+  font-weight: var(--display-3-weight);
+  letter-spacing: var(--display-3-letter);
+  line-height: var(--display-3-line);
+  color: var(--text-gray-6);
   margin: 0;
 }
 [lang="ko"] .ed-head__title {

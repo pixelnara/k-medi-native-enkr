@@ -22,7 +22,6 @@
   padding-top: clamp(120px, 16vw, 250px);
   padding-bottom: clamp(48px, 6vw, 80px);
   background: var(--bg-white);
-  /* background: red; */
 }
 .intro__header {
   text-align: center;
@@ -67,7 +66,7 @@
   font-family: var(--font-display);
   font-size: clamp(42px, 4.5vw, 66px);
   font-weight: 700;
-  color: var(--text-caption);
+  color: var(--accent-blue);
   line-height: 1;
   margin-bottom: var(--space-28);
 }
@@ -261,7 +260,7 @@
 }
 .stat-row__num sup {
   font-size: 0.48em;
-  color: var(--text-caption);
+  color: var(--accent-blue);
   vertical-align: top;
   padding-top: 0.15em;
   font-weight: 700;

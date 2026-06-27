@@ -2,8 +2,8 @@
    KMEDITOUR — Design System Tokens
    ────────────────────────────────────────────────────────────
    Layer 1  Primitive      Raw values (color, size, spacing …)
-   Layer 2  Type Scale     Responsive size utilities (--type-*)
-   Layer 3  Semantic       Role tokens (--typo-*, --color-*)
+   Layer 2  Type Scale     Responsive size utilities (--res-*)
+   Layer 3  Semantic       Role tokens (--*, --color-*)
    Layer 4  Language       Font-family override by [lang]
    ============================================================ */
 
@@ -29,7 +29,6 @@
   --gray-900: #1a1a1a;
   --gray-950: #111111;
   --brown-50: #f7f4f2;
-  --navy-900: #0d0e10;
 
   /* ─── 1-B. Color: Blue ─── */
   --blue-pure: #0000ff;
@@ -41,7 +40,6 @@
   --blue-ec: #087eec;
 
   /* ─── 1-C. Color: Light Blue ─── */
-  --light-blue-300: #4fc7f5;
   --light-blue-500: #25aae1;
 
   /* ─── 1-D. Color: Category Accent ─── */
@@ -74,8 +72,6 @@
   --text-30: 3rem;
   --text-32: 3.2rem;
   --text-34: clamp(24px, 2.4vw, 34px);
-  --text-46: clamp(30px, 3.4vw, 46px);
-  --text-76: clamp(38px, 5.4vw, 76px);
   --text-80: clamp(56px, 5vw, 80px);
   --text-104: clamp(44px, 6.6vw, 104px);
 
@@ -115,18 +111,15 @@
   --space-52: 52px;
   --space-56: 56px;
   --space-64: 64px;
-  --space-72: 72px;
   --space-80: 80px;
   --space-gutter: clamp(16px, 1.6vw, 34px);
 
   /* ─── 1-I. Radius ─── */
   --radius-1px: 1px;
-  --radius-5: 5%;
   --radius-full: 50%;
   --radius-pill: 100px;
 
   /* ─── 1-J. Shadow ─── */
-  --shadow-header: 0 1px 0 var(--gray-200);
   --shadow-card: 0 30px 70px -30px rgba(40, 30, 25, 0.35);
   --shadow-btn: 0 4px 16px rgba(0, 0, 0, 0.12);
 
@@ -157,33 +150,11 @@
   --text-gray-7: var(--gray-950); /* max emphasis */
   --text-blue: var(--blue-500);
   --text-white: var(--white);
-  --text-chip: var(--blue-pure);
   --rating: var(--blue-500);
-
-  /* ─── 2-C (alias). Legacy caption color tokens ─── */
-  /* 다수 컴포넌트에서 참조 중. 신규 코드는 --color-accent / --color-caption 사용. */
-  --text-caption: var(--blue-500);
-  --text-caption2: var(--gray-500);
-
-  /* ─── 2-D. Typography Color ─────────────────────────────────
-     Typography 토큰(--typo-*)은 반드시 이 토큰만 참조한다.
-     브랜드 컬러 변경 시 이 섹션만 수정.
-     Display는 별도 토큰으로 분리하여 브랜드 컬러 적용 가능.
-     ─────────────────────────────────────────────────────────── */
-  --color-display: var(--gray-900); /* Display / Brand tier (밝은 배경 기본값. 다크 배경 위에서는 컴포넌트가 컨텍스트 색 지정) */
-  --color-heading: var(--gray-900); /* Heading h1–h6 */
-  --color-body: var(--gray-500); /* 본문 */
-  --color-caption: var(--gray-400); /* 캡션 · 보조 텍스트 */
-  --color-label: var(--gray-700); /* 폼 레이블 · step label */
-  --color-button: var(--white); /* 버튼 텍스트 (다크 버튼 위) */
-  --color-nav: var(--gray-900); /* 네비게이션 */
-  --color-link: var(--blue-500); /* 링크 */
-  --color-accent: var(--blue-500); /* 강조 텍스트 */
 
   /* ─── 2-E. Border ─── */
   --border-gray-1: var(--gray-950); /* 다크 헤어라인 (에디토리얼) */
   --border-gray-2: var(--gray-300); /* 연한 구분선 (mobile gnb) */
-  --border-gray-3: var(--gray-400); /* 중간 구분선 (footer) */
   --border-gray-4: var(--gray-800); /* 강조 보더 (cnav-btn, filter chip) */
 
   /* ─── 2-F. Teal (alias → gray, 색상 최소화) ─── */
@@ -213,7 +184,6 @@
   --overlay-bg: rgba(0, 0, 0, 0.55);
   --overlay-50: rgba(0, 0, 0, 0.5);
   --overlay-60: rgba(0, 0, 0, 0.6);
-  --overlay-80: rgba(0, 0, 0, 0.8);
 
   /* ─── 2-L. Cosmetic Page ─── */
   --cosm-navy: #1a1a1e;
@@ -232,168 +202,104 @@
      LAYER 3 — Responsive Type Scale
      ────────────────────────────────────────────────────────────
      크기(size)만 담당. font / weight / color는 포함하지 않는다.
-     컴포넌트에서 직접 참조 가능. Layer 4(--typo-*)도 이 토큰 참조.
-
-     ※ --type-h2 (up to 52px) 는 Section-level 대형 유틸리티용.
-        Heading role 토큰(--typo-h2-size)은 --text-34(max 34px) 사용.
-        두 스케일이 의도적으로 다르므로 변경 시 주의.
+     컴포넌트에서 직접 참조 가능. Layer 4(--*)도 이 토큰 참조.
      ════════════════════════════════════════════════════════════ */
 
-  --type-h1: var(--text-46); /* clamp(30px, 3.4vw, 46px)  */
-  --type-h2: clamp(28px, 3.5vw, 52px); /* Section 대형 유틸리티      */
-  --type-h3: clamp(20px, 2.2vw, 30px);
-  --type-h4: clamp(18px, 1.8vw, 24px);
-  --type-h5: clamp(16px, 1.5vw, 22px);
-  --type-h6: var(--text-15);
+  --res-h3: clamp(20px, 2.2vw, 30px);
+  --res-h4: clamp(18px, 1.8vw, 24px);
+  --res-h5: clamp(16px, 1.5vw, 22px);
 
-  --type-body-lg: clamp(16px, calc(15px + 0.4vw), 18px);
-  --type-body: clamp(15px, calc(14.5px + 0.25vw), 17px);
-  --type-body-sm: clamp(13px, calc(13px + 0.1vw), 14px);
+  --res-body-lg: clamp(16px, calc(15px + 0.4vw), 18px);
+  --res-body: clamp(15px, calc(14.5px + 0.25vw), 17px);
 
   /* ════════════════════════════════════════════════════════════
-     LAYER 4 — Semantic Typography Role Tokens
+     LAYER 4 — Typography System  (Display / Heading / Body / UI)
      ────────────────────────────────────────────────────────────
-     세 갈래:
-       4-A. Display / Brand  — 시각적 장식, HTML 구조 비종속
-       4-B. Heading          — 문서 구조·접근성, h1~h6 대응
-       4-C. Body / UI        — Pretendard 고정, 언어 무관
-     ────────────────────────────────────────────────────────────
-     규칙:
-       · color   → 반드시 Layer 2 (--color-*) 참조
-       · font    → --font-display / --font-body 참조
-       · 크기    → 가급적 Layer 3 (--type-*) 참조
-       · font 분기 → Layer 5 [lang] 블록에서만 처리
+     역할 기반 토큰. 컴포넌트는 이 토큰만 참조한다.
+       · font  → Display·Heading: --font-display / Body·UI: --font-body
+       · size  → 가급적 Layer 1 (--text-*) / clamp
+       · color → 컴포넌트가 컨텍스트에 맞게 지정 (토큰 비포함)
+       · KO 분기 → Layer 5 [lang] 에서 --font-display override
      ════════════════════════════════════════════════════════════ */
 
-  /* ┌─────────────────────────────────────────────────────────┐
-     │  4-A. Display / Brand tier                             │
-     │  브랜드 무드·장식성. HTML heading 구조와 비종속.       │
-     │  EN: --font-display (Optima, Marcellus)                │
-     │  KO: Pretendard (Layer 5 override)                     │
-     └─────────────────────────────────────────────────────────┘ */
+  /* ── Display (--font-display) ── */
+  --display-1-size: var(--text-104); /* clamp(44, 6.6vw, 104) */
+  --display-1-weight: 400;
+  --display-1-line: 1.05;
+  --display-1-letter: var(--tracking-tighter);
 
-  --typo-hero-size: var(--text-104);
-  --typo-hero-weight: 400;
-  --typo-hero-line: 1.05;
-  --typo-hero-letter: -0.02em;
-  --typo-hero-color: var(--color-display);
+  --display-2-size: var(--text-80); /* clamp(56, 5vw, 80) */
+  --display-2-weight: 600;
+  --display-2-line: 1.08;
+  --display-2-letter: var(--tracking-tight);
 
-  /* display — 서브페이지 히어로 타이틀(.page-hero__title)에 연결 */
-  --typo-display-size: var(--text-80);
-  --typo-display-weight: 600;
-  --typo-display-line: 1.08;
-  --typo-display-letter: var(--tracking-tight);
-  --typo-display-color: var(--color-display);
+  --display-3-size: clamp(26px, 3.4vw, 48px);
+  --display-3-weight: 600;
+  --display-3-line: 1;
+  --display-3-letter: var(--tracking-tighter);
 
-  /* section-display — 에디토리얼 섹션 헤더(.ed-head__title)에 연결 */
-  --typo-section-display-size: clamp(26px, 3.4vw, 48px);
-  --typo-section-display-weight: 600;
-  --typo-section-display-line: 1;
-  --typo-section-display-letter: var(--tracking-tighter);
-  --typo-section-display-color: var(--color-display);
+  /* ── Heading (--font-display) ── */
+  --h1-weight: 600;
 
-  /* eyebrow — 소형 대문자 섹션 레이블 (kicker · category · brand sub) */
-  --typo-eyebrow-size: var(--text-13);
-  --typo-eyebrow-weight: 600;
-  --typo-eyebrow-line: 1.2;
-  --typo-eyebrow-letter: var(--tracking-wide);
-  --typo-eyebrow-color: var(--color-accent);
+  --h2-size: var(--text-34);
+  --h2-weight: 600;
+  --h2-line: 1.35;
+  --h2-letter: -0.015em;
 
-  /* ┌─────────────────────────────────────────────────────────┐
-     │  4-B. Heading tier                                     │
-     │  문서 구조·접근성. h1~h6 HTML 태그 대응.               │
-     │  크기·굵기·행간은 언어 무관 유지. font만 Layer 5 분기. │
-     │  EN: --font-display / KO: Pretendard                   │
-     └─────────────────────────────────────────────────────────┘ */
+  --h3-size: var(--text-24);
+  --h3-weight: 500;
+  --h3-line: 1.45;
+  --h3-letter: var(--tracking-tight);
 
-  --typo-h1-size: var(--type-h1); /* clamp(30px, 3.4vw, 46px) */
-  --typo-h1-weight: 600;
-  --typo-h1-line: 1.25;
-  --typo-h1-letter: -0.02em;
-  --typo-h1-color: var(--color-heading);
+  --h4-size: var(--text-20);
+  --h4-weight: 500;
+  --h4-line: 1.5;
+  --h4-letter: -0.005em;
 
-  --typo-h2-size: var(--text-34);
-  --typo-h2-weight: 600;
-  --typo-h2-line: 1.35;
-  --typo-h2-letter: -0.015em;
-  --typo-h2-color: var(--color-heading);
+  --h5-size: var(--res-h5); /* clamp(16, 1.5vw, 22) */
+  --h5-weight: 500;
 
-  --typo-h3-size: var(--text-24);
-  --typo-h3-weight: 500;
-  --typo-h3-line: 1.45;
-  --typo-h3-letter: -0.01em;
-  --typo-h3-color: var(--color-heading);
+  --h6-size: var(--text-15);
+  --h6-weight: 500;
+  --h6-line: 1.4;
+  --h6-letter: var(--tracking-snug);
 
-  --typo-h4-size: var(--text-20);
-  --typo-h4-weight: 500;
-  --typo-h4-line: 1.5;
-  --typo-h4-letter: -0.005em;
-  --typo-h4-color: var(--color-heading);
+  /* ── Body (--font-body) — 1: Lead/Intro · 2: 기본 · 3: 소형 ── */
+  --body-1-size: clamp(18px, 2vw, 22px);
+  --body-1-weight: 500;
+  --body-1-line: 1.65;
+  --body-1-letter: var(--tracking-tighter);
 
-  --typo-h5-size: var(--type-h5); /* clamp(16px, 1.5vw, 22px) */
-  --typo-h5-weight: 500;
-  --typo-h5-line: 1.5;
-  --typo-h5-letter: 0em;
-  --typo-h5-color: var(--color-heading);
+  --body-2-size: var(--text-16);
+  --body-2-weight: 400;
+  --body-2-line: 1.7;
+  --body-2-letter: var(--tracking-tight);
 
-  --typo-h6-size: var(--type-h6); /* 15px */
-  --typo-h6-weight: 500;
-  --typo-h6-line: 1.4;
-  --typo-h6-letter: 0.01em;
-  --typo-h6-color: var(--color-heading);
+  --body-3-size: var(--text-15);
 
-  /* ┌─────────────────────────────────────────────────────────┐
-     │  4-C. Body / UI (Pretendard 고정 — 언어 무관)          │
-     └─────────────────────────────────────────────────────────┘ */
+  /* ── UI (--font-body) ── */
+  --button-size: var(--text-14);
+  --button-weight: 600;
+  --button-letter: var(--tracking-wide);
 
-  /* lead — 섹션 인트로 문단(.sec-intro)에 연결 */
-  --typo-lead-size: clamp(18px, 2vw, 22px);
-  --typo-lead-weight: 500;
-  --typo-lead-line: 1.65;
-  --typo-lead-letter: var(--tracking-tighter);
-  --typo-lead-color: var(--color-body);
+  --caption-size: var(--text-12);
+  --caption-weight: 400;
+  --caption-line: 1.5;
+  --caption-letter: var(--tracking-medium);
 
-  --typo-body-size: var(--text-16);
-  --typo-body-size-15: var(--text-15);
-  --typo-body-weight: 400;
-  --typo-body-line: 1.7;
-  --typo-body-letter: -0.01em;
-  --typo-body-color: var(--color-body);
+  --label-size: var(--text-13);
+  --label-weight: 500;
+  --label-line: 1.4;
+  --label-letter: -0.005em;
 
-  --typo-body-sm-size: var(--type-body-sm); /* clamp(13px, …, 14px) */
-  --typo-body-sm-weight: 400;
-  --typo-body-sm-line: 1.6;
-  --typo-body-sm-letter: -0.005em;
-  --typo-body-sm-color: var(--color-body);
+  --nav-size: var(--text-16);
+  --nav-weight: 600;
+  --nav-letter: var(--tracking-snug);
 
-  /* caption — figure 캡션·이미지 출처 (.art-body figcaption 등에 연결) */
-  --typo-caption-size: var(--text-12);
-  --typo-caption-weight: 400;
-  --typo-caption-line: 1.5;
-  --typo-caption-letter: var(--tracking-medium);
-  --typo-caption-color: var(--color-caption);
-
-  /* label — 폼 레이블·step 라벨. (주의: 본 사이트의 *__label은 10~21px로
-     값이 제각각이라 단일 컴포넌트에 연결하지 않음. 폼 도입 시 기준값으로 사용) */
-  --typo-label-size: var(--text-13);
-  --typo-label-weight: 500;
-  --typo-label-line: 1.4;
-  --typo-label-letter: -0.005em;
-  --typo-label-color: var(--color-label);
-
-  /* button — .btn / chip 계열에 연결 (size·weight·letter) */
-  --typo-button-size: var(--text-14);
-  --typo-button-weight: 600;
-  --typo-button-line: 1.2;
-  --typo-button-letter: var(--tracking-wide);
-  --typo-button-color: var(--color-button);
-
-  /* nav — 데스크탑 GNB 링크(.gnb a)에 연결 */
-  --typo-nav-size: var(--text-16);
-  --typo-nav-weight: 600;
-  --typo-nav-line: 1.2;
-  --typo-nav-letter: var(--tracking-snug);
-  --typo-nav-color: var(--color-nav);
+  /* Overline = .eyebrow (--font-display, UPPERCASE) */
+  --overline-size: var(--text-19);
+  --overline-weight: 600;
+  --overline-letter: var(--tracking-wide);
 
   /* ─── Layout ─── */
   --maxw: 2560px;
