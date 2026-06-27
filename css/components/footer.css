@@ -254,5 +254,8 @@
   }
   .foot-contact__form {
     flex-basis: auto;
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
   }
 }
