@@ -24,7 +24,7 @@
   margin-bottom: var(--space-12);
 }
 .mag-page-head__title {
-  font-family: var(--typo-h1-font);
+  font-family: var(--font-display);
   font-size: clamp(40px, 6vw, 88px);
   font-weight: var(--typo-h1-weight);
   letter-spacing: var(--tracking-tighter);
@@ -488,10 +488,10 @@
   object-fit: cover;
 }
 .art-body figcaption {
-  font-size: var(--text-12);
-  color: var(--text-gray-2);
+  font-size: var(--typo-caption-size);
+  color: var(--typo-caption-color);
   margin-top: var(--space-10);
-  letter-spacing: 0.04em;
+  letter-spacing: var(--typo-caption-letter);
 }
 
 /* ─── Article Sidebar ─── */
@@ -677,7 +677,7 @@
   margin-bottom: var(--space-16);
 }
 .art2-hero__title {
-  font-family: var(--typo-h1-font);
+  font-family: var(--font-display);
   font-size: clamp(32px, 5.5vw, 76px);
   font-weight: var(--typo-h1-weight);
   color: var(--text-white);

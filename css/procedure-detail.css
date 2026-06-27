@@ -63,7 +63,7 @@
 }
 
 .pd-hero__title {
-  font-family: var(--typo-h1-font);
+  font-family: var(--font-display);
   font-size: clamp(44px, 6vw, 88px);
   font-weight: var(--typo-h1-weight);
   letter-spacing: var(--tracking-tightest);

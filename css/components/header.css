@@ -296,9 +296,9 @@
   gap: clamp(18px, 3.8vw, 40px);
 }
 .gnb a {
-  font-size: var(--text-16);
-  font-weight: 600;
-  letter-spacing: var(--tracking-snug);
+  font-size: var(--typo-nav-size);
+  font-weight: var(--typo-nav-weight);
+  letter-spacing: var(--typo-nav-letter);
   position: relative;
   padding: var(--space-6) 0;
 }

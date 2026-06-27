@@ -1,89 +1,85 @@
 /* ============================================================
    KMEDITOUR — Design System Tokens
-   Primitive → Semantic 구조
+   ────────────────────────────────────────────────────────────
+   Layer 1  Primitive      Raw values (color, size, spacing …)
+   Layer 2  Type Scale     Responsive size utilities (--type-*)
+   Layer 3  Semantic       Role tokens (--typo-*, --color-*)
+   Layer 4  Language       Font-family override by [lang]
    ============================================================ */
 
 :root {
-  /* ─── Primitive: Color ─── */
+  /* ════════════════════════════════════════════════════════════
+     LAYER 1 — Primitive Tokens
+     ════════════════════════════════════════════════════════════ */
 
-  /* ── Gray Scale (번호↑ = 명도↓) ── */
-  --white: #ffffff; /* 흰색 */
-  --black: #000000; /* 순수 블랙 (이미지 영역 bg 등) */
-  /* 중성 그레이 (쿨/블루 언더톤 제거 → 확실한 블랙앤화이트) */
-  --gray-50: #f9f9f9; /* 배경 서피스 */
-  --gray-100: #f5f5f5; /* 연한 배경 서피스 */
-  --gray-150: #f0f0f0; /* 구분선·배경 */
-  --gray-175: #ededed; /* 강조 서피스 배경 (section--surface) */
-  --gray-200: #d9d9d9; /* 보더 기본 */
-  --gray-300: #c6c6c6; /* 연한 구분선 */
-  --gray-400: #9b9b9b; /* 서브텍스트 약 */
-  --gray-500: #6e6e6e; /* 본문 텍스트 */
-  --gray-600: #3f3f3f; /* 본문 텍스트2 */
-  --gray-700: #2c2c2c; /* 중간 다크 */
-  --gray-800: #2a2929; /* 강조 보더 */
-  --gray-900: #1a1a1a; /* 헤딩 텍스트 */
-  --gray-950: #111111; /* 최강 다크·버튼 */
+  /* ─── 1-A. Color: Neutral ─── */
+  --white: #ffffff;
+  --black: #000000;
+  --gray-50: #f9f9f9;
+  --gray-100: #f5f5f5;
+  --gray-150: #f0f0f0;
+  --gray-175: #ededed;
+  --gray-200: #d9d9d9;
+  --gray-300: #c6c6c6;
+  --gray-400: #9b9b9b;
+  --gray-500: #6e6e6e;
+  --gray-600: #3f3f3f;
+  --gray-700: #2c2c2c;
+  --gray-800: #2a2929;
+  --gray-900: #1a1a1a;
+  --gray-950: #111111;
+  --brown-50: #f7f4f2;
+  --navy-900: #0d0e10;
 
-  /* ── Brown Scale ── */
-  --brown-50: #f7f4f2; /* 웜 서피스 (surface-gray-3) */
-
-  /* ── 원색 블루 ── */
+  /* ─── 1-B. Color: Blue ─── */
   --blue-pure: #0000ff;
-
-  /* ── Blue Scale (#1e49ba 기준) ── */
   --blue-100: #eaedf5;
   --blue-300: #869fdf;
   --blue-400: #4a71d9;
   --blue-500: #1e49ba;
   --blue-600: #183b96;
+  --blue-ec: #087eec;
 
-  /* ── Light Blue Scale (#25aae1 기준) ── */
+  /* ─── 1-C. Color: Light Blue ─── */
   --light-blue-300: #4fc7f5;
   --light-blue-500: #25aae1;
 
-  /* ── Light Blue (액센트) ── */
-  --blue-ec: #087eec;
+  /* ─── 1-D. Color: Category Accent ─── */
+  --terracotta-500: #b85c38;
+  --green-500: #2e7d4f;
 
-  /* ── Category Accent Scale (news/filter 카테고리 색상) ── */
-  --terracotta-500: #b85c38; /* dining */
-  --green-500: #2e7d4f; /* event */
-
-  /* ── Teal (contact phone icon) → 그레이 (색상 최소화) ── */
-  --teal-50: var(--gray-50);
-  --teal-500: var(--gray-700);
-
-  /* ── Social: Kakao ── */
+  /* ─── 1-E. Color: Social ─── */
   --kakao-yellow: #fee500;
   --kakao-dark: #191919;
 
-  /* ─── Primitive: Typography ─── */
-  --text-10: 1rem; /* 10px @ 10px base */
-  --text-11: 1.1rem; /* 11px */
-  --text-12: 1.25rem; /* ~12.5px */
-  --text-13: 1.3rem; /* 13px */
-  --text-14: 1.4rem; /* 14px */
-  --text-15: 1.5rem; /* 15px */
-  --text-16: 1.6rem; /* 16px */
-  --text-17: 1.7rem; /* 17px */
-  --text-18: 1.8rem; /* 18px */
-  --text-19: 1.9rem; /* 19px */
-  --text-20: 2rem; /* 20px */
-  --text-21: 2.1rem; /* 21px */
-  --text-22: 2.2rem; /* 22px */
-  --text-23: 2.3rem; /* 23px */
-  --text-24: 2.4rem; /* 24px */
-  --text-25: 2.5rem; /* 25px */
-  --text-28: 2.8rem; /* 28px */
-  --text-29: 2.9rem; /* 29px */
-  --text-30: 3rem; /* 30px */
-  --text-32: 3.2rem; /* 32px */
+  /* ─── 1-F. Font Size ─── */
+  --text-10: 1rem;
+  --text-11: 1.1rem;
+  --text-12: 1.25rem;
+  --text-13: 1.3rem;
+  --text-14: 1.4rem;
+  --text-15: 1.5rem;
+  --text-16: 1.6rem;
+  --text-17: 1.7rem;
+  --text-18: 1.8rem;
+  --text-19: 1.9rem;
+  --text-20: 2rem;
+  --text-21: 2.1rem;
+  --text-22: 2.2rem;
+  --text-23: 2.3rem;
+  --text-24: 2.4rem;
+  --text-25: 2.5rem;
+  --text-28: 2.8rem;
+  --text-29: 2.9rem;
+  --text-30: 3rem;
+  --text-32: 3.2rem;
   --text-34: clamp(24px, 2.4vw, 34px);
   --text-46: clamp(30px, 3.4vw, 46px);
   --text-76: clamp(38px, 5.4vw, 76px);
   --text-80: clamp(56px, 5vw, 80px);
   --text-104: clamp(44px, 6.6vw, 104px);
 
-  /* ─── Primitive: Letter Spacing ─── */
+  /* ─── 1-G. Letter Spacing ─── */
   --tracking-tightest: -0.03em;
   --tracking-tighter: -0.02em;
   --tracking-tight: -0.01em;
@@ -95,7 +91,7 @@
   --tracking-wide: 0.1em;
   --tracking-wider: 0.22em;
 
-  /* ─── Primitive: Spacing ─── */
+  /* ─── 1-H. Spacing ─── */
   --space-0: 0px;
   --space-2: 2px;
   --space-3: 3px;
@@ -123,295 +119,306 @@
   --space-80: 80px;
   --space-gutter: clamp(16px, 1.6vw, 34px);
 
-  /* ─── Primitive: Radius ─── */
+  /* ─── 1-I. Radius ─── */
   --radius-1px: 1px;
   --radius-5: 5%;
   --radius-full: 50%;
   --radius-pill: 100px;
 
-  /* ─── Primitive: Shadow ─── */
-
+  /* ─── 1-J. Shadow ─── */
   --shadow-header: 0 1px 0 var(--gray-200);
   --shadow-card: 0 30px 70px -30px rgba(40, 30, 25, 0.35);
   --shadow-btn: 0 4px 16px rgba(0, 0, 0, 0.12);
 
-  /* ─── Semantic: Background ─── */
-  /* 명시적 단색 배경 — 페이지·헤더·카드 등 solid bg */
+  /* ════════════════════════════════════════════════════════════
+     LAYER 2 — Semantic Color Tokens
+     (컴포넌트는 Primitive를 직접 참조하지 않고 이 토큰만 참조)
+     ════════════════════════════════════════════════════════════ */
 
-  --bg-white: var(--white); /* 흰색 배경 (body, header, card) */
-  --bg-gray: var(--gray-150); /* 회색 배경 (accordion item) */
-  --bg-dark: var(--gray-950); /* 다크 배경 → 뉴트럴 블랙 (버텀바·trust·banner, 블루 틴트 제거) */
+  /* ─── 2-A. Background ─── */
+  --bg-white: var(--white);
+  --bg-gray: var(--gray-150);
+  --bg-dark: var(--gray-950);
+  --bg-warm: #f6f6f4;
 
-  /* ─── Semantic: Surface ─── */
-  /* 섹션·컴포넌트 레벨 서피스 — section 구역·컬럼 배경 */
+  /* ─── 2-B. Surface ─── */
+  --surface-gray-1: var(--gray-50);
+  --surface-gray-2: var(--gray-200);
+  --surface-gray-3: var(--brown-50);
+  --surface-gray-4: var(--gray-175);
 
-  --surface-gray-1: var(--gray-50); /* 연한 서피스 (section bg, tab bg, lang-option) */
-  --surface-gray-2: var(--gray-200); /* 강조 서피스 (compare col 배경) */
-  --surface-gray-3: var(--brown-50); /* 웜 서피스 (center map-card) */
-  --surface-gray-4: var(--gray-175); /* 강조 서피스 (section--surface) */
-
-  /* ─── Semantic: Text ─── */
-  /* gray-1~7: 밝은(gray-300) → 어두운(gray-950) 순. 특수 컬러는 별도 */
-
-  --text-gray-1: var(--gray-300); /* 플레이스홀더·비활성 */
-  --text-gray-2: var(--gray-400); /* 서브텍스트 (날짜, sub-head) */
-  --text-gray-3: var(--gray-500); /* 본문 기본 */
-  --text-gray-4: var(--gray-600); /* 본문 보조 (filter chip, footer links) */
-  --text-gray-5: var(--gray-700); /* 폼 레이블 */
-  --text-gray-6: var(--gray-900); /* 헤딩·강조 제목 */
-  --text-gray-7: var(--gray-950); /* 최강 강조 (모바일 헤더, login 제목) */
-  --text-blue: var(--blue-500); /* 강조 */
+  /* ─── 2-C. Text (general UI) ─── */
+  --text-gray-1: var(--gray-300); /* placeholder · inactive */
+  --text-gray-2: var(--gray-400); /* sub-text · date */
+  --text-gray-3: var(--gray-500); /* body default */
+  --text-gray-4: var(--gray-600); /* body secondary */
+  --text-gray-5: var(--gray-700); /* form label */
+  --text-gray-6: var(--gray-900); /* heading · emphasis */
+  --text-gray-7: var(--gray-950); /* max emphasis */
+  --text-blue: var(--blue-500);
+  --text-white: var(--white);
   --text-chip: var(--blue-pure);
-  --chip-blue: var(--blue-pure);
-  --menu-gray-300: var(--gray-300); /* gnb 내부 */
-  --text-white: var(--white); /* 다크/컬러 배경 위 흰색 */
+  --rating: var(--blue-500);
+
+  /* ─── 2-C (alias). Legacy caption color tokens ─── */
+  /* 다수 컴포넌트에서 참조 중. 신규 코드는 --color-accent / --color-caption 사용. */
   --text-caption: var(--blue-500);
-  --text-caption2: var(--gray-500); /* 캡션·플로어 레이블 (골드→그레이) */
-  --rating: var(--blue-500); /* 별점·평점 */
+  --text-caption2: var(--gray-500);
 
-  /* ─── Semantic: Border ─── */
-  /* gray-1~4: 밝은(gray-200) → 어두운(gray-800) 순. warm = brown 계열 */
+  /* ─── 2-D. Typography Color ─────────────────────────────────
+     Typography 토큰(--typo-*)은 반드시 이 토큰만 참조한다.
+     브랜드 컬러 변경 시 이 섹션만 수정.
+     Display는 별도 토큰으로 분리하여 브랜드 컬러 적용 가능.
+     ─────────────────────────────────────────────────────────── */
+  --color-display: var(--gray-900); /* Display / Brand tier (밝은 배경 기본값. 다크 배경 위에서는 컴포넌트가 컨텍스트 색 지정) */
+  --color-heading: var(--gray-900); /* Heading h1–h6 */
+  --color-body: var(--gray-500); /* 본문 */
+  --color-caption: var(--gray-400); /* 캡션 · 보조 텍스트 */
+  --color-label: var(--gray-700); /* 폼 레이블 · step label */
+  --color-button: var(--white); /* 버튼 텍스트 (다크 버튼 위) */
+  --color-nav: var(--gray-900); /* 네비게이션 */
+  --color-link: var(--blue-500); /* 링크 */
+  --color-accent: var(--blue-500); /* 강조 텍스트 */
 
-  --border-gray-1: var(--gray-950); /* 기본 구분선 → 다크 헤어라인 (에디토리얼) */
+  /* ─── 2-E. Border ─── */
+  --border-gray-1: var(--gray-950); /* 다크 헤어라인 (에디토리얼) */
   --border-gray-2: var(--gray-300); /* 연한 구분선 (mobile gnb) */
-  --border-gray-3: var(--gray-400); /* 중간 구분선 (footer top/bottom) */
+  --border-gray-3: var(--gray-400); /* 중간 구분선 (footer) */
   --border-gray-4: var(--gray-800); /* 강조 보더 (cnav-btn, filter chip) */
 
-  /* ─── Semantic: Button ─── */
+  /* ─── 2-F. Teal (alias → gray, 색상 최소화) ─── */
+  --teal-50: var(--gray-50);
+  --teal-500: var(--gray-700);
 
-  --btn-primary: var(--gray-950); /* 기본 버튼 배경 (solid, filter active) */
-  --btn-secondary: var(--blue-500); /* .btn--primary:hover → 블루 액센트 (상담 예약하기 등) */
+  /* ─── 2-G. Button ─── */
+  --btn-primary: var(--gray-950);
+  --btn-secondary: var(--blue-500);
 
-  /* ─── Semantic: Accent ─── */
-  --accent-gray-1: var(--gray-900); /* UI 아이콘 · 체크마크 · 숫자 원 */
-  --accent-gray-2: var(--gray-950); /* 아코디언·모달·버튼·CTA 배경 */
+  /* ─── 2-H. Accent ─── */
+  --accent-gray-1: var(--gray-900);
+  --accent-gray-2: var(--gray-950);
   --accent-blue: var(--blue-500);
+  --accent-gradient: linear-gradient(135deg, var(--gray-950) 0%, var(--gray-950) 35%, var(--gray-900) 70%, var(--gray-900) 100%);
 
-  /* ─── Semantic: Category Accent (news 카드·필터 카테고리) ─── */
-  --cat-offer: var(--accent-blue); /* 오퍼 */
-  --cat-dining: var(--terracotta-500); /* 다이닝 */
-  --cat-event: var(--green-500); /* 이벤트 */
-  --accent-gradient: linear-gradient(
-    135deg,
-    var(--gray-950) 0%,
-    var(--gray-950) 35%,
-    var(--gray-900) 70%,
-    var(--gray-900) 100%
-  ); /* CTA dark 배경 */
+  /* ─── 2-I. Category ─── */
+  --cat-offer: var(--accent-blue);
+  --cat-dining: var(--terracotta-500);
+  --cat-event: var(--green-500);
 
-  /* ─── Semantic: Social Login ─── */
+  /* ─── 2-J. Social ─── */
   --btn-kakao: var(--kakao-yellow);
   --btn-kakao-text: var(--kakao-dark);
 
-  /* ─── Navy Scale → 뉴트럴 다크 (블루 제거, 색상 최소화) ─── */
-  --navy-900: #0d0e10; /* hero gradient 끝 */
-
-  /* ─── Background: warm neutral ─── */
-  --bg-warm: #f6f6f4; /* procedure · travel · skin-analysis 콘텐츠 영역 배경 */
-
-  /* ─── Semantic: Overlay ─── */
+  /* ─── 2-K. Overlay ─── */
   --overlay-bg: rgba(0, 0, 0, 0.55);
   --overlay-50: rgba(0, 0, 0, 0.5);
   --overlay-60: rgba(0, 0, 0, 0.6);
   --overlay-80: rgba(0, 0, 0, 0.8);
 
-  /* ─── Cosmetic Page — Component Tokens ─── */
-  /* 네이비: 배지·버튼·chip 배경에 사용되는 코스메틱 페이지 브랜드 컬러 */
-  --cosm-navy: #1a1a1e; /* 네이비→뉴트럴 다크 (블루 제거) */
-  /* 배지 */
+  /* ─── 2-L. Cosmetic Page ─── */
+  --cosm-navy: #1a1a1e;
   --cosm-badge-gift: var(--gray-900);
   --cosm-badge-buyers-bg: rgba(0, 0, 0, 0.58);
-  /* 카드 인터랙션 */
   --cosm-card-hover: rgba(0, 0, 0, 0.06);
   --cosm-card-hover-shadow: 0 0 0 14px rgba(0, 0, 0, 0.06);
-  /* 액션 바 */
   --cosm-action-bar-bg: rgba(0, 0, 0, 0.82);
   --cosm-btn-on-dark-hover: rgba(255, 255, 255, 0.12);
-  /* 멤버십 포인트 */
   --cosm-membership-bg: var(--gray-150);
   --cosm-membership-text: var(--gray-700);
-  /* 가격 */
   --cosm-discount: var(--gray-950);
-  /* 좋아요 활성 */
   --cosm-like-active: var(--gray-900);
 
-  /* ─── Layer 2: Responsive Type Scale ───────────────────────────
-     제목(h1~h6)·본문 계열 반응형 크기.
-     UI 요소(버튼·레이블·칩)는 --text-*px 그대로 유지.
-     ─────────────────────────────────────────────────────────── */
+  /* ════════════════════════════════════════════════════════════
+     LAYER 3 — Responsive Type Scale
+     ────────────────────────────────────────────────────────────
+     크기(size)만 담당. font / weight / color는 포함하지 않는다.
+     컴포넌트에서 직접 참조 가능. Layer 4(--typo-*)도 이 토큰 참조.
 
-  --type-h1: var(--text-46); /* clamp(30px,3.4vw,46px) — 페이지 대표 제목 */
-  --type-h2: clamp(28px, 3.5vw, 52px); /* 섹션 대제목 */
-  --type-h3: clamp(20px, 2.2vw, 30px); /* 서브섹션·카드 대제목 */
-  --type-h4: clamp(18px, 1.8vw, 24px); /* 카드 소제목·CTA 설명 */
-  --type-h5: clamp(16px, 1.5vw, 22px); /* step 레이블·아이콘 레이블 */
-  --type-h6: var(--text-15); /* 소형 레이블·캡션 헤딩 */
+     ※ --type-h2 (up to 52px) 는 Section-level 대형 유틸리티용.
+        Heading role 토큰(--typo-h2-size)은 --text-34(max 34px) 사용.
+        두 스케일이 의도적으로 다르므로 변경 시 주의.
+     ════════════════════════════════════════════════════════════ */
 
-  --type-body-lg: clamp(16px, calc(15px + 0.4vw), 18px); /* 리드 본문 */
-  --type-body: clamp(15px, calc(14.5px + 0.25vw), 17px); /* 일반 본문 */
-  --type-body2: clamp(14px, calc(14px + 0.15vw), 15px); /* 보조 본문 */
+  --type-h1: var(--text-46); /* clamp(30px, 3.4vw, 46px)  */
+  --type-h2: clamp(28px, 3.5vw, 52px); /* Section 대형 유틸리티      */
+  --type-h3: clamp(20px, 2.2vw, 30px);
+  --type-h4: clamp(18px, 1.8vw, 24px);
+  --type-h5: clamp(16px, 1.5vw, 22px);
+  --type-h6: var(--text-15);
 
-  /* ═══════════════════════════════════════════════════════════
-     Layer 3 — Semantic Typography Role Token
-     ───────────────────────────────────────────────────────────
-     두 갈래로 분리:
-       3-A. Display / Brand  — 시각적 강조·장식성, HTML 구조 비종속
-       3-B. Heading          — 문서 구조·접근성, h1~h6 semantic 대응
-     ───────────────────────────────────────────────────────────
-     · 모든 큰 글자 = h1이 아님
-     · 모든 h1이 반드시 hero display style일 필요 없음
-     · 폰트 분기는 Layer 4 [lang] 블록에서 처리
-     ═══════════════════════════════════════════════════════════ */
+  --type-body-lg: clamp(16px, calc(15px + 0.4vw), 18px);
+  --type-body: clamp(15px, calc(14.5px + 0.25vw), 17px);
+  --type-body-sm: clamp(13px, calc(13px + 0.1vw), 14px);
 
-  /* ┌───────────────────────────────────────────────────────┐
-     │  3-A. Display / Brand tier                           │
-     │  브랜드 무드·장식성이 강한 시각적 제목 역할.          │
-     │  HTML heading 구조와 1:1 대응하지 않아도 됨.          │
-     │  EN: --font-display (Optima, Marcellus …)            │
-     │  KO: Pretendard (Layer 4 override)                   │
-     └───────────────────────────────────────────────────────┘ */
+  /* ════════════════════════════════════════════════════════════
+     LAYER 4 — Semantic Typography Role Tokens
+     ────────────────────────────────────────────────────────────
+     세 갈래:
+       4-A. Display / Brand  — 시각적 장식, HTML 구조 비종속
+       4-B. Heading          — 문서 구조·접근성, h1~h6 대응
+       4-C. Body / UI        — Pretendard 고정, 언어 무관
+     ────────────────────────────────────────────────────────────
+     규칙:
+       · color   → 반드시 Layer 2 (--color-*) 참조
+       · font    → --font-display / --font-body 참조
+       · 크기    → 가급적 Layer 3 (--type-*) 참조
+       · font 분기 → Layer 5 [lang] 블록에서만 처리
+     ════════════════════════════════════════════════════════════ */
 
-  /* hero — 홈 히어로·풀블리드 최대 장식 제목 */
-  --typo-hero-font: var(--font-display);
+  /* ┌─────────────────────────────────────────────────────────┐
+     │  4-A. Display / Brand tier                             │
+     │  브랜드 무드·장식성. HTML heading 구조와 비종속.       │
+     │  EN: --font-display (Optima, Marcellus)                │
+     │  KO: Pretendard (Layer 5 override)                     │
+     └─────────────────────────────────────────────────────────┘ */
+
   --typo-hero-size: var(--text-104);
   --typo-hero-weight: 400;
   --typo-hero-line: 1.05;
   --typo-hero-letter: -0.02em;
+  --typo-hero-color: var(--color-display);
 
-  /* display — 브랜드 임팩트 제목 (hero 아래 단계) */
-  --typo-display-font: var(--font-display);
+  /* display — 서브페이지 히어로 타이틀(.page-hero__title)에 연결 */
   --typo-display-size: var(--text-80);
-  --typo-display-weight: 400;
+  --typo-display-weight: 600;
   --typo-display-line: 1.08;
-  --typo-display-letter: -0.015em;
+  --typo-display-letter: var(--tracking-tight);
+  --typo-display-color: var(--color-display);
 
-  /* section-display — 섹션 단위 장식 타이틀 */
-  --typo-section-display-font: var(--font-display);
-  --typo-section-display-size: var(--text-46);
-  --typo-section-display-weight: 400;
-  --typo-section-display-line: 1.15;
-  --typo-section-display-letter: -0.01em;
+  /* section-display — 에디토리얼 섹션 헤더(.ed-head__title)에 연결 */
+  --typo-section-display-size: clamp(26px, 3.4vw, 48px);
+  --typo-section-display-weight: 600;
+  --typo-section-display-line: 1;
+  --typo-section-display-letter: var(--tracking-tighter);
+  --typo-section-display-color: var(--color-display);
 
-  /* ┌───────────────────────────────────────────────────────┐
-     │  3-B. Heading tier                                   │
-     │  문서 구조·접근성을 위한 semantic heading.            │
-     │  h1~h6 HTML 태그에 대응하는 role token.              │
-     │  EN: --font-display (Optima 계열)                    │
-     │  KO: Pretendard (Layer 4 override, font만 변경)      │
-     │  → 크기·굵기·행간은 언어 무관하게 유지됨             │
-     └───────────────────────────────────────────────────────┘ */
+  /* eyebrow — 소형 대문자 섹션 레이블 (kicker · category · brand sub) */
+  --typo-eyebrow-size: var(--text-13);
+  --typo-eyebrow-weight: 600;
+  --typo-eyebrow-line: 1.2;
+  --typo-eyebrow-letter: var(--tracking-wide);
+  --typo-eyebrow-color: var(--color-accent);
 
-  --typo-h1-font: var(--font-display);
-  --typo-h1-size: var(--type-h1);
+  /* ┌─────────────────────────────────────────────────────────┐
+     │  4-B. Heading tier                                     │
+     │  문서 구조·접근성. h1~h6 HTML 태그 대응.               │
+     │  크기·굵기·행간은 언어 무관 유지. font만 Layer 5 분기. │
+     │  EN: --font-display / KO: Pretendard                   │
+     └─────────────────────────────────────────────────────────┘ */
+
+  --typo-h1-size: var(--type-h1); /* clamp(30px, 3.4vw, 46px) */
   --typo-h1-weight: 600;
   --typo-h1-line: 1.25;
   --typo-h1-letter: -0.02em;
+  --typo-h1-color: var(--color-heading);
 
-  --typo-h2-font: var(--font-display);
   --typo-h2-size: var(--text-34);
   --typo-h2-weight: 600;
   --typo-h2-line: 1.35;
   --typo-h2-letter: -0.015em;
+  --typo-h2-color: var(--color-heading);
 
-  --typo-h3-font: var(--font-display);
   --typo-h3-size: var(--text-24);
   --typo-h3-weight: 500;
   --typo-h3-line: 1.45;
   --typo-h3-letter: -0.01em;
+  --typo-h3-color: var(--color-heading);
 
-  --typo-h4-font: var(--font-display);
   --typo-h4-size: var(--text-20);
   --typo-h4-weight: 500;
   --typo-h4-line: 1.5;
   --typo-h4-letter: -0.005em;
+  --typo-h4-color: var(--color-heading);
 
-  --typo-h5-font: var(--font-display);
-  --typo-h5-size: var(--type-h5);
+  --typo-h5-size: var(--type-h5); /* clamp(16px, 1.5vw, 22px) */
   --typo-h5-weight: 500;
   --typo-h5-line: 1.5;
   --typo-h5-letter: 0em;
+  --typo-h5-color: var(--color-heading);
 
-  --typo-h6-font: var(--font-display);
-  --typo-h6-size: var(--type-h6);
+  --typo-h6-size: var(--type-h6); /* 15px */
   --typo-h6-weight: 500;
   --typo-h6-line: 1.4;
   --typo-h6-letter: 0.01em;
+  --typo-h6-color: var(--color-heading);
 
-  /* ── 3-C. Body / UI (Pretendard 고정 — 언어 무관) ─────────── */
+  /* ┌─────────────────────────────────────────────────────────┐
+     │  4-C. Body / UI (Pretendard 고정 — 언어 무관)          │
+     └─────────────────────────────────────────────────────────┘ */
 
-  --typo-lead-font: var(--font-body);
-  --typo-lead-size: var(--text-18);
-  --typo-lead-weight: 400;
-  --typo-lead-line: 1.75;
-  --typo-lead-letter: -0.01em;
+  /* lead — 섹션 인트로 문단(.sec-intro)에 연결 */
+  --typo-lead-size: clamp(18px, 2vw, 22px);
+  --typo-lead-weight: 500;
+  --typo-lead-line: 1.65;
+  --typo-lead-letter: var(--tracking-tighter);
+  --typo-lead-color: var(--color-body);
 
-  --typo-body-font: var(--font-body);
   --typo-body-size: var(--text-16);
+  --typo-body-size-15: var(--text-15);
   --typo-body-weight: 400;
   --typo-body-line: 1.7;
   --typo-body-letter: -0.01em;
+  --typo-body-color: var(--color-body);
 
-  --typo-caption-font: var(--font-body);
-  --typo-caption-size: var(--text-14);
+  --typo-body-sm-size: var(--type-body-sm); /* clamp(13px, …, 14px) */
+  --typo-body-sm-weight: 400;
+  --typo-body-sm-line: 1.6;
+  --typo-body-sm-letter: -0.005em;
+  --typo-body-sm-color: var(--color-body);
+
+  /* caption — figure 캡션·이미지 출처 (.art-body figcaption 등에 연결) */
+  --typo-caption-size: var(--text-12);
   --typo-caption-weight: 400;
   --typo-caption-line: 1.5;
-  --typo-caption-letter: -0.005em;
+  --typo-caption-letter: var(--tracking-medium);
+  --typo-caption-color: var(--color-caption);
 
-  --typo-label-font: var(--font-body);
+  /* label — 폼 레이블·step 라벨. (주의: 본 사이트의 *__label은 10~21px로
+     값이 제각각이라 단일 컴포넌트에 연결하지 않음. 폼 도입 시 기준값으로 사용) */
   --typo-label-size: var(--text-13);
   --typo-label-weight: 500;
   --typo-label-line: 1.4;
   --typo-label-letter: -0.005em;
+  --typo-label-color: var(--color-label);
 
-  /* ── 3-D. UI Interactive (Pretendard 고정) ─────────────────── */
-
-  --typo-button-font: var(--font-body);
-  --typo-button-size: var(--text-15);
+  /* button — .btn / chip 계열에 연결 (size·weight·letter) */
+  --typo-button-size: var(--text-14);
   --typo-button-weight: 600;
   --typo-button-line: 1.2;
-  --typo-button-letter: 0.02em;
+  --typo-button-letter: var(--tracking-wide);
+  --typo-button-color: var(--color-button);
 
-  --typo-nav-font: var(--font-body);
-  --typo-nav-size: var(--text-14);
+  /* nav — 데스크탑 GNB 링크(.gnb a)에 연결 */
+  --typo-nav-size: var(--text-16);
   --typo-nav-weight: 600;
   --typo-nav-line: 1.2;
-  --typo-nav-letter: 0.01em;
+  --typo-nav-letter: var(--tracking-snug);
+  --typo-nav-color: var(--color-nav);
 
   /* ─── Layout ─── */
-
   --maxw: 2560px;
   --maxw-02: 1000px;
   --gutter: var(--space-gutter);
   --header-h: 92px;
 
   /* ─── Breakpoints (reference only — CSS @media does not support var()) ─── */
-  /* JS usage: window.KMT.BP.mobile / window.KMT.mqMax(px).matches         */
-  --bp-mobile: 860; /* 모바일 GNB / 컴포넌트 레이아웃 전환 */
-  --bp-small: 600; /* 소형 모바일 서체·여백 추가 압축 */
-  --bp-treat: 520; /* treat-grid 2열 전환 */
+  --bp-mobile: 860;
+  --bp-small: 600;
+  --bp-treat: 520;
 
   /* ─── JS Interaction Tokens (reference only — unitless, read by app.js) ─── */
-  /* JS usage: window.KMT.SCROLL.* / window.KMT.HERO.*                     */
-  --scroll-header-solid: 60; /* scrollY > N → 헤더 불투명 */
-  --scroll-header-compact: 80; /* scrollY 하강 시 헤더 컴팩트 */
-  --scroll-topbtn: 400; /* scrollY > N → top 버튼 표시 */
-  --hero-interval: 6000; /* 히어로 슬라이더 자동재생 (ms) */
+  --scroll-header-solid: 60;
+  --scroll-header-compact: 80;
+  --scroll-topbtn: 400;
+  --hero-interval: 6000;
 }
 
-/* ============================================================
-   언어 단위 Typography Override (EN 우선 구조)
-   ------------------------------------------------------------
-   타이포 위계는 EN(index-en.html) 기준으로 확정한다.
-   기본값(:root) → Display/Brand 역할 = Optima 계열(--font-display).
-   국문 페이지(html[lang="ko"])에서는 Display 역할 폰트를
-   Pretendard로 리매핑하여 한글 가독성을 보장한다.
-
-   · font-family 토큰만 재정의 → 크기·굵기·레이아웃 불변(안전)
-   · var(--font-display) / var(--font-en)을 쓰는 모든 요소에 자동 반영
-   · 개별 [lang="ko"] 요소 규칙(weight/letter-spacing 미세조정)은 위에 그대로 동작
-   · 레거시 --font-en도 함께 리매핑(폴백 끝이 generic sans → Pretendard 보정)
-   ============================================================ */
+/* ════════════════════════════════════════════════════════════
+   LAYER 5 — Language Override
+   ────────────────────────────────────────────────────────────
+   font-family 토큰만 재정의. 크기·굵기·간격·색상은 불변.
+   var(--font-display)를 사용하는 모든 요소에 자동 반영.
+   ════════════════════════════════════════════════════════════ */
 [lang="ko"] {
   --font-display: "Pretendard Variable", -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", sans-serif;
-  --font-en: "Pretendard Variable", -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", sans-serif;
 }

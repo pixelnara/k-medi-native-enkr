@@ -573,7 +573,7 @@
   text-transform: uppercase;
 }
 .pd-detail-hero__title {
-  font-family: var(--typo-h1-font);
+  font-family: var(--font-display);
   font-size: var(--text-32);
   font-weight: var(--typo-h1-weight);
   line-height: 1.35;
