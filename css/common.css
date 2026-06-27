@@ -45,11 +45,11 @@ body {
 }
 /* Eyebrow / section label — the ONLY place --caption is used */
 .eyebrow {
-  font-family: var(--font-en);
+  font-family: var(--font-display);
   color: var(--text-caption);
   font-size: var(--text-19);
   font-weight: 600;
-  letter-spacing: var(--tracking-normal);
+  letter-spacing: var(--tracking-wide);
   text-transform: uppercase;
   margin-bottom: var(--space-18);
 }
@@ -312,6 +312,13 @@ body {
   color: var(--gray-950);
   line-height: 0.95;
   margin: 0 0 var(--space-16);
+}
+/* 장식체(Display) 변형 — 영문 타이틀 전용.
+   국문 페이지에는 적용 금지(font.css 규칙). cosmetic / skin-sol 영문 페이지에만 사용. */
+.page-head-edito__title--display {
+  font-family: var(--font-display);
+  font-weight: 500;
+  letter-spacing: var(--tracking-tight);
 }
 .page-head-edito__desc {
   font-size: var(--text-15);
@@ -1681,8 +1688,9 @@ image-slot#cert-sgi {
   .h-lg {
     font-size: clamp(32px, 8vw, 60px);
   }
-  .eyebrow {
-    font-size: var(--text-14);
+  .eyebrow,
+  .page-hero--white .eyebrow {
+    font-size: var(--text-12);
   }
 
   /* Feature caption */
@@ -1852,22 +1860,14 @@ image-slot#cert-sgi {
 .ed-head__title {
   font-family: var(--font-display);
   font-size: clamp(26px, 3.4vw, 48px);
-  font-weight: 400;
+  font-weight: 600;
   letter-spacing: var(--tracking-tighter);
   color: var(--gray-950);
   line-height: 1;
   margin: 0;
 }
 [lang="ko"] .ed-head__title {
-  font-family: var(--font-body);
   font-weight: 700;
-}
-.ed-head__title::before {
-  content: "✦";
-  color: var(--accent-blue);
-  font-size: 0.45em;
-  vertical-align: 0.2em;
-  margin-right: 0.6em;
 }
 @media (max-width: 600px) {
   .ed-head__title {
@@ -1898,7 +1898,8 @@ image-slot#cert-sgi {
     padding-top: 0;
   }
   .ed-head__title {
-    font-size: clamp(20px, 4vw, 26px);
+    /* 섹션 헤더: 카드 제목(22px)보다 위, 히어로(29px)보다 아래 — 위계 정렬 */
+    font-size: clamp(26px, 6vw, 30px);
   }
   .ed-head__more {
     font-size: var(--text-11);
@@ -1913,3 +1914,4 @@ image-slot#cert-sgi {
     transition: background 0s;
   }
 }
+

@@ -486,7 +486,7 @@
   margin-top: clamp(40px, 5vw, 72px);
 }
 .feature__kicker {
-  font-family: var(--font-en);
+  font-family: var(--font-display);
   color: var(--text-caption);
   font-size: var(--text-12);
   letter-spacing: var(--tracking-wide);
@@ -609,24 +609,32 @@
   display: block;
 }
 .why-journey__icon-label {
-  font-family: var(--font-body);
+  font-family: var(--font-display);
   font-size: var(--type-h5);
-  font-weight: 650;
+  font-weight: 400;
   color: var(--text-gray-6);
-  letter-spacing: var(--tracking-tighter);
+  letter-spacing: -0.01em;
   line-height: 1.35;
   margin-bottom: 0;
 }
+[lang="ko"] .why-journey__icon-label {
+  font-weight: 650;
+  letter-spacing: var(--tracking-tighter);
+}
 .why-journey__icon-sub {
   display: block;
-  font-family: var(--font-body);
+  font-family: var(--font-display);
   font-size: var(--text-16);
-  font-weight: 600;
+  font-weight: 400;
   color: var(--text-gray-6);
-  letter-spacing: var(--tracking-tighter);
+  letter-spacing: -0.01em;
   margin-bottom: var(--space-12);
   margin-top: 0;
   line-height: 1.5;
+}
+[lang="ko"] .why-journey__icon-sub {
+  font-weight: 600;
+  letter-spacing: var(--tracking-tighter);
 }
 .why-journey__icon-desc {
   font-family: var(--font-body);
@@ -745,14 +753,15 @@
     margin-bottom: var(--space-4);
   }
   .why-journey__icon-sub {
-    font-size: 1.65rem;
+    font-size: 1.6rem;
     margin-top: var(--space-10);
     margin-bottom: var(--space-6);
+    font-weight: 600;
   }
   .why-journey__icon-desc {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     font-weight: 500;
-    line-height: 1.45;
+    line-height: 1.55;
     color: var(--text-gray-4);
   }
 }
@@ -806,7 +815,7 @@
   margin-top: var(--space-20);
 }
 .news-card__cat {
-  font-family: var(--font-en);
+  font-family: var(--font-display);
   color: var(--text-caption);
   font-size: var(--text-13);
   letter-spacing: var(--tracking-wide);
@@ -840,10 +849,10 @@
   font-family: var(--font-display);
   color: var(--text-gray-6);
   font-size: clamp(14px, 1.35vw, 23px);
-  font-weight: 400;
+  font-weight: 500;
   line-height: 1.45;
   letter-spacing: var(--tracking-tight);
-  margin-top: var(--space-10);
+  margin-top: var(--space-4);
   display: -webkit-box;
   -webkit-line-clamp: 2;
   line-clamp: 2;
@@ -853,7 +862,6 @@
   transition: text-decoration 0.2s;
 }
 [lang="ko"] .news-card__title {
-  font-family: var(--font-body);
   font-weight: 600;
 }
 @media (hover: hover) {
@@ -872,6 +880,25 @@
   font-size: var(--text-12);
   font-weight: 400;
   color: var(--text-gray-2);
+}
+
+/* ── 카드 타이포 위계 (InterContinental 스타일) ──
+   From Korea(오퍼) + How It Works 두 .news-grid 영역 공통 적용.
+   1) 카테고리 : Pretendard 16px   (HIW 'STEP 1' 라벨 포함)
+   2) 제목      : Optima(EN) / Pretendard(KO, theme.css 토큰 레이어) 24px
+   3) 날짜      : Pretendard 16px   (오퍼 카드 전용 — HIW엔 날짜 없음)
+   ──────────────────────────────────────────────────────── */
+.news-grid .news-card__cat {
+  font-family: var(--font-body);
+  font-size: var(--text-16);
+}
+.news-grid .news-card__title {
+  /* font-family은 base의 --font-display 유지 (EN Optima / KO Pretendard) */
+  font-size: var(--text-24);
+}
+.news-grid .news-card__date {
+  font-family: var(--font-body);
+  font-size: var(--text-16);
 }
 .highlights__more {
   display: flex;
@@ -1030,19 +1057,18 @@
   display: inline-block;
   font-family: var(--font-display);
   font-size: var(--text-15);
-  font-weight: 400;
+  font-weight: 600;
   padding-bottom: 12px;
   line-height: 1.4;
 }
 [lang="ko"] .acc-em {
-  font-family: var(--font-body);
   font-weight: 520;
 }
 .acc-desc {
   color: var(--text-gray-4);
   font-size: var(--text-14);
   font-weight: 450;
-  line-height: 1.4;
+  line-height: 1.3;
 }
 /* PC 전용 — 기존 레이아웃 글씨 크기 유지 (em 17px / desc 18px) */
 @media (min-width: 861px) {
@@ -1300,7 +1326,7 @@
   .highlights__more .btn {
     height: auto;
     padding: 20px 0;
-    font-size: var(--text-15);
+    font-size: var(--text-18);
   }
   .highlights__more .btn {
     display: block;
@@ -1376,7 +1402,7 @@
     font-weight: 400;
     line-height: 1.5;
     color: var(--text-gray-5);
-    margin-bottom: var(--space-10);
+    /* margin-bottom: var(--space-10); */
   }
   /* 방문 시간 (가짜) */
   .treat-card__time {
@@ -1439,9 +1465,8 @@
 .hiw-grid {
   grid-template-columns: repeat(4, 1fr);
 }
-/* Step label — enlarged so the sequence reads clearly */
+/* Step label — 'STEP n' 레이아웃만 유지 (크기/폰트는 .news-grid 위계 규칙이 통일: Pretendard 16px) */
 .hiw-grid .news-card__cat {
-  font-size: var(--text-24);
   letter-spacing: var(--tracking-tight);
   display: flex;
   gap: var(--space-4);
@@ -1464,8 +1489,8 @@
 .news-card__desc {
   color: var(--text-gray-4);
   font-size: var(--text-15);
-  font-weight: 500;
-  line-height: 2.15;
+  font-weight: 400;
+  line-height: 1.7;
   margin-top: var(--space-12);
   letter-spacing: var(--tracking-tighter);
 }
@@ -1514,7 +1539,6 @@
   margin-bottom: var(--space-16);
 }
 [lang="ko"] .hiw-card__step {
-  font-family: var(--font-body);
   font-weight: 700;
 }
 .hiw-step__prefix {
@@ -1607,8 +1631,9 @@
   .hiw-card__desc {
     grid-column: 2;
     grid-row: 2;
-    font-size: var(--text-13);
+    font-size: var(--text-14);
     line-height: 1.65;
+    font-weight: 400;
   }
   .hiw-step__prefix {
     display: none;
@@ -1763,7 +1788,7 @@
     line-height: 1.2;
     letter-spacing: var(--tracking-tighter);
     text-align: center;
-    font-weight: 700;
+    font-weight: 600 !important; /* 인라인 weight(500)보다 우선 — 모바일 전용 */
     padding-bottom: 0.3em;
   }
   .hero__desc {
@@ -1938,14 +1963,14 @@
 
   /* Section intro responsive */
   .sec-intro {
-    font-size: clamp(15px, 4vw, 20px);
+    font-size: clamp(14px, 4vw, 20px);
     font-weight: 450;
   }
-  /* whyus / treatments intro: 모바일에서 2줄로 떨어지도록 축소 */
+  /* whyus / treatments intro: 모바일 본문 — 15px 고정, 줄간격 1.7 */
   #whyus .sec-intro,
   #treatments .sec-intro {
-    font-size: clamp(12px, 3.2vw, 15px);
-    line-height: 1.55;
+    font-size: clamp(15px, 3.2vw, 15px);
+    line-height: 1.4;
   }
   .mo-br {
     display: inline;
@@ -2026,20 +2051,24 @@
   .hero__nav {
     display: none;
   }
-  /* 뉴스 카드 */
-  .news-card__date {
-    display: none;
-  }
+  /* 뉴스 카드 — InterContinental 레퍼런스 모바일 사이징
+     (.news-grid 명시도로 재정의해 데스크톱 위계가 모바일로 새지 않게 함) */
   .news-card__meta {
     margin-top: var(--space-10);
   }
-  .news-card__cat {
+  .news-grid .news-card__cat {
     font-size: var(--text-12);
   }
-  .news-card__title {
+  .news-grid .news-card__title {
+    font-size: var(--text-22);
+    line-height: 1.3;
     margin-top: var(--space-4);
     -webkit-line-clamp: 2;
     line-clamp: 2;
+  }
+  .news-grid .news-card__date {
+    display: block;
+    font-size: var(--text-14);
   }
   .news-grid {
     grid-template-columns: 1fr;
@@ -2071,9 +2100,9 @@
   }
   /* Trust */
   .trust__intro {
-    font-size: var(--text-13);
-    font-weight: 400;
-    line-height: 1.7;
+    font-size: var(--text-14);
+    font-weight: 450;
+    line-height: 1.4;
     max-width: 100%;
     padding: 0 var(--space-20);
     margin-bottom: var(--space-36);

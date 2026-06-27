@@ -353,3 +353,21 @@
   --scroll-topbtn: 400; /* scrollY > N → top 버튼 표시 */
   --hero-interval: 6000; /* 히어로 슬라이더 자동재생 (ms) */
 }
+
+/* ============================================================
+   언어 단위 Typography Override (EN 우선 구조)
+   ------------------------------------------------------------
+   타이포 위계는 EN(index-en.html) 기준으로 확정한다.
+   기본값(:root) → Display/Brand 역할 = Optima 계열(--font-display).
+   국문 페이지(html[lang="ko"])에서는 Display 역할 폰트를
+   Pretendard로 리매핑하여 한글 가독성을 보장한다.
+
+   · font-family 토큰만 재정의 → 크기·굵기·레이아웃 불변(안전)
+   · var(--font-display) / var(--font-en)을 쓰는 모든 요소에 자동 반영
+   · 개별 [lang="ko"] 요소 규칙(weight/letter-spacing 미세조정)은 위에 그대로 동작
+   · 레거시 --font-en도 함께 리매핑(폴백 끝이 generic sans → Pretendard 보정)
+   ============================================================ */
+[lang="ko"] {
+  --font-display: "Pretendard Variable", -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", sans-serif;
+  --font-en:      "Pretendard Variable", -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", sans-serif;
+}

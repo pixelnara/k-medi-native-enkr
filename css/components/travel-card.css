@@ -49,7 +49,8 @@
 }
 
 .tv-card__title {
-  font-family: var(--font-body);
+  /* Display 타입 — EN: Optima / KO: theme.css [lang="ko"] 토큰 레이어가 Pretendard로 자동 override */
+  font-family: var(--font-display);
   font-size: var(--text-17);
   font-weight: 700;
   letter-spacing: var(--tracking-tight);

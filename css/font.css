@@ -8,7 +8,8 @@
    ============================================================ */
 
 :root {
-  /* 영문 전용: Optima(Mac) → Marcellus → Cormorant Garamond → Candara(Win) */
+  /* [Deprecated] 하위 호환용 alias — 신규/기존 코드 모두 --font-display 사용.
+     프로덕션 CSS에서는 미사용(design-system.html 문서 예시로만 잔존). */
   --font-en: Optima, Marcellus, "Cormorant Garamond", Candara, sans-serif;
 
   /* 국문/기본: Pretendard Variable → 시스템 폰트 */

@@ -106,12 +106,17 @@
   margin-bottom: var(--space-36);
 }
 .sa-panel__title {
+  font-family: var(--font-display);
   font-size: clamp(26px, 3.2vw, 44px);
-  font-weight: 700;
-  letter-spacing: var(--tracking-tightest);
+  font-weight: 400;
+  letter-spacing: -0.02em;
   color: var(--text-gray-7);
   margin-bottom: var(--space-14);
   line-height: 1.1;
+}
+[lang="ko"] .sa-panel__title {
+  font-weight: 700;
+  letter-spacing: var(--tracking-tightest);
 }
 .sa-panel__sub {
   font-size: var(--text-15);
@@ -232,12 +237,17 @@
 }
 
 .sa-slide__title {
+  font-family: var(--font-display);
   font-size: clamp(17px, 2vw, 22px);
-  font-weight: 700;
+  font-weight: 400;
   color: var(--text-gray-7);
   margin-bottom: var(--space-16);
-  letter-spacing: var(--tracking-tighter);
+  letter-spacing: -0.01em;
   line-height: 1.2;
+}
+[lang="ko"] .sa-slide__title {
+  font-weight: 700;
+  letter-spacing: var(--tracking-tighter);
 }
 
 .sa-slide__list {
