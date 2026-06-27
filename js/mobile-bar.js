@@ -12,7 +12,7 @@
   var ITEMS = [
     { label: '홈',     href: 'index.html' },
     { label: '피부타입', href: 'skin-sol.html' },
-    { label: '상담받기', href: '#booking', cta: true },
+    { label: '상담받기', href: 'reservation.html', cta: true },
     { label: '매거진',  href: 'magazine.html' },
     { label: '쇼핑',   href: 'cosmetic.html' },
   ];
