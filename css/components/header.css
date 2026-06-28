@@ -563,7 +563,6 @@
   /* CTA 버튼 행 */
   .gnb-contact-cta {
     display: flex;
-    /* gap: var(--space-8); */
     width: 100%;
     margin-top: var(--space-0);
   }
@@ -574,8 +573,7 @@
     justify-content: center;
     gap: var(--space-6);
     padding: var(--space-18) var(--space-8);
-    /* border-radius: 2px; */
-    font-size: var(--text-15);
+    font-size: var(--text-14);
     font-weight: 600;
     letter-spacing: var(--tracking-tight);
     text-decoration: none;
@@ -660,7 +658,7 @@
   .gnb-lang-tab.is-active {
     color: var(--text-gray-7);
     font-weight: 700;
-    background: var(--gray-100);
+    background: var(--gray-200);
   }
 }
 
@@ -762,7 +760,9 @@
 .gnb-overlay__close:active {
   transform: scale(0.84);
   opacity: 0.45;
-  transition: transform 0.07s, opacity 0.07s;
+  transition:
+    transform 0.07s,
+    opacity 0.07s;
 }
 .gnb-overlay__close svg {
   width: 24px;
@@ -979,7 +979,7 @@
 .gnb-sub-toggle {
   display: inline-flex;
   align-items: center;
-  justify-content: center;
+  /* justify-content: center; */
   width: 22px;
   height: 22px;
   flex-shrink: 0;
@@ -1011,12 +1011,10 @@
   border-left: 2px solid var(--border-gray-1);
 }
 .gnb-col ul.gnb-sub-list--flat {
-  margin-top: 0;
-  margin-bottom: 0;
   border-left: none;
 }
 ul.gnb-sub-list.gnb-sub-list--flat {
-  padding-top: 12px;
+  /* padding-top: 12px; */
 }
 .gnb-has-sub.is-open > ul.gnb-sub-list {
   display: flex;

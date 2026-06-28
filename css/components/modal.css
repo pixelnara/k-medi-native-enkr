@@ -48,9 +48,9 @@
   padding: var(--space-4);
 }
 @media (hover: hover) {
-.login-modal__close:hover {
-  color: var(--text-gray-7);
-}
+  .login-modal__close:hover {
+    color: var(--text-gray-7);
+  }
 }
 .login-modal__brand {
   font-size: var(--text-18);
@@ -141,9 +141,9 @@ input[type="password"].login-modal__input {
   padding: var(--space-4);
 }
 @media (hover: hover) {
-.login-pwd-eye:hover {
-  color: var(--text-gray-3);
-}
+  .login-pwd-eye:hover {
+    color: var(--text-gray-3);
+  }
 }
 .login-modal__options {
   display: flex;
@@ -173,9 +173,9 @@ input[type="password"].login-modal__input {
   text-decoration: none;
 }
 @media (hover: hover) {
-.login-modal__forgot:hover {
-  text-decoration: underline;
-}
+  .login-modal__forgot:hover {
+    text-decoration: underline;
+  }
 }
 .login-modal__submit {
   width: 100%;
@@ -191,9 +191,9 @@ input[type="password"].login-modal__input {
   transition: opacity 0.2s;
 }
 @media (hover: hover) {
-.login-modal__submit:hover {
-  opacity: 0.82;
-}
+  .login-modal__submit:hover {
+    opacity: 0.82;
+  }
 }
 .login-modal__divider {
   display: flex;
@@ -233,9 +233,9 @@ input[type="password"].login-modal__input {
   transition: opacity 0.15s;
 }
 @media (hover: hover) {
-.login-social-btn:hover {
-  opacity: 0.85;
-}
+  .login-social-btn:hover {
+    opacity: 0.85;
+  }
 }
 .login-social-btn--kakao {
   background: var(--btn-kakao);
@@ -255,9 +255,9 @@ input[type="password"].login-modal__input {
   text-decoration: none;
 }
 @media (hover: hover) {
-.login-modal__join a:hover {
-  text-decoration: underline;
-}
+  .login-modal__join a:hover {
+    text-decoration: underline;
+  }
 }
 .login-modal__admin {
   margin-top: var(--space-14);
@@ -275,9 +275,9 @@ input[type="password"].login-modal__input {
   text-decoration: none;
 }
 @media (hover: hover) {
-.login-admin-link:hover {
-  color: var(--text-gray-3);
-}
+  .login-admin-link:hover {
+    color: var(--text-gray-3);
+  }
 }
 @media (max-width: 768px) {
   .login-modal {
@@ -313,15 +313,15 @@ input[type="password"].login-modal__input {
   transform: translateY(100%);
   visibility: hidden;
   transition:
-    transform 0.26s cubic-bezier(0.55, 0, 1, 0.45), /* close: 빠른 퇴장 */
-    visibility 0s linear 0.26s;
+    transform 0.26s cubic-bezier(0.55, 0, 1, 0.45),
+    /* close: 빠른 퇴장 */ visibility 0s linear 0.26s;
 }
 .proc-sheet.is-open {
   transform: translateY(0);
   visibility: visible;
   transition:
-    transform 0.42s cubic-bezier(0.22, 1, 0.36, 1), /* open: spring 진입 */
-    visibility 0s linear 0s;
+    transform 0.42s cubic-bezier(0.22, 1, 0.36, 1),
+    /* open: spring 진입 */ visibility 0s linear 0s;
 }
 .proc-sheet__bar {
   display: flex;
@@ -349,7 +349,9 @@ input[type="password"].login-modal__input {
 .proc-sheet__close:active {
   transform: scale(0.84);
   opacity: 0.45;
-  transition: transform 0.07s, opacity 0.07s;
+  transition:
+    transform 0.07s,
+    opacity 0.07s;
 }
 .proc-sheet__title {
   font-size: var(--text-18);
@@ -379,17 +381,33 @@ input[type="password"].login-modal__input {
 
 /* 열릴 때 아이템 순차 등장 */
 @keyframes proc-enter {
-  from { opacity: 0; transform: translateY(10px); }
-  to   { opacity: 1; transform: none; }
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
 }
 .proc-sheet.is-open .proc-sheet__list li {
   animation: proc-enter 0.28s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
-.proc-sheet.is-open .proc-sheet__list li:nth-child(1) { animation-delay: 0.22s; }
-.proc-sheet.is-open .proc-sheet__list li:nth-child(2) { animation-delay: 0.27s; }
-.proc-sheet.is-open .proc-sheet__list li:nth-child(3) { animation-delay: 0.32s; }
-.proc-sheet.is-open .proc-sheet__list li:nth-child(4) { animation-delay: 0.37s; }
-.proc-sheet.is-open .proc-sheet__list li:nth-child(5) { animation-delay: 0.42s; }
+.proc-sheet.is-open .proc-sheet__list li:nth-child(1) {
+  animation-delay: 0.22s;
+}
+.proc-sheet.is-open .proc-sheet__list li:nth-child(2) {
+  animation-delay: 0.27s;
+}
+.proc-sheet.is-open .proc-sheet__list li:nth-child(3) {
+  animation-delay: 0.32s;
+}
+.proc-sheet.is-open .proc-sheet__list li:nth-child(4) {
+  animation-delay: 0.37s;
+}
+.proc-sheet.is-open .proc-sheet__list li:nth-child(5) {
+  animation-delay: 0.42s;
+}
 .proc-sheet.is-open .proc-sheet__banner {
   animation: proc-enter 0.3s cubic-bezier(0.22, 1, 0.36, 1) 0.44s both;
 }

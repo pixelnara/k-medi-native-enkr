@@ -597,9 +597,15 @@
   .why-journey__icon-item {
     gap: 28px;
     padding: 32px 20px;
+    align-items: flex-start;
   }
   .why-journey__icon-left {
-    width: 160px;
+    width: auto;
+    flex-shrink: 0;
+  }
+  .why-journey__icon-label {
+    display: block;
+    margin-bottom: var(--space-6);
   }
 }
 @media (max-width: 760px) {
@@ -626,6 +632,7 @@
   .why-journey__icon-item:nth-child(odd),
   .why-journey__icon-item:nth-child(even) {
     gap: 16px;
+    align-items: flex-start; /* 아이콘 + 텍스트(제목/설명) 상단 정렬 */
     border-top: none;
     /* border-top: 1px solid var(--border-gray-1); */
     border-bottom: 1px solid var(--border-gray-1);
@@ -638,34 +645,45 @@
     border-bottom: none;
     padding-bottom: 24px;
   }
+  /* 좌측: 아이콘만 (라벨은 우측 컬럼으로 이동) */
   .why-journey__icon-left {
-    width: 96px;
+    width: auto;
+    flex-shrink: 0;
   }
   .why-journey__icon-wrap {
     width: 48px;
     height: 48px;
-    margin-bottom: var(--space-12);
+    margin-bottom: 0;
   }
   .why-journey__icon-wrap svg {
     width: 26px;
     height: 26px;
   }
+  /* 우측: 제목(라벨) + 설명. 서브태그라인은 모바일에서 숨김 */
+  .why-journey__icon-right {
+    padding-top: 2px;
+  }
   .why-journey__icon-label {
-    font-size: var(--text-13);
-    font-weight: 600;
-    margin-bottom: var(--space-4);
+    display: block;
+    font-size: var(--text-15);
+    font-weight: 650;
+    line-height: 1.35;
+    margin-bottom: var(--space-6);
   }
   .why-journey__icon-sub {
-    font-size: 1.6rem;
-    margin-top: var(--space-10);
-    margin-bottom: var(--space-6);
-    font-weight: 600;
+    display: none;
   }
   .why-journey__icon-desc {
     font-size: 1.3rem;
     font-weight: 500;
     line-height: 1.55;
     color: var(--text-gray-4);
+    /* 최대 3줄 + 말줄임 처리 */
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
 }
 
