@@ -199,7 +199,7 @@
   letter-spacing: var(--tracking-tighter);
   color: var(--gray-950);
   line-height: 1.2;
-  margin: 0 0 var(--space-20);
+  margin: 0 0 var(--space-16);
   transition: text-decoration 0.2s;
 }
 @media (hover: hover) {
@@ -210,7 +210,7 @@
   }
 }
 .mag-featured__excerpt {
-  font-size: var(--text-15);
+  font-size: var(--text-13);
   color: var(--text-gray-5);
   line-height: 1.7;
   margin-bottom: var(--space-24);
@@ -245,7 +245,8 @@
     padding: var(--space-24) 0;
   }
   .mag-featured__title {
-    font-size: clamp(22px, 5vw, 32px);
+    font-size: clamp(19px, 5vw, 32px);
+    line-height: 1.5;
   }
 }
 
@@ -297,13 +298,17 @@
     border-left: none;
     border-right: none;
   }
+  /* 모바일(폰): "더 보기" 위 하단 라인 제거 (마지막 카드 보더) */
+  .mag-card:last-child {
+    border-bottom: none;
+  }
 }
 
 /* ─── Load More ─── */
 .mag-more {
   text-align: center;
   padding-top: clamp(32px, 4vw, 56px);
-  border-top: 1px solid var(--gray-200);
+  /* 카드 그리드 하단 보더와 겹쳐 2줄로 보여 상단 보더 제거 → 1줄 유지 */
   margin-top: clamp(32px, 4vw, 56px);
 }
 .mag-more__btn {

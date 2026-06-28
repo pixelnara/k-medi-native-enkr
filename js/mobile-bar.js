@@ -12,7 +12,6 @@
   var ITEMS = [
     { label: '홈',     href: 'index.html' },
     { label: '피부타입', href: 'skin-sol.html' },
-    { label: '상담받기', href: 'reservation.html', cta: true },
     { label: '쇼핑',   href: 'cosmetic.html' },
     { label: '매거진',  href: 'magazine.html' },
   ];

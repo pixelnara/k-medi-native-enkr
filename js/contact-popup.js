@@ -1,12 +1,15 @@
 (function () {
+  var isEN = document.documentElement.lang === 'en' || location.pathname.indexOf('/en/') !== -1;
+  var chatLabel = isEN ? 'Contact' : '문의하기';
   var html = [
-    '<button class="chat-btn" id="chatBtn" aria-label="문의하기" aria-expanded="false">',
+    '<button class="chat-btn" id="chatBtn" aria-label="' + chatLabel + '" aria-expanded="false">',
     '  <svg class="chat-icon-chat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">',
     '    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>',
     "  </svg>",
     '  <svg class="chat-icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">',
     '    <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>',
     "  </svg>",
+    '  <span class="chat-btn__label">' + chatLabel + '</span>',
     "</button>",
 
     '<div class="contact-popup" id="contactPopup" aria-hidden="true" role="dialog" aria-modal="true" aria-label="문의하기">',
@@ -58,6 +61,17 @@
   var popup = document.getElementById("contactPopup");
   var closeBtn = document.getElementById("contactClose");
   var loginTrigger = document.getElementById("contactLoginTrigger");
+
+  /* 진입 시 숨김 → 스크롤 시 노출 (모든 페이지) */
+  function onScrollReveal() {
+    if (window.scrollY > 30) {
+      chatBtn.classList.add("is-revealed");
+    } else {
+      chatBtn.classList.remove("is-revealed");
+    }
+  }
+  window.addEventListener("scroll", onScrollReveal, { passive: true });
+  onScrollReveal();
 
   function openPopup() {
     popup.classList.add("is-open");

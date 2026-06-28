@@ -544,9 +544,22 @@ image-slot#cert-sgi {
   justify-content: center;
   z-index: 850;
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.25);
+  /* 진입 시 숨김 → .is-revealed 추가 시 노출 (스크롤 노출용) */
+  opacity: 0;
+  visibility: hidden;
   transition:
     background 0.3s ease,
-    transform 0.3s ease;
+    transform 0.3s ease,
+    opacity 0.3s ease,
+    visibility 0.3s ease;
+}
+.chat-btn.is-revealed {
+  opacity: 1;
+  visibility: visible;
+}
+/* 라벨은 모바일 알약 버튼에서만 노출 */
+.chat-btn__label {
+  display: none;
 }
 @media (hover: hover) {
   .chat-btn:hover {
@@ -1636,10 +1649,34 @@ image-slot#cert-sgi {
     color: var(--text-gray-6);
     background: var(--surface-gray-1);
   }
-  /* chat-btn on mobile: show above mobile bar */
+  /* chat-btn on mobile: 검정 버텀바 위에 알약(pill) 형태로 가운데 배치 */
   .chat-btn {
     display: flex;
+    /* 좌우 중앙 정렬 (transform은 노출 트랜지션이 쓰므로 margin auto 사용) */
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: fit-content;
+    height: auto;
+    border-radius: var(--radius-pill);
+    padding: var(--space-12) var(--space-20);
+    gap: 0;
+    background: var(--bg-white);
+    color: var(--text-gray-7);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.18);
+    /* 검정 버텀바(80px) 위쪽에 띄움 */
     bottom: calc(var(--space-80) + env(safe-area-inset-bottom, 0px) + var(--space-16));
+  }
+  /* 모바일 알약은 텍스트만 노출 (좌측 아이콘 숨김) */
+  .chat-btn svg {
+    display: none;
+  }
+  .chat-btn__label {
+    display: inline;
+    font-size: var(--text-13);
+    font-weight: 400;
+    letter-spacing: var(--tracking-tight);
+    white-space: nowrap;
   }
   .contact-popup {
     width: calc(100vw - var(--space-32));
@@ -1875,5 +1912,46 @@ image-slot#cert-sgi {
   .news-card:active {
     background: var(--surface-gray-1);
     transition: background 0s;
+  }
+}
+
+/* ============================================================
+   MOBILE DESCRIPTION LINE-CLAMP (최대 3줄)
+   - 모바일(≤768px)에서 설명/카드 본문/리스트 설명 텍스트를 3줄로 제한
+   - 제목/이름/라벨/서브타이틀은 제외 (대상 아님)
+   - 데스크톱(≥769px)은 영향 없음
+   - 컴포넌트별 셀렉터로 한정해 다른 영역 미영향
+   ============================================================ */
+@media (max-width: 768px) {
+  .sec-intro,
+  .trust__intro,
+  .acc-desc,
+  .why-journey__icon-desc,
+  .news-card__desc,
+  .tv-card__desc,
+  .treat-card__desc,
+  .proc-slide__desc,
+  .pss-ingredient-card__desc,
+  .pss-category__desc,
+  .sa-subpanel__desc,
+  .subpanel__desc,
+  .guarantee-col__desc,
+  .feature__desc,
+  .step__desc,
+  .tv-detail__desc,
+  .pd-desc,
+  .rsv-fee-box__desc,
+  .mag-card__excerpt,
+  .mag-featured__excerpt {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    overflow: hidden;
+  }
+  /* 우리를 선택하는 이유(why-journey) 카드 설명: 강제 2줄 + 말줄임 */
+  .why-journey__icon-desc {
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
   }
 }

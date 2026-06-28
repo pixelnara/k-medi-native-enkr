@@ -12,7 +12,6 @@
   var ITEMS = [
     { label: 'Home',     href: 'index.html' },
     { label: 'Skin',     href: 'skin-sol.html' },
-    { label: 'Book',     href: 'reservation.html', cta: true },
     { label: 'Shop',     href: 'cosmetic.html' },
     { label: 'Magazine', href: 'magazine.html' },
   ];
