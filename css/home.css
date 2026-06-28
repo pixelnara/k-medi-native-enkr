@@ -1859,7 +1859,7 @@
   /* Contact button — visible above bottom bar */
   .chat-btn {
     display: flex;
-    bottom: calc(72px + 16px);
+    bottom: calc(72px + 24px);
   }
 
   /* Section titles */

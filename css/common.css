@@ -373,7 +373,7 @@ body {
     text-align: left;
   }
   .page-head-edito__title {
-    font-size: clamp(32px, 9vw, 52px);
+    font-size: clamp(28px, 7vw, 52px);
     letter-spacing: var(--tracking-tight);
     font-weight: 700;
     padding-bottom: 10px;
@@ -1668,8 +1668,8 @@ image-slot#cert-sgi {
   .chat-btn {
     display: flex;
     /* 좌우 중앙 정렬 (transform은 노출 트랜지션이 쓰므로 margin auto 사용) */
-    left: 0;
-    right: 0;
+    /* left: 0; */
+    right: 16px;
     margin: 0 auto;
     width: fit-content;
     height: auto;
