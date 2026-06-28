@@ -1393,7 +1393,7 @@ image-slot#cert-sgi {
     position: fixed;
     bottom: 0;
     left: 0;
-    transform: none;
+    transform: translateY(0);
     width: 100%;
     max-width: none;
     z-index: 500;
@@ -1407,7 +1407,10 @@ image-slot#cert-sgi {
     gap: 0;
     padding: 0;
     padding-bottom: env(safe-area-inset-bottom, 0px);
-    transition: opacity 0.2s ease;
+    transition: transform 0.3s ease;
+  }
+  .mobile-bar.is-hidden {
+    transform: translateY(100%);
   }
   /* 하단바 v1 활성 / v2 숨김 */
   .mobile-bar--v1 {
@@ -1686,7 +1689,7 @@ image-slot#cert-sgi {
     grid-template-columns: 1fr;
   }
   .footer {
-    padding-bottom: calc(var(--space-40) + 80px);
+    padding-bottom: calc(80px + env(safe-area-inset-bottom, 0px));
   }
   .footer__top {
     gap: var(--space-8) var(--space-20);

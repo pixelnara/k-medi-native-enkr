@@ -53,4 +53,15 @@
   });
 
   document.body.appendChild(nav);
+
+  var prevScrollY = window.scrollY;
+  window.addEventListener('scroll', function () {
+    var y = window.scrollY;
+    if (y > prevScrollY && y > 80) {
+      nav.classList.add('is-hidden');
+    } else {
+      nav.classList.remove('is-hidden');
+    }
+    prevScrollY = y;
+  }, { passive: true });
 })();
