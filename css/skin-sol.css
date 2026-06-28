@@ -955,21 +955,21 @@
     grid-template-columns: 1fr;
     gap: var(--space-6);
   }
-  /* 가로 row 레이아웃 — 체크 터치 영역 확보 + 텍스트 겹침 방지 */
+  /* 세로 column 레이아웃 — 아이콘 → 제목 → 설명 순 세로 배치, 체크박스는 우상단 고정 */
   .pss-option__card {
-    flex-direction: row;
-    align-items: center;
+    flex-direction: column;
+    align-items: flex-start;
     min-height: auto;
-    /* right 56px: check(32) + right-offset(14) + gap(10) */
-    padding: var(--space-18) 56px var(--space-18) var(--space-18);
-    gap: var(--space-12);
+    /* right 52px: check(32) + right-offset(13) + gap(7) */
+    padding: var(--space-18) 52px var(--space-18) var(--space-18);
+    gap: var(--space-10);
   }
   .pss-option__check {
-    top: 50%;
+    top: 14px;
     right: 13px;
     width: 32px;
     height: 32px;
-    transform: translateY(-50%);
+    transform: none;
   }
   .pss-option__check svg {
     width: 16px;
