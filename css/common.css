@@ -763,16 +763,18 @@ image-slot#cert-sgi {
   width: var(--space-18);
   height: var(--space-18);
 }
+/* 복사 버튼 — 추천 배지와 동일한 필드(filled) 알약 형태, 회색 톤 */
 .contact-popup__copy-btn {
   display: inline-flex;
   align-items: center;
-  padding: 1px var(--space-6);
+  line-height: 1;
+  padding: var(--space-4) var(--space-8);
   font-size: var(--text-11);
   font-weight: 600;
-  color: var(--accent-gray-1);
-  border: 1px solid var(--accent-gray-1);
+  color: var(--gray-500);
+  border: none;
   border-radius: var(--radius-pill);
-  background: transparent;
+  background: var(--gray-150);
   cursor: pointer;
   transition:
     background 0.15s,
@@ -781,13 +783,12 @@ image-slot#cert-sgi {
 }
 @media (hover: hover) {
   .contact-popup__copy-btn:hover {
-    background: var(--gray-50);
+    background: var(--gray-200);
   }
 }
 .contact-popup__copy-btn.is-copied {
-  color: var(--teal-500);
-  border-color: var(--teal-500);
-  background: var(--teal-50);
+  color: var(--gray-900);
+  background: var(--gray-200);
 }
 /* 이메일 주소 + 복사 버튼 한 줄 정렬 */
 .contact-popup__item-value-row {
@@ -818,13 +819,17 @@ image-slot#cert-sgi {
   font-weight: 700;
   color: var(--text-gray-6);
 }
+/* 추천 배지 — 복사 버튼과 동일한 알약 형태, 레드 강조 톤 */
 .contact-popup__feature-badge {
+  display: inline-flex;
+  align-items: center;
+  line-height: 1;
   font-size: var(--text-11);
   font-weight: 600;
-  color: var(--teal-500);
-  background: var(--teal-50);
+  color: #d65a54; /* 추천 강조 레드 (모노톤 시스템 외 단일 액센트) */
+  background: #fce7e6;
   border-radius: var(--radius-pill);
-  padding: 1px var(--space-6);
+  padding: var(--space-4) var(--space-8);
 }
 .contact-popup__feature-arrow {
   margin-left: auto;
