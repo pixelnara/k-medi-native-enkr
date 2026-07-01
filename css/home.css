@@ -52,20 +52,11 @@
     background-image: url("../assets/img/1-page-home/01_main_banner/hero-6.png");
   }
 }
-.hero__slide--intro {
-  background-image: url("../assets/img/1-page-home/01_main_banner/hero-8.png");
-}
 .hero__slide--2nd {
   background-image: url("../assets/img/1-page-home/01_main_banner/hero-8.png");
 }
 .hero__slide--3rd {
   background-image: url("../assets/img/1-page-home/01_main_banner/hero-17.png");
-}
-.hero__slide--event {
-  background-image: url("../assets/img/1-page-home/01_main_banner/hero-5.png");
-}
-.hero__slide--seoul {
-  background-image: url("../assets/img/1-page-home/01_main_banner/hero-15.png");
 }
 .hero__slide--4th {
   background-image: url("../assets/img/1-page-home/01_main_banner/hero-7.png");
@@ -78,7 +69,20 @@
 .hero__slide--5th {
   background-image: url("../assets/img/1-page-home/01_main_banner/hero-20.jpeg");
 }
-.hero__slide--hotel {
+/* 최상위 홈(index.html) 전용 히어로 이미지 — en/ko의 first~5th 네이밍과 이미지가 달라 페이지 스코프로 분리 */
+.hero--home .hero__slide--first {
+  background-image: url("../assets/img/1-page-home/01_main_banner/hero-8.png");
+}
+.hero--home .hero__slide--2nd {
+  background-image: url("../assets/img/1-page-home/01_main_banner/hero-5.png");
+}
+.hero--home .hero__slide--3rd {
+  background-image: url("../assets/img/1-page-home/01_main_banner/hero-15.png");
+}
+.hero--home .hero__slide--4th {
+  background-image: url("../assets/img/1-page-home/01_main_banner/hero-20.jpeg");
+}
+.hero--home .hero__slide--5th {
   background-image: url("../assets/img/1-page-home/06_others/hero-man-hotel.png");
 }
 .hero__slide::after {
