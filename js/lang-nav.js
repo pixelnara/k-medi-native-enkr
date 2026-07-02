@@ -38,9 +38,7 @@
       inLangFolder = FOLDERS.includes(parent);
     }
 
-    return inLangFolder
-      ? `../${targetFolder}/${filename}`
-      : `${targetFolder}/${filename}`;
+    return inLangFolder ? `../${targetFolder}/${filename}` : `${targetFolder}/${filename}`;
   }
 
   /** 현재 페이지의 언어 코드 반환 */
